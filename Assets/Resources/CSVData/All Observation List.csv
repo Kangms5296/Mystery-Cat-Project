@@ -1,0 +1,49 @@
+﻿ID,Character,Way,TalkScript,Division,Param,Condition
+O001,형사,Pull,아앗! 귀를 왜t잡아당기시는 겁니까?,x,,
+O002,형사,Pull,키야옹!! 꼬리는 건들지 말아주세요!,x,,
+O003,형사,Pull,"그르릉… 큼, 큼!! 뭐하시는 겁니까?",x,,
+O004,형사,Pull,모자는 안돼! …안됩니다.,character,모자를 죽어도 벗으려 하지 않는다.,Clue_Observation_Detective_Hat
+O005,형사,Look,,character,왼쪽 눈에 흉터가 있다.,Clue_Observation_Detective_Eye
+O006,형사,Look,,character,털 끝에 검은 것이 묻어있다.,Clue_Observation_Detective_Hand
+O007,형사,Pincer,"앗흥! 뭐, 뭐였지…!",item,형사의 털,Clue_Observation_Detective_Fur
+O008,경찰,Pull,아야! 공무집행방해입니다!,x,,
+O009,경찰,Pull,하지 마십시오.,x,,
+O010,경찰,Pull,… 하지 마십시오.,x,,
+O011,경찰,Pull,아무것도 없습니다.,x,,
+O012,경찰,Look,,character,목에 막 생긴 상처가 있다.,Clue_Observation_Police_Neck
+O013,경찰,Pincer,…… (긁적),item,경찰의 털,Clue_Observation_Police_Fur
+O014,꼬맹이 아빠,Pull,"미야아! 뭐, 뭐 하세요…",x,,
+O015,꼬맹이 아빠,Pull,제발 좀 냅둬옹…,x,,
+O016,꼬맹이 아빠,Pull,"최고급 은가루, 슬쩍했다.",item,은가루,Clue_Observation_Father_Silver
+O017,꼬맹이 아빠,Look,,character,너무 울어서 눈이 빨갛다.,Clue_Observation_Father_Eye
+O018,꼬맹이 아빠,Pincer,미야옹… 지금 저한테 이런 짓을 하고 싶으신건가요옹…,item,꼬맹이 아빠의 털,Clue_Observation_Father_Fur
+O019,노숙묘,Pull,헤헤… 내 귀가 그렇게 좋아? 그럼 더 해줘…,x,,
+O020,노숙묘,Pull,헤헤… 아파…,x,,
+O021,노숙묘,Pull,손 괜찮아? 화장실 다녀오고 안닦았는데… 헤…,x,,
+O022,노숙묘,Look,,character,귀에 흉터가 있다.,Clue_Observation_Homeless_Ear
+O023,노숙묘,Look,검은 게 묻어있… 벼룩…?,x,,
+O024,노숙묘,Pincer,헤헤 내 털 좋아? 냄새 안 나 괜찮아…,item,노숙묘의 털,Clue_Observation_Homeless_Fur
+O025,노숙묘,Pincer,벼룩…,item,벼룩,Clue_Observation_Homeless_Bug
+O026,바텐더,Pull,아! 뒤지고 싶냐?,x,,
+O027,바텐더,Pull,"이 마을 암컷, 아니 모든 고양이 중에서 내 수염이 제일 길단다.",x,,
+O028,바텐더,Look,,character,귀가 다른 곳에 비해 털이 적다.,Clue_Observation_Bartender_Ear
+O029,바텐더,Look,,character,옷에 피 같은 게 묻어 있다.,Clue_Observation_Bartender_Clothes
+O030,바텐더,Pincer,"아! 이거, 귀한 털이야!",item,바텐더의 털,Clue_Observation_Bartender_Fur
+O031,바 손님,Pull,뇨뇽! 이래도 술이 안깨는거뇽… 더 세게 잡아당겨주라뇽…,x,,
+O032,바 손님,Pull,뇽~ 수염이 왜 안자랄까뇽…,x,,
+O033,바 손님,Look,,character,손 끝에 거뭇거뭇한 게 묻어 있다.,Clue_Observation_Customer_Hand
+O034,바 손님,Look,,character,포도주가 묻어 있다.,Clue_Observation_Customer_Mouse
+O035,바 손님,Pincer,뇨옹! 털을 한 100가닥은 뽑아야 술이 깰 것 같으뇽…,item,바 손님의 털,Clue_Observation_Customer_Fur
+O036,사서 동료,Pull,아아! 다시 쫓겨나고 싶어?,x,,
+O037,사서 동료,Pull,야! 이건 내 눈이야!,character,안경 벗으면 앞을 못 본다.,Clue_Observation_Library_Glasses
+O038,사서 동료,Look,,character,안경이 얼룩덜룩하다. ,Clue_Observation_Library_Glasses2
+O039,사서 동료,Look,,character,옷에 갈색 털이 묻어있다.,Clue_Observation_Library_Clothes
+O040,사서 동료,Pincer,"앗! 그, 그래 털 수집가의 털도 궁금하시겠지! 소중히 하라고!",item,사서 동료의 털,Clue_Observation_Library_Fur
+O041,우유배달소년,Pull,냥군님…? 아파옹…,x,,
+O042,우유배달소년,Pull,냥군님… 적당히 하시라옹…,x,,
+O043,우유배달소년,Pull,"야, 그만 하라고 했지.",item,가짜 귀,Clue_Observation_Milkboy_ToyEar
+O044,우유배달소년,Look,,character,흉터 같은 게 있다. 좀 갈라진 것 같다…?,Clue_Observation_Milkboy_Ear
+O045,우유배달소년,Look,,character,귀에 흉터 같은 게 있다…?,Clue_Observation_Milkboy_Ear1
+O046,우유배달소년,Look,,character,귀가 좀 갈라진 것 같다…?,Clue_Observation_Milkboy_Ear2
+O047,우유배달소년,Pincer,"아닛, 아프다옹!",x,,Clue_Observation_Milkboy_Fur
+O048,꼬맹이 아빠,Pull,응? 실밥이 풀렸나…,item,금실,Clue_Observation_String

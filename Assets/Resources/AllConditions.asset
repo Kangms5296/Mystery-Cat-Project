@@ -1,0 +1,1468 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b70aab6556e7cc46a2fa6ece6700a68, type: 3}
+  m_Name: AllConditions
+  m_EditorClassIdentifier: 
+  conditions:
+  - {fileID: 114691834020707824}
+  - {fileID: 114698144004599828}
+  - {fileID: 114734343718411078}
+  - {fileID: 114406128442090668}
+  - {fileID: 114988055675496424}
+  - {fileID: 114443616160930716}
+  - {fileID: 114568305263383868}
+  - {fileID: 114849610182643120}
+  - {fileID: 114814800215130924}
+  - {fileID: 114783797401302626}
+  - {fileID: 114784185764253394}
+  - {fileID: 114596464125840714}
+  - {fileID: 114505225823698490}
+  - {fileID: 114198316670247146}
+  - {fileID: 114438829731223216}
+  - {fileID: 114184709508151392}
+  - {fileID: 114347528942175680}
+  - {fileID: 114721654825383178}
+  - {fileID: 114374529831264462}
+  - {fileID: 114424659802635186}
+  - {fileID: 114335076099610882}
+  - {fileID: 114724146875668680}
+  - {fileID: 114980719308467130}
+  - {fileID: 114277807377092776}
+  - {fileID: 114285858181652706}
+  - {fileID: 114930332475126988}
+  - {fileID: 114454177946334636}
+  - {fileID: 114649568389264394}
+  - {fileID: 114169830075233510}
+  - {fileID: 114656472599983400}
+  - {fileID: 114067455638243234}
+  - {fileID: 114451135065696966}
+  - {fileID: 114377577955198864}
+  - {fileID: 114524772522157964}
+  - {fileID: 114142644108972552}
+  - {fileID: 114583200831812420}
+  - {fileID: 114728326777036396}
+  - {fileID: 114550743892151000}
+  - {fileID: 114470070588521300}
+  - {fileID: 114413458988936500}
+  - {fileID: 114333398791328346}
+  - {fileID: 114558162117963366}
+  - {fileID: 114041664764893828}
+  - {fileID: 114408178265818766}
+  - {fileID: 114339823721686472}
+  - {fileID: 114719153498473530}
+  - {fileID: 114398943793962146}
+  - {fileID: 114230158351397940}
+  - {fileID: 114375194529103822}
+  - {fileID: 114600561520722086}
+  - {fileID: 114145426475951888}
+  - {fileID: 114910948178193500}
+  - {fileID: 114772464972312582}
+  - {fileID: 114713416782545592}
+  - {fileID: 114476173112000650}
+  - {fileID: 114900257916315172}
+  - {fileID: 114544651476964206}
+  - {fileID: 114271358462766016}
+  - {fileID: 114664371515158544}
+  - {fileID: 114737135577775276}
+  - {fileID: 114658309998912704}
+  - {fileID: 114008361082196346}
+  - {fileID: 114823086745714086}
+  - {fileID: 114974720360388610}
+  - {fileID: 114157001216504856}
+  - {fileID: 114652882025291542}
+  - {fileID: 114451549070378280}
+  - {fileID: 114488880670727176}
+  - {fileID: 114328764065132472}
+  - {fileID: 114570422123091536}
+  - {fileID: 114676323065473982}
+  - {fileID: 114266140574963354}
+  - {fileID: 114969634959109324}
+  - {fileID: 114435579762797334}
+  - {fileID: 114390567140699434}
+  - {fileID: 114213095045070542}
+  - {fileID: 114856317101004334}
+  - {fileID: 114787940352084868}
+  - {fileID: 114759028443604808}
+  - {fileID: 114777233592592782}
+  - {fileID: 114538591557440664}
+  - {fileID: 114056829039403748}
+  - {fileID: 114641682865051580}
+  - {fileID: 114716635991238076}
+  - {fileID: 114605807861362658}
+  - {fileID: 114577222460644228}
+  - {fileID: 114660652931885924}
+  - {fileID: 114751713936859796}
+  - {fileID: 114994418218283580}
+  - {fileID: 114970740046700696}
+  - {fileID: 114708678379270316}
+  - {fileID: 114293157763397334}
+  - {fileID: 114519704734008782}
+  - {fileID: 114713147834450070}
+  - {fileID: 114106462119683990}
+  - {fileID: 114091063030140460}
+--- !u!114 &114008361082196346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Father_Eye
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Father_Eye
+  satisfied: 0
+  hash: 1422844233
+--- !u!114 &114041664764893828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: TrueEnding_Start
+  m_EditorClassIdentifier: 
+  description: TrueEnding_Start
+  satisfied: 0
+  hash: 1334118803
+--- !u!114 &114056829039403748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Object_Flower1
+  m_EditorClassIdentifier: 
+  description: Object_Flower1
+  satisfied: 0
+  hash: -404045224
+--- !u!114 &114067455638243234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NPC_Bartender_Complete
+  m_EditorClassIdentifier: 
+  description: NPC_Bartender_Complete
+  satisfied: 0
+  hash: 2037407528
+--- !u!114 &114091063030140460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Milkboy_Fur
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Milkboy_Fur
+  satisfied: 0
+  hash: -1543300582
+--- !u!114 &114106462119683990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Book3To7
+  m_EditorClassIdentifier: 
+  description: Book3To7
+  satisfied: 0
+  hash: -1210589598
+--- !u!114 &114142644108972552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NPC_Library_GiveFur
+  m_EditorClassIdentifier: 
+  description: NPC_Library_GiveFur
+  satisfied: 0
+  hash: 737066842
+--- !u!114 &114145426475951888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01.5_Clue_TouchDeskOne
+  m_EditorClassIdentifier: 
+  description: 01.5_Clue_TouchDeskOne
+  satisfied: 0
+  hash: -1361576277
+--- !u!114 &114157001216504856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Homeless_Fur
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Homeless_Fur
+  satisfied: 0
+  hash: -1762365178
+--- !u!114 &114169830075233510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NPC_Bartender_GiveSilverMilk
+  m_EditorClassIdentifier: 
+  description: NPC_Bartender_GiveSilverMilk
+  satisfied: 0
+  hash: -1411597566
+--- !u!114 &114184709508151392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NPC_Police_Complete
+  m_EditorClassIdentifier: 
+  description: NPC_Police_Complete
+  satisfied: 0
+  hash: 662616288
+--- !u!114 &114198316670247146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01_NPC_Police_TellTruth
+  m_EditorClassIdentifier: 
+  description: 01_NPC_Police_TellTruth
+  satisfied: 0
+  hash: 259189801
+--- !u!114 &114213095045070542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Library_Fur
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Library_Fur
+  satisfied: 0
+  hash: 1075527568
+--- !u!114 &114230158351397940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 07_NPC_GiveFalseSilver
+  m_EditorClassIdentifier: 
+  description: 07_NPC_GiveFalseSilver
+  satisfied: 0
+  hash: -1855594730
+--- !u!114 &114266140574963354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Customer_Fur
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Customer_Fur
+  satisfied: 0
+  hash: 2087464860
+--- !u!114 &114271358462766016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Detective_Fur
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Detective_Fur
+  satisfied: 0
+  hash: 1944968294
+--- !u!114 &114277807377092776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NPC_MilkBoy_GetMilk
+  m_EditorClassIdentifier: 
+  description: NPC_MilkBoy_GetMilk
+  satisfied: 0
+  hash: -1869461458
+--- !u!114 &114285858181652706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NPC_MilkBoy_GetSilverMilk
+  m_EditorClassIdentifier: 
+  description: NPC_MilkBoy_GetSilverMilk
+  satisfied: 0
+  hash: -676803947
+--- !u!114 &114293157763397334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Book2To7
+  m_EditorClassIdentifier: 
+  description: Book2To7
+  satisfied: 0
+  hash: 258717959
+--- !u!114 &114328764065132472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Bartender_Fur
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Bartender_Fur
+  satisfied: 0
+  hash: 1491277407
+--- !u!114 &114333398791328346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NormalEnding_True_Start
+  m_EditorClassIdentifier: 
+  description: NormalEnding_True_Start
+  satisfied: 0
+  hash: 973036815
+--- !u!114 &114335076099610882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Event 505 Complete
+  m_EditorClassIdentifier: 
+  description: Event 505 Complete
+  satisfied: 0
+  hash: 553415126
+--- !u!114 &114339823721686472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 10_NPC_Yes
+  m_EditorClassIdentifier: 
+  description: 10_NPC_Yes
+  satisfied: 0
+  hash: -522178259
+--- !u!114 &114347528942175680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NPC_Police_TalkByDaddy
+  m_EditorClassIdentifier: 
+  description: NPC_Police_TalkByDaddy
+  satisfied: 0
+  hash: -1058077972
+--- !u!114 &114374529831264462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01_NPC_Father_GiveEar
+  m_EditorClassIdentifier: 
+  description: 01_NPC_Father_GiveEar
+  satisfied: 0
+  hash: -1981203075
+--- !u!114 &114375194529103822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01.5_Clue_TouchBookThree
+  m_EditorClassIdentifier: 
+  description: 01.5_Clue_TouchBookThree
+  satisfied: 0
+  hash: 451662694
+--- !u!114 &114377577955198864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: GetMissionByLibrary
+  m_EditorClassIdentifier: 
+  description: GetMissionByLibrary
+  satisfied: 0
+  hash: 1109938492
+--- !u!114 &114390567140699434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Library_Clothes
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Library_Clothes
+  satisfied: 0
+  hash: -245945361
+--- !u!114 &114398943793962146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 07_NPC_GiveTrueSilver
+  m_EditorClassIdentifier: 
+  description: 07_NPC_GiveTrueSilver
+  satisfied: 0
+  hash: 584322009
+--- !u!114 &114406128442090668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01.5_Object_profilePicture
+  m_EditorClassIdentifier: 
+  description: 01.5_Object_profilePicture
+  satisfied: 0
+  hash: 1557117882
+--- !u!114 &114408178265818766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 10_NPC_MilkPeople_RequestfindSilver
+  m_EditorClassIdentifier: 
+  description: 10_NPC_MilkPeople_RequestfindSilver
+  satisfied: 0
+  hash: 348052302
+--- !u!114 &114413458988936500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NormalEnding_Lie_Start
+  m_EditorClassIdentifier: 
+  description: NormalEnding_Lie_Start
+  satisfied: 0
+  hash: 1829123866
+--- !u!114 &114424659802635186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01_NPC_Homeless_GiveFlower
+  m_EditorClassIdentifier: 
+  description: 01_NPC_Homeless_GiveFlower
+  satisfied: 0
+  hash: 969686055
+--- !u!114 &114435579762797334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Library_Glasses2
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Library_Glasses2
+  satisfied: 0
+  hash: -1578535477
+--- !u!114 &114438829731223216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01_NPC_Police_TellLie
+  m_EditorClassIdentifier: 
+  description: 01_NPC_Police_TellLie
+  satisfied: 0
+  hash: -785518613
+--- !u!114 &114443616160930716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 02_Clue_FIndIdCard
+  m_EditorClassIdentifier: 
+  description: 02_Clue_FIndIdCard
+  satisfied: 0
+  hash: -1228196086
+--- !u!114 &114451135065696966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NPC_Customer_Complete
+  m_EditorClassIdentifier: 
+  description: NPC_Customer_Complete
+  satisfied: 0
+  hash: 1334009717
+--- !u!114 &114451549070378280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Bartender_Ear
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Bartender_Ear
+  satisfied: 0
+  hash: 1946910547
+--- !u!114 &114454177946334636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NPC_MilkBoy_Complete
+  m_EditorClassIdentifier: 
+  description: NPC_MilkBoy_Complete
+  satisfied: 0
+  hash: -1684316626
+--- !u!114 &114470070588521300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Ending_Start
+  m_EditorClassIdentifier: 
+  description: Ending_Start
+  satisfied: 0
+  hash: 390717202
+--- !u!114 &114476173112000650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Detective_Hat
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Detective_Hat
+  satisfied: 0
+  hash: -1094810868
+--- !u!114 &114488880670727176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Bartender_Clothes
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Bartender_Clothes
+  satisfied: 0
+  hash: 669801267
+--- !u!114 &114505225823698490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01_NPC_Police_ThirdClick
+  m_EditorClassIdentifier: 
+  description: 01_NPC_Police_ThirdClick
+  satisfied: 0
+  hash: -2035166181
+--- !u!114 &114519704734008782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Book3To5
+  m_EditorClassIdentifier: 
+  description: Book3To5
+  satisfied: 0
+  hash: 1507442510
+--- !u!114 &114524772522157964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NPC_Customer_GiveDrink
+  m_EditorClassIdentifier: 
+  description: NPC_Customer_GiveDrink
+  satisfied: 0
+  hash: 1316401197
+--- !u!114 &114538591557440664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Milkboy_ToyEar
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Milkboy_ToyEar
+  satisfied: 0
+  hash: -1071121890
+--- !u!114 &114544651476964206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Detective_Hand
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Detective_Hand
+  satisfied: 0
+  hash: 569918143
+--- !u!114 &114550743892151000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Library_Object_ClockHistory
+  m_EditorClassIdentifier: 
+  description: Library_Object_ClockHistory
+  satisfied: 0
+  hash: -1517796473
+--- !u!114 &114558162117963366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: BadEnding_Start
+  m_EditorClassIdentifier: 
+  description: BadEnding_Start
+  satisfied: 0
+  hash: 111808225
+--- !u!114 &114568305263383868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 03_Clue_GetSuspectHair
+  m_EditorClassIdentifier: 
+  description: 03_Clue_GetSuspectHair
+  satisfied: 0
+  hash: 1496741297
+--- !u!114 &114570422123091536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Customer_Hand
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Customer_Hand
+  satisfied: 0
+  hash: 2090850382
+--- !u!114 &114577222460644228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Object_Flower5
+  m_EditorClassIdentifier: 
+  description: Object_Flower5
+  satisfied: 0
+  hash: -528021951
+--- !u!114 &114583200831812420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Library_Object_CatHabit
+  m_EditorClassIdentifier: 
+  description: Library_Object_CatHabit
+  satisfied: 0
+  hash: -1624747231
+--- !u!114 &114596464125840714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01_NPC_Police_FirstClick
+  m_EditorClassIdentifier: 
+  description: 01_NPC_Police_FirstClick
+  satisfied: 0
+  hash: 920761823
+--- !u!114 &114600561520722086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01.5_Clue_TouchPicture
+  m_EditorClassIdentifier: 
+  description: 01.5_Clue_TouchPicture
+  satisfied: 0
+  hash: -308974755
+--- !u!114 &114605807861362658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Object_Flower4
+  m_EditorClassIdentifier: 
+  description: Object_Flower4
+  satisfied: 0
+  hash: -1753205033
+--- !u!114 &114629100282694746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Insert Condition
+  m_EditorClassIdentifier: 
+  description: Insert Condition
+  satisfied: 0
+  hash: 634925744
+--- !u!114 &114641682865051580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Object_Flower2
+  m_EditorClassIdentifier: 
+  description: Object_Flower2
+  satisfied: 0
+  hash: 2128843746
+--- !u!114 &114649568389264394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NPC_Bartender_GiveMilk
+  m_EditorClassIdentifier: 
+  description: NPC_Bartender_GiveMilk
+  satisfied: 0
+  hash: 734792227
+--- !u!114 &114652882025291542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Homeless_Bug
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Homeless_Bug
+  satisfied: 0
+  hash: -64996047
+--- !u!114 &114656472599983400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NPC_Bartender_GivePoisonMilk
+  m_EditorClassIdentifier: 
+  description: NPC_Bartender_GivePoisonMilk
+  satisfied: 0
+  hash: 765591981
+--- !u!114 &114658309998912704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Father_Silver
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Father_Silver
+  satisfied: 0
+  hash: -2060853107
+--- !u!114 &114660652931885924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Boo1To5
+  m_EditorClassIdentifier: 
+  description: Boo1To5
+  satisfied: 0
+  hash: 1003244766
+--- !u!114 &114664371515158544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Police_Neck
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Police_Neck
+  satisfied: 0
+  hash: 1835713486
+--- !u!114 &114676323065473982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Customer_Mouse
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Customer_Mouse
+  satisfied: 0
+  hash: 1124972881
+--- !u!114 &114691834020707824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01_Clue_UnderTheTree
+  m_EditorClassIdentifier: 
+  description: 01_Clue_UnderTheTree
+  satisfied: 0
+  hash: 606786195
+--- !u!114 &114698144004599828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01_Clue_UnderTheBush
+  m_EditorClassIdentifier: 
+  description: 01_Clue_UnderTheBush
+  satisfied: 0
+  hash: 910034239
+--- !u!114 &114708678379270316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Book2To6
+  m_EditorClassIdentifier: 
+  description: Book2To6
+  satisfied: 0
+  hash: 2020379025
+--- !u!114 &114713147834450070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Book3To6
+  m_EditorClassIdentifier: 
+  description: Book3To6
+  satisfied: 0
+  hash: -1060049164
+--- !u!114 &114713416782545592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 02_Clue_MakeIdCard
+  m_EditorClassIdentifier: 
+  description: 02_Clue_MakeIdCard
+  satisfied: 0
+  hash: -1718228586
+--- !u!114 &114716635991238076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Object_Flower3
+  m_EditorClassIdentifier: 
+  description: Object_Flower3
+  satisfied: 0
+  hash: 165978996
+--- !u!114 &114719153498473530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 10_NPC_No
+  m_EditorClassIdentifier: 
+  description: 10_NPC_No
+  satisfied: 0
+  hash: -538693929
+--- !u!114 &114721654825383178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NPC_Police_GiveDoll
+  m_EditorClassIdentifier: 
+  description: NPC_Police_GiveDoll
+  satisfied: 0
+  hash: -1843180688
+--- !u!114 &114724146875668680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NPC_MilkBoy_NoBringSilver
+  m_EditorClassIdentifier: 
+  description: NPC_MilkBoy_NoBringSilver
+  satisfied: 0
+  hash: 646458390
+--- !u!114 &114728326777036396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Library_Object_OldPicture
+  m_EditorClassIdentifier: 
+  description: Library_Object_OldPicture
+  satisfied: 0
+  hash: -1366377430
+--- !u!114 &114734343718411078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01.5_Clue_FindWatch
+  m_EditorClassIdentifier: 
+  description: 01.5_Clue_FindWatch
+  satisfied: 0
+  hash: 1281501836
+--- !u!114 &114737135577775276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Police_Fur
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Police_Fur
+  satisfied: 0
+  hash: -1775487421
+--- !u!114 &114751713936859796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Book1To6
+  m_EditorClassIdentifier: 
+  description: Book1To6
+  satisfied: 0
+  hash: 1792616063
+--- !u!114 &114759028443604808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Milkboy_Ear2
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Milkboy_Ear2
+  satisfied: 0
+  hash: -292954065
+--- !u!114 &114772464972312582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01.5_Clue_TouchBook2
+  m_EditorClassIdentifier: 
+  description: 01.5_Clue_TouchBook2
+  satisfied: 0
+  hash: -1664962027
+--- !u!114 &114777233592592782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_String
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_String
+  satisfied: 0
+  hash: 204339842
+--- !u!114 &114783797401302626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01_NPC_Police_BeforeClick
+  m_EditorClassIdentifier: 
+  description: 01_NPC_Police_BeforeClick
+  satisfied: 0
+  hash: 1841383824
+--- !u!114 &114784185764253394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01_LookAtStatue
+  m_EditorClassIdentifier: 
+  description: 01_LookAtStatue
+  satisfied: 0
+  hash: -815628504
+--- !u!114 &114787940352084868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Milkboy_Ear1
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Milkboy_Ear1
+  satisfied: 0
+  hash: 2004922773
+--- !u!114 &114814800215130924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 04_Clue_BarCalendar
+  m_EditorClassIdentifier: 
+  description: 04_Clue_BarCalendar
+  satisfied: 0
+  hash: -1271029922
+--- !u!114 &114823086745714086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Father_Fur
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Father_Fur
+  satisfied: 0
+  hash: 2045679067
+--- !u!114 &114849610182643120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 04_Clue_Spoon
+  m_EditorClassIdentifier: 
+  description: 04_Clue_Spoon
+  satisfied: 0
+  hash: -466574050
+--- !u!114 &114856317101004334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Milkboy_Ear
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Milkboy_Ear
+  satisfied: 0
+  hash: -1997835498
+--- !u!114 &114900257916315172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Detective_Eye
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Detective_Eye
+  satisfied: 0
+  hash: 1590536436
+--- !u!114 &114910948178193500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01.5_Clue_TouchDeskTwo
+  m_EditorClassIdentifier: 
+  description: 01.5_Clue_TouchDeskTwo
+  satisfied: 0
+  hash: -982388164
+--- !u!114 &114930332475126988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NPC_MilkBoy_GetPoisonMilk
+  m_EditorClassIdentifier: 
+  description: NPC_MilkBoy_GetPoisonMilk
+  satisfied: 0
+  hash: 1373007930
+--- !u!114 &114969634959109324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Library_Glasses
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Library_Glasses
+  satisfied: 0
+  hash: 931972533
+--- !u!114 &114970740046700696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Book2To5
+  m_EditorClassIdentifier: 
+  description: Book2To5
+  satisfied: 0
+  hash: -513419221
+--- !u!114 &114974720360388610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Clue_Observation_Homeless_Ear
+  m_EditorClassIdentifier: 
+  description: Clue_Observation_Homeless_Ear
+  satisfied: 0
+  hash: -1172563958
+--- !u!114 &114980719308467130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: NPC_MilkBoy_YesBringSilver
+  m_EditorClassIdentifier: 
+  description: NPC_MilkBoy_YesBringSilver
+  satisfied: 0
+  hash: -1221129378
+--- !u!114 &114988055675496424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: 01.6_ExitHome
+  m_EditorClassIdentifier: 
+  description: 01.6_ExitHome
+  satisfied: 0
+  hash: -157401243
+--- !u!114 &114994418218283580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Book1To7
+  m_EditorClassIdentifier: 
+  description: Book1To7
+  satisfied: 0
+  hash: 501094121
