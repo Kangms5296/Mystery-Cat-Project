@@ -51,7 +51,7 @@ public class GiveItemOnConditionReaction : DelayedReaction
             yield return null;
 
         // 인벤토리 간 조작 금지 설정 해제
-        FSLocator.textDisplayer.reactionButton.enabled = true;
+        //FSLocator.textDisplayer.reactionButton.enabled = true;
 
         // 클릭한 slot 아이템의 이름과 infoList 내의 아이템 이름 중 맞는 게 있다면..
         for (int i = 0;i < infoList.Count; i++)
@@ -65,13 +65,15 @@ public class GiveItemOnConditionReaction : DelayedReaction
 
                 // 해당 아이템을 주었을 때의 reaction 실행
                 infoList[i].reactionCollection.InitAndReact();
+                break;
+
             }
         }
-        
-        // 주려는 물건이 지정돤 물건이 아니라면..
-        if(inventory.isGive == false)
-            notGivedReaction.InitAndReact();
 
+        // 주려는 물건이 지정돤 물건이 아니라면..
+        if (inventory.isGive == false)
+            notGivedReaction.InitAndReact();
+        
         inventory.isGive = false;  
         inventory.isSimpleGive = true;
 

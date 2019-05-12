@@ -9,8 +9,8 @@ public class MissionScript : UIScript {
     // 표시할 UI
     private Text textUI;
 
-
-
+    [HideInInspector]
+    public bool isClicked = false;
 
     // Use this for initialization
     void Awake()
@@ -27,7 +27,7 @@ public class MissionScript : UIScript {
 
     // Mission UI Click 시 행동 기술
     public override void OnClickUI()
-    {        
+    {
         // 절반 이상을 Play 했으면 다시 되돌아가면서 재생
         if (anim["MissionClick"].normalizedTime > 0.5f)
             anim["MissionClick"].speed = -1.0f;
@@ -35,6 +35,7 @@ public class MissionScript : UIScript {
             anim["MissionClick"].speed = 1.0f;
 
         anim.Play("MissionClick");
+        isClicked = true;
     }
 
     public void SetMission(string temp)

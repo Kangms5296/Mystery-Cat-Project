@@ -217,6 +217,30 @@ public class ReactionCollection : MonoBehaviour
                     delayedReaction.React(this);
                     return;
                 }
+                else if (reactions[i].GetType().Name == "MoveDistanceCheckReaction")
+                {
+                    startIndex = i + 1;
+                    FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
+                    FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
+                    delayedReaction.React(this);
+                    return;
+                }
+                else if (reactions[i].GetType().Name == "WaitingUntilClickMissionReaction")
+                {
+                    startIndex = i + 1;
+                    FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
+                    FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
+                    delayedReaction.React(this);
+                    return;
+                }
+                else if (reactions[i].GetType().Name == "WaitingUntilClickInventoryReaction")
+                {
+                    startIndex = i + 1;
+                    FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
+                    FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
+                    delayedReaction.React(this);
+                    return;
+                }
                 else if (reactions[i].GetType().Name == "EventCallbackReaction" || reactions[i].GetType().Name == "EventCallbackConditionReaction")
                 {
                     startIndex = 0;

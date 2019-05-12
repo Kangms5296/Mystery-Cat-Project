@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Name: AllConditions
   m_EditorClassIdentifier: 
   conditions:
+  - {fileID: 114397178098178902}
+  - {fileID: 114939622218622604}
+  - {fileID: 114685145257474114}
+  - {fileID: 114503843050517758}
   - {fileID: 114691834020707824}
   - {fileID: 114698144004599828}
   - {fileID: 114734343718411078}
@@ -500,6 +504,20 @@ MonoBehaviour:
   description: Clue_Observation_Library_Clothes
   satisfied: 0
   hash: -245945361
+--- !u!114 &114397178098178902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: ClearToturial
+  m_EditorClassIdentifier: 
+  description: ClearToturial
+  satisfied: 0
+  hash: 1348020860
 --- !u!114 &114398943793962146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,6 +714,20 @@ MonoBehaviour:
   description: Clue_Observation_Bartender_Clothes
   satisfied: 0
   hash: 669801267
+--- !u!114 &114503843050517758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: GiveHairBook
+  m_EditorClassIdentifier: 
+  description: GiveHairBook
+  satisfied: 0
+  hash: -925392450
 --- !u!114 &114505225823698490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1018,6 +1050,20 @@ MonoBehaviour:
   description: Clue_Observation_Customer_Mouse
   satisfied: 0
   hash: 1124972881
+--- !u!114 &114685145257474114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: GetHairBook
+  m_EditorClassIdentifier: 
+  description: GetHairBook
+  satisfied: 0
+  hash: 1068908618
 --- !u!114 &114691834020707824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1382,6 +1428,20 @@ MonoBehaviour:
   description: NPC_MilkBoy_GetPoisonMilk
   satisfied: 0
   hash: 1373007930
+--- !u!114 &114939622218622604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: GetFindBookMission
+  m_EditorClassIdentifier: 
+  description: GetFindBookMission
+  satisfied: 0
+  hash: -951404865
 --- !u!114 &114969634959109324
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DocumentManager : MonoBehaviour {
+public class DocumentManager : UIScript {
 
     public GameObject documentDisplayer;
 
@@ -25,7 +25,7 @@ public class DocumentManager : MonoBehaviour {
     }
 
     // 화면 상단 UI를 통하여 UI를 실행
-    public void OnClickUI()
+    public override void OnClickUI()
     {
         documentDisplayer.SetActive(true);
 

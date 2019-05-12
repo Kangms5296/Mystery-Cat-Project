@@ -23,24 +23,6 @@ public class CharacterMoveReaction : DelayedReaction
 
         myCorotine = CoroutineHandler.Start_Coroutine(CheckAllMoving()).gameObject;
     }
-		
-    /*
-	IEnumerator CheckMoving()
-	{
-		Debug.Log ("Cor Start");
-
-		while (character.getIsMoving()) {
-			yield return null;
-		}
-        character.Stop();
-		character.MakeSpeedBack ();
-
-		FSLocator.textDisplayer.reactionButton.enabled = true;
-		FSLocator.textDisplayer.reactionButton.onClick.Invoke ();
-
-
-		Destroy(myCorotine);
-	}*/
 
     IEnumerator CheckAllMoving()
     {
