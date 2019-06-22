@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class AlphaMaskTest : MonoBehaviour {
 
-    public RectTransform t;
+    public RectTransform mask;
 
-    [Range(0.001f, 30)]
-    public float size = 30;
+    [Range(0.001f, 50)]
+    public float size = 50;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +18,6 @@ public class AlphaMaskTest : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        t.localScale = new Vector3(size, size, 1);
+        mask.localScale = new Vector3(size, size, 1);
 	}
 }

@@ -93,6 +93,9 @@ public class ObservationManager : MonoBehaviour {
         if (talkScriptCoroutine != null)
             StopCoroutine(talkScriptCoroutine);
 
+        pullEvents.transform.Find(npcName).gameObject.SetActive(false);
+        lookEvents.transform.Find(npcName).gameObject.SetActive(false);
+
         Displayer.SetActive(false);
     }
 
