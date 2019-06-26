@@ -12,10 +12,26 @@ MonoBehaviour:
   m_Name: AllConditions
   m_EditorClassIdentifier: 
   conditions:
-  - {fileID: 114397178098178902}
   - {fileID: 114939622218622604}
   - {fileID: 114685145257474114}
   - {fileID: 114503843050517758}
+  - {fileID: 114713439498801804}
+  - {fileID: 114691297334722128}
+  - {fileID: 114817846858003190}
+  - {fileID: 114011251240941424}
+  - {fileID: 114656095989701000}
+  - {fileID: 114103332448080954}
+  - {fileID: 114371466804473314}
+  - {fileID: 114558370859733512}
+  - {fileID: 114724461524598518}
+  - {fileID: 114616528040440026}
+  - {fileID: 114698292387672648}
+  - {fileID: 114304170263065808}
+  - {fileID: 114443578376290706}
+  - {fileID: 114797994681127938}
+  - {fileID: 114608730596106848}
+  - {fileID: 114939752621550006}
+  - {fileID: 114025648758522546}
   - {fileID: 114691834020707824}
   - {fileID: 114698144004599828}
   - {fileID: 114734343718411078}
@@ -112,6 +128,7 @@ MonoBehaviour:
   - {fileID: 114713147834450070}
   - {fileID: 114106462119683990}
   - {fileID: 114091063030140460}
+  - {fileID: 114355075944145104}
 --- !u!114 &114008361082196346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +143,34 @@ MonoBehaviour:
   description: Clue_Observation_Father_Eye
   satisfied: 0
   hash: 1422844233
+--- !u!114 &114011251240941424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Book2Get
+  m_EditorClassIdentifier: 
+  description: Book2Get
+  satisfied: 1
+  hash: 70343822
+--- !u!114 &114025648758522546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: TutorialFinish
+  m_EditorClassIdentifier: 
+  description: TutorialFinish
+  satisfied: 0
+  hash: 1747681728
 --- !u!114 &114041664764893828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +227,20 @@ MonoBehaviour:
   description: Clue_Observation_Milkboy_Fur
   satisfied: 0
   hash: -1543300582
+--- !u!114 &114103332448080954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: PutBookToShelf5
+  m_EditorClassIdentifier: 
+  description: PutBookToShelf5
+  satisfied: 1
+  hash: 193895784
 --- !u!114 &114106462119683990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +437,20 @@ MonoBehaviour:
   description: Book2To7
   satisfied: 0
   hash: 258717959
+--- !u!114 &114304170263065808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: ArrangeFinish
+  m_EditorClassIdentifier: 
+  description: ArrangeFinish
+  satisfied: 1
+  hash: 1054034656
 --- !u!114 &114328764065132472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,6 +521,34 @@ MonoBehaviour:
   description: NPC_Police_TalkByDaddy
   satisfied: 0
   hash: -1058077972
+--- !u!114 &114355075944145104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: BookShelf8ArrangeFinish
+  m_EditorClassIdentifier: 
+  description: BookShelf8ArrangeFinish
+  satisfied: 1
+  hash: -339747248
+--- !u!114 &114371466804473314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: PutBookToShelf6
+  m_EditorClassIdentifier: 
+  description: PutBookToShelf6
+  satisfied: 1
+  hash: -1836593966
 --- !u!114 &114374529831264462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,20 +605,6 @@ MonoBehaviour:
   description: Clue_Observation_Library_Clothes
   satisfied: 0
   hash: -245945361
---- !u!114 &114397178098178902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
-  m_Name: ClearToturial
-  m_EditorClassIdentifier: 
-  description: ClearToturial
-  satisfied: 0
-  hash: 1348020860
 --- !u!114 &114398943793962146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,6 +703,20 @@ MonoBehaviour:
   description: 01_NPC_Police_TellLie
   satisfied: 0
   hash: -785518613
+--- !u!114 &114443578376290706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: AfterComeHomeless
+  m_EditorClassIdentifier: 
+  description: AfterComeHomeless
+  satisfied: 0
+  hash: 31009494
 --- !u!114 &114443616160930716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -754,7 +855,7 @@ MonoBehaviour:
   m_Name: Book3To5
   m_EditorClassIdentifier: 
   description: Book3To5
-  satisfied: 0
+  satisfied: 1
   hash: 1507442510
 --- !u!114 &114524772522157964
 MonoBehaviour:
@@ -826,6 +927,20 @@ MonoBehaviour:
   description: BadEnding_Start
   satisfied: 0
   hash: 111808225
+--- !u!114 &114558370859733512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: PutBookToShelf7
+  m_EditorClassIdentifier: 
+  description: PutBookToShelf7
+  satisfied: 1
+  hash: -444531644
 --- !u!114 &114568305263383868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -924,6 +1039,34 @@ MonoBehaviour:
   description: Object_Flower4
   satisfied: 0
   hash: -1753205033
+--- !u!114 &114608730596106848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: GetTutoString
+  m_EditorClassIdentifier: 
+  description: GetTutoString
+  satisfied: 0
+  hash: 1182793450
+--- !u!114 &114616528040440026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: PutBook2
+  m_EditorClassIdentifier: 
+  description: PutBook2
+  satisfied: 1
+  hash: 1388584825
 --- !u!114 &114629100282694746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -980,6 +1123,20 @@ MonoBehaviour:
   description: Clue_Observation_Homeless_Bug
   satisfied: 0
   hash: -64996047
+--- !u!114 &114656095989701000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Book3Get
+  m_EditorClassIdentifier: 
+  description: Book3Get
+  satisfied: 1
+  hash: -1131594773
 --- !u!114 &114656472599983400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1062,8 +1219,22 @@ MonoBehaviour:
   m_Name: GetHairBook
   m_EditorClassIdentifier: 
   description: GetHairBook
-  satisfied: 0
+  satisfied: 1
   hash: 1068908618
+--- !u!114 &114691297334722128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: AfterGetArrangeBookMission
+  m_EditorClassIdentifier: 
+  description: AfterGetArrangeBookMission
+  satisfied: 1
+  hash: -745890661
 --- !u!114 &114691834020707824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1092,6 +1263,20 @@ MonoBehaviour:
   description: 01_Clue_UnderTheBush
   satisfied: 0
   hash: 910034239
+--- !u!114 &114698292387672648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: PutBook3
+  m_EditorClassIdentifier: 
+  description: PutBook3
+  satisfied: 1
+  hash: 633548783
 --- !u!114 &114708678379270316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1134,6 +1319,20 @@ MonoBehaviour:
   description: 02_Clue_MakeIdCard
   satisfied: 0
   hash: -1718228586
+--- !u!114 &114713439498801804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: GetDaysInfo
+  m_EditorClassIdentifier: 
+  description: GetDaysInfo
+  satisfied: 1
+  hash: 1455680584
 --- !u!114 &114716635991238076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1190,6 +1389,20 @@ MonoBehaviour:
   description: NPC_MilkBoy_NoBringSilver
   satisfied: 0
   hash: 646458390
+--- !u!114 &114724461524598518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: PutBook1
+  m_EditorClassIdentifier: 
+  description: PutBook1
+  satisfied: 1
+  hash: -875737405
 --- !u!114 &114728326777036396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1244,7 +1457,7 @@ MonoBehaviour:
   m_Name: Book1To6
   m_EditorClassIdentifier: 
   description: Book1To6
-  satisfied: 0
+  satisfied: 1
   hash: 1792616063
 --- !u!114 &114759028443604808
 MonoBehaviour:
@@ -1330,6 +1543,20 @@ MonoBehaviour:
   description: Clue_Observation_Milkboy_Ear1
   satisfied: 0
   hash: 2004922773
+--- !u!114 &114797994681127938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: GetTutoFlower
+  m_EditorClassIdentifier: 
+  description: GetTutoFlower
+  satisfied: 0
+  hash: 2132184473
 --- !u!114 &114814800215130924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1344,6 +1571,20 @@ MonoBehaviour:
   description: 04_Clue_BarCalendar
   satisfied: 0
   hash: -1271029922
+--- !u!114 &114817846858003190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Book1Get
+  m_EditorClassIdentifier: 
+  description: Book1Get
+  satisfied: 1
+  hash: 377811808
 --- !u!114 &114823086745714086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1440,8 +1681,22 @@ MonoBehaviour:
   m_Name: GetFindBookMission
   m_EditorClassIdentifier: 
   description: GetFindBookMission
-  satisfied: 0
+  satisfied: 1
   hash: -951404865
+--- !u!114 &114939752621550006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: MakeFlowerRing
+  m_EditorClassIdentifier: 
+  description: MakeFlowerRing
+  satisfied: 0
+  hash: 1353252413
 --- !u!114 &114969634959109324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,5 +1779,5 @@ MonoBehaviour:
   m_Name: Book1To7
   m_EditorClassIdentifier: 
   description: Book1To7
-  satisfied: 0
+  satisfied: 1
   hash: 501094121

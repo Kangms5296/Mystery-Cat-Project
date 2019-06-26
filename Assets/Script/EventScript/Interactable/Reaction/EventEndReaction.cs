@@ -26,10 +26,7 @@ public class EventEndReaction : DelayedReaction
 		FSLocator.uiContainer.ShowObservationList ();
 
         uiCaching = FindObjectOfType<UICaching>();
-
         foreach (var ui in uiCaching.GetUI())
 			ui.gameObject.SetActive(true);
-  
-		//m_raycast.enabled = false;
     }
 }

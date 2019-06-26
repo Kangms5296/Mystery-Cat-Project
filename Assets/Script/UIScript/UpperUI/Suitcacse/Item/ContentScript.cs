@@ -66,7 +66,8 @@ public class ContentScript : MonoBehaviour {
         allMix = Resources.Load("CSVData/All Mix List Asset") as ParsingData;
 
         // stage1 item 이미지 캐싱
-        stage1_sprites = Resources.LoadAll<Sprite>("ArtResource/Stage1/object/Stage1 All Object");
+        stage1_sprites = Resources.LoadAll<Sprite>("ArtResource/Stage1/Object/");
+        Debug.Log(stage1_sprites.Length);
     }
 
 

@@ -22,20 +22,13 @@ public class EventStartReaction : DelayedReaction
 		FSLocator.textDisplayer.ShowDialogueHolder ();
 		FSLocator.uiContainer.HideObservationList ();
 
-        uiCaching = FindObjectOfType<UICaching>();
-
 		newPlayer.GetComponent<BoxCollider2D> ().enabled = false;
 
+        uiCaching = FindObjectOfType<UICaching>();
         foreach (var ui in uiCaching.GetUI())
-			ui.gameObject.SetActive(false);
+            ui.gameObject.SetActive(false);
 
 		if(joyStick != null)
 			joyStick.OnJoystickUp();
-
-		//Joystick.SetActive (false);
-		//m_raycast.enabled = false;
-
-		//TutorialController.Instance.HideButton ();
-
     }
 }

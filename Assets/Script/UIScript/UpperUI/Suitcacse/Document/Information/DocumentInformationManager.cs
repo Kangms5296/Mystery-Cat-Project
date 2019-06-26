@@ -24,7 +24,8 @@ public class DocumentInformationManager : MonoBehaviour {
 
     // information 정보를 추출할 csv 파일
     [HideInInspector] public ParsingData allData;
-
+   
+    [HideInInspector] public bool isOpened = false;
 
     // ============================================================== Public Function =============================================================
 

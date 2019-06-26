@@ -22,6 +22,7 @@ public class DocumentCharacterManager : MonoBehaviour {
     private Text expText;
 
 
+    [HideInInspector] public bool isOpened = false;
 
 
 

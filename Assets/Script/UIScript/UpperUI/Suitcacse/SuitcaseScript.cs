@@ -7,10 +7,16 @@ public class SuitcaseScript : UIScript {
 
     private bool isClick = false;
 
-    // Use this for initialization
-    void Start()
+    private void OnEnable()
     {
-        anim = GetComponent<Animation>();
+        if(anim == null)
+            anim = GetComponent<Animation>();
+
+        anim["SuitcaseClick"].normalizedTime = 0;
+        anim["SuitcaseClick"].speed = -1.0f;
+        anim.Play("SuitcaseClick");
+
+        isClick = false;
     }
 
     public override void OnClickUI()

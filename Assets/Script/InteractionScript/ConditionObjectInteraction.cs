@@ -26,7 +26,7 @@ public class ConditionObjectInteraction : MonoBehaviour {
 
 		parentObject = gameObject.transform.parent;
 
-        interactionBtn = GameObject.Find("InteractionBtn").GetComponent<Animator>();
+        interactionBtn = GameObject.Find("InteractionIcon").GetComponent<Animator>();
 	}
 
 
