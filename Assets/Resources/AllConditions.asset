@@ -31,6 +31,9 @@ MonoBehaviour:
   - {fileID: 114797994681127938}
   - {fileID: 114608730596106848}
   - {fileID: 114939752621550006}
+  - {fileID: 114218761668614996}
+  - {fileID: 114014153153314172}
+  - {fileID: 114289148300354246}
   - {fileID: 114025648758522546}
   - {fileID: 114691834020707824}
   - {fileID: 114698144004599828}
@@ -155,8 +158,22 @@ MonoBehaviour:
   m_Name: Book2Get
   m_EditorClassIdentifier: 
   description: Book2Get
-  satisfied: 1
+  satisfied: 0
   hash: 70343822
+--- !u!114 &114014153153314172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Tutorial_Look
+  m_EditorClassIdentifier: 
+  description: Tutorial_Look
+  satisfied: 1
+  hash: 1202763652
 --- !u!114 &114025648758522546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +256,7 @@ MonoBehaviour:
   m_Name: PutBookToShelf5
   m_EditorClassIdentifier: 
   description: PutBookToShelf5
-  satisfied: 1
+  satisfied: 0
   hash: 193895784
 --- !u!114 &114106462119683990
 MonoBehaviour:
@@ -353,6 +370,20 @@ MonoBehaviour:
   description: Clue_Observation_Library_Fur
   satisfied: 0
   hash: 1075527568
+--- !u!114 &114218761668614996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Tutorial_Pull
+  m_EditorClassIdentifier: 
+  description: Tutorial_Pull
+  satisfied: 1
+  hash: -108544155
 --- !u!114 &114230158351397940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,6 +454,20 @@ MonoBehaviour:
   description: NPC_MilkBoy_GetSilverMilk
   satisfied: 0
   hash: -676803947
+--- !u!114 &114289148300354246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4c454cc4c7c044689bf7d8ce6b01cc, type: 3}
+  m_Name: Tutorial_Pincer
+  m_EditorClassIdentifier: 
+  description: Tutorial_Pincer
+  satisfied: 0
+  hash: -1605787584
 --- !u!114 &114293157763397334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,7 +494,7 @@ MonoBehaviour:
   m_Name: ArrangeFinish
   m_EditorClassIdentifier: 
   description: ArrangeFinish
-  satisfied: 1
+  satisfied: 0
   hash: 1054034656
 --- !u!114 &114328764065132472
 MonoBehaviour:
@@ -533,7 +578,7 @@ MonoBehaviour:
   m_Name: BookShelf8ArrangeFinish
   m_EditorClassIdentifier: 
   description: BookShelf8ArrangeFinish
-  satisfied: 1
+  satisfied: 0
   hash: -339747248
 --- !u!114 &114371466804473314
 MonoBehaviour:
@@ -547,7 +592,7 @@ MonoBehaviour:
   m_Name: PutBookToShelf6
   m_EditorClassIdentifier: 
   description: PutBookToShelf6
-  satisfied: 1
+  satisfied: 0
   hash: -1836593966
 --- !u!114 &114374529831264462
 MonoBehaviour:
@@ -855,7 +900,7 @@ MonoBehaviour:
   m_Name: Book3To5
   m_EditorClassIdentifier: 
   description: Book3To5
-  satisfied: 1
+  satisfied: 0
   hash: 1507442510
 --- !u!114 &114524772522157964
 MonoBehaviour:
@@ -939,7 +984,7 @@ MonoBehaviour:
   m_Name: PutBookToShelf7
   m_EditorClassIdentifier: 
   description: PutBookToShelf7
-  satisfied: 1
+  satisfied: 0
   hash: -444531644
 --- !u!114 &114568305263383868
 MonoBehaviour:
@@ -1065,7 +1110,7 @@ MonoBehaviour:
   m_Name: PutBook2
   m_EditorClassIdentifier: 
   description: PutBook2
-  satisfied: 1
+  satisfied: 0
   hash: 1388584825
 --- !u!114 &114629100282694746
 MonoBehaviour:
@@ -1135,7 +1180,7 @@ MonoBehaviour:
   m_Name: Book3Get
   m_EditorClassIdentifier: 
   description: Book3Get
-  satisfied: 1
+  satisfied: 0
   hash: -1131594773
 --- !u!114 &114656472599983400
 MonoBehaviour:
@@ -1219,7 +1264,7 @@ MonoBehaviour:
   m_Name: GetHairBook
   m_EditorClassIdentifier: 
   description: GetHairBook
-  satisfied: 1
+  satisfied: 0
   hash: 1068908618
 --- !u!114 &114691297334722128
 MonoBehaviour:
@@ -1233,7 +1278,7 @@ MonoBehaviour:
   m_Name: AfterGetArrangeBookMission
   m_EditorClassIdentifier: 
   description: AfterGetArrangeBookMission
-  satisfied: 1
+  satisfied: 0
   hash: -745890661
 --- !u!114 &114691834020707824
 MonoBehaviour:
@@ -1275,7 +1320,7 @@ MonoBehaviour:
   m_Name: PutBook3
   m_EditorClassIdentifier: 
   description: PutBook3
-  satisfied: 1
+  satisfied: 0
   hash: 633548783
 --- !u!114 &114708678379270316
 MonoBehaviour:
@@ -1331,7 +1376,7 @@ MonoBehaviour:
   m_Name: GetDaysInfo
   m_EditorClassIdentifier: 
   description: GetDaysInfo
-  satisfied: 1
+  satisfied: 0
   hash: 1455680584
 --- !u!114 &114716635991238076
 MonoBehaviour:
@@ -1401,7 +1446,7 @@ MonoBehaviour:
   m_Name: PutBook1
   m_EditorClassIdentifier: 
   description: PutBook1
-  satisfied: 1
+  satisfied: 0
   hash: -875737405
 --- !u!114 &114728326777036396
 MonoBehaviour:
@@ -1457,7 +1502,7 @@ MonoBehaviour:
   m_Name: Book1To6
   m_EditorClassIdentifier: 
   description: Book1To6
-  satisfied: 1
+  satisfied: 0
   hash: 1792616063
 --- !u!114 &114759028443604808
 MonoBehaviour:
@@ -1583,7 +1628,7 @@ MonoBehaviour:
   m_Name: Book1Get
   m_EditorClassIdentifier: 
   description: Book1Get
-  satisfied: 1
+  satisfied: 0
   hash: 377811808
 --- !u!114 &114823086745714086
 MonoBehaviour:
@@ -1681,7 +1726,7 @@ MonoBehaviour:
   m_Name: GetFindBookMission
   m_EditorClassIdentifier: 
   description: GetFindBookMission
-  satisfied: 1
+  satisfied: 0
   hash: -951404865
 --- !u!114 &114939752621550006
 MonoBehaviour:
@@ -1779,5 +1824,5 @@ MonoBehaviour:
   m_Name: Book1To7
   m_EditorClassIdentifier: 
   description: Book1To7
-  satisfied: 1
+  satisfied: 0
   hash: 501094121

@@ -226,6 +226,25 @@ public class LookMode : TouchMode
                             }
                         }
                         break;
+                    case "tutorial":
+                        
+                        // 이 정보를..
+                        conditions = Resources.Load<AllConditions>("AllConditions");
+                        foreach (Condition tempCondition in conditions.conditions)
+                        {
+                            // 이전에 정보를 얻은적이 있는지 확인
+                            if (tempCondition.description == condition)
+                            {
+                                // 대사만 처리
+                                GameObject.FindObjectOfType<ObservationManager>().GetItem("", "", talkScript, null);
+
+                                // 정보를 획득하였음을 기록
+                                tempCondition.satisfied = true;
+                                
+                                break;
+                            }
+                        }
+                        break;
 
                 }
             }

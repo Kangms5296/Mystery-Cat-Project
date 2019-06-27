@@ -18,20 +18,22 @@ public class ConditionObjectInteraction : MonoBehaviour {
 	[SerializeField]
 	public Image button;
 
-    private Animator interactionBtn;
+    Animator interactionBtn;
 
-	protected void Start()
+
+    protected void Start()
 	{
 		canvas = GameObject.Find("UI_Canvas").GetComponent<Transform>();
 
 		parentObject = gameObject.transform.parent;
-
-        interactionBtn = GameObject.Find("InteractionIcon").GetComponent<Animator>();
 	}
 
 
     protected void OnTriggerEnter2D(Collider2D collision)
     {
+        if(interactionBtn == null)
+            interactionBtn = GameObject.Find("InteractionIcon").GetComponent<Animator>();
+
         // 상호작용이 가능한 거리로 플레이어가 접근
         if (collision.tag == "Player")
         {

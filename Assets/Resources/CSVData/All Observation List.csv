@@ -47,3 +47,6 @@ O045,우유배달소년,Look,,character,귀에 흉터 같은 게 있다…?,Clue
 O046,우유배달소년,Look,,character,귀가 좀 갈라진 것 같다…?,Clue_Observation_Milkboy_Ear2
 O047,우유배달소년,Pincer,"아닛, 아프다옹!",x,,Clue_Observation_Milkboy_Fur
 O048,꼬맹이 아빠,Pull,응? 실밥이 풀렸나…,item,금실,Clue_Observation_String
+O049,튜토리얼,Pull,검은 게… 깨끗해졌다.,tutorial,,Tutorial_Pull
+O050,튜토리얼,Look,벼룩…이 보인다.,tutorial,,Tutorial_Look
+O051,튜토리얼,Pincer,헤헤… 시원하다…,item,벼룩,Tutorial_Pincer

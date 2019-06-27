@@ -30,6 +30,9 @@ public class ObservationManager : MonoBehaviour {
     // Look Event List
     public GameObject lookEvents;
 
+    // Pincer Event List
+    public GameObject pincerEvents;
+
     [Header("Getting Item(Info) Panel")]
     public GameObject gettingItemPanel;
     public Text gettingItemName;
@@ -95,6 +98,7 @@ public class ObservationManager : MonoBehaviour {
 
         pullEvents.transform.Find(npcName).gameObject.SetActive(false);
         lookEvents.transform.Find(npcName).gameObject.SetActive(false);
+        pincerEvents.transform.Find(npcName).gameObject.SetActive(false);
 
         Displayer.SetActive(false);
     }
@@ -108,6 +112,9 @@ public class ObservationManager : MonoBehaviour {
         // Look 행동에 대한 Event List 제거
         lookEvents.SetActive(false);
 
+        // Pincer 행동에 대한 Event List 제거
+        pincerEvents.SetActive(false);
+
         touchMode = DefaultMode.defaultMode;
     }
 
@@ -115,7 +122,6 @@ public class ObservationManager : MonoBehaviour {
     public void OnClickPullBtn()
     {
         // 이미지 터치 기준 알파값 지정(터치 지점 알파값이 0.1f 이상인 경우에만 터치로 인정)
-        NPCImage.alphaHitTestMinimumThreshold = 0.1f;
         NPCImage.raycastTarget = false;
 
         // Pull 행동에 대한 Event List 표시
@@ -125,6 +131,9 @@ public class ObservationManager : MonoBehaviour {
         // Look 행동에 대한 Event List 제거
         lookEvents.SetActive(false);
 
+        // Pincer 행동에 대한 Event List 제거
+        pincerEvents.SetActive(false);
+
         touchMode = PullMode.pullMode;
     }
 
@@ -132,7 +141,6 @@ public class ObservationManager : MonoBehaviour {
     public void OnClickLookBtn()
     {
         // 이미지 터치 기준 알파값 지정(터치 지점 알파값이 0.1f 이상인 경우에만 터치로 인정)
-        NPCImage.alphaHitTestMinimumThreshold = 0f;
         NPCImage.raycastTarget = true;
 
         // Look 행동에 대한 Event List 표시
@@ -141,16 +149,35 @@ public class ObservationManager : MonoBehaviour {
 
         // Pull 행동에 대한 Event List 제거
         pullEvents.SetActive(false);
-        
+
+        // Pincer 행동에 대한 Event List 제거
+        pincerEvents.SetActive(false);
+
         touchMode = LookMode.lookMode;
     }
 
     // Displayer 우측 버튼 중 Pincer 버튼 클릭
     public void OnClickPincerBtn()
     {
+        /*
         // 이미지 터치 기준 알파값 지정(터치 지점 알파값이 0.1f 이상인 경우에만 터치로 인정)
         NPCImage.alphaHitTestMinimumThreshold = 0.1f;
         NPCImage.raycastTarget = true;
+
+        // Pull 행동에 대한 Event List 제거
+        pullEvents.SetActive(false);
+
+        // Look 행동에 대한 Event List 제거
+        lookEvents.SetActive(false);
+
+        touchMode = PincerMode.pincerMode;
+        */
+
+        NPCImage.raycastTarget = false;
+
+        // Pincer 행동에 대한 Event List 표시
+        pincerEvents.transform.Find(npcName).gameObject.SetActive(true);
+        pincerEvents.SetActive(true);
 
         // Pull 행동에 대한 Event List 제거
         pullEvents.SetActive(false);
