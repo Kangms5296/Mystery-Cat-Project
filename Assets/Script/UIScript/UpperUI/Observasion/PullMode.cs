@@ -164,7 +164,7 @@ public class PullMode : TouchMode
                                     DocumentCharacterManager tempDocument = GameObject.FindObjectOfType<DocumentManager>().character;
 
                                     CharacterSlot tempSlot = tempDocument.GetSlot(npcName);
-                                    tempSlot.characterExp += "------------\n";
+                                    tempSlot.characterExp += "------------------\n";
                                     tempSlot.characterExp += infoName + "\n";
                                     tempDocument.CharacterKnow(npcName);
 

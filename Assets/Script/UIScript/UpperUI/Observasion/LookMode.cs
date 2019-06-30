@@ -39,14 +39,9 @@ public class LookMode : TouchMode
 
         float tempX = observationAreaBG.anchoredPosition.x;
         float tempY = observationAreaBG.anchoredPosition.y;
-        if (observationAreaBG.anchoredPosition.x < 30)
-            tempX = 30;
-        if (observationAreaBG.anchoredPosition.x > 140)
-            tempX = 140;
-        if (observationAreaBG.anchoredPosition.y < -140)
-            tempY = -140;
-        if (observationAreaBG.anchoredPosition.y > 65)
-            tempY = 65;
+
+
+        Debug.Log(observationAreaBG.anchoredPosition);
 
         observationAreaBG.anchoredPosition = new Vector2(tempX, tempY);
         observationAreaInput.anchoredPosition = firstInputPosition + firstBgPosition - new Vector2(tempX, tempY);
@@ -62,7 +57,7 @@ public class LookMode : TouchMode
         }
 
         // 돋보기를 제거
-        observationAreaBG.anchoredPosition = new Vector2(500, 0);
+        observationAreaBG.anchoredPosition = new Vector2(2500, 0);
     }
 
     // NPC 드래그 패턴 정의
@@ -80,14 +75,15 @@ public class LookMode : TouchMode
 
         float tempX = observationAreaBG.anchoredPosition.x;
         float tempY = observationAreaBG.anchoredPosition.y;
-        if (observationAreaBG.anchoredPosition.x < 30)
-            tempX = 30;
-        if (observationAreaBG.anchoredPosition.x > 140)
-            tempX = 140;
-        if (observationAreaBG.anchoredPosition.y < -140)
-            tempY = -140;
-        if (observationAreaBG.anchoredPosition.y > 65)
-            tempY = 65;
+
+        if (observationAreaBG.anchoredPosition.x < 40)
+            tempX = 40;
+        if (observationAreaBG.anchoredPosition.x > 480)
+            tempX = 480;
+        if (observationAreaBG.anchoredPosition.y < -400)
+            tempY = -400;
+        if (observationAreaBG.anchoredPosition.y > 200)
+            tempY = 200;
 
         observationAreaBG.anchoredPosition = new Vector2(tempX, tempY);
         observationAreaInput.anchoredPosition = firstInputPosition + firstBgPosition - new Vector2(tempX, tempY);
@@ -214,7 +210,7 @@ public class LookMode : TouchMode
                                     DocumentCharacterManager tempDocument = GameObject.FindObjectOfType<DocumentManager>().character;
 
                                     CharacterSlot tempSlot = tempDocument.GetSlot(npcName);
-                                    tempSlot.characterExp += "------------\n";
+                                    tempSlot.characterExp += "------------------\n";
                                     tempSlot.characterExp += infoName + "\n";
                                     tempDocument.CharacterKnow(npcName);
 

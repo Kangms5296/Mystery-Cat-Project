@@ -6,9 +6,10 @@ public class GameOver : MonoBehaviour {
 
     // return 버튼
     public Button returnBtn;
+
     // return 이후 처리할 이벤트들
     public ReactionCollection reaction;
-
+    public Interactable interact;
 
     public void InitGameOver()
     {
@@ -58,7 +59,10 @@ public class GameOver : MonoBehaviour {
         alpha = 0;
         canvasComponent.alpha = alpha;
 
-        reaction.InitAndReact();
+        if (reaction != null)
+            reaction.InitAndReact();
+        else
+            interact.Interact();
 
         gameObject.SetActive(false);
     }

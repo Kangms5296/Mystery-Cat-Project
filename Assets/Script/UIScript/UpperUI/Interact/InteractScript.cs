@@ -23,11 +23,6 @@ public class InteractScript : MonoBehaviour {
         source.clip = clip;
         source.volume = StaticInfoForSound.EffectSound;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     
     // ====================================================================== public function =========================================================================

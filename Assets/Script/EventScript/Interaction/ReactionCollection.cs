@@ -19,7 +19,7 @@ public class ReactionCollection : MonoBehaviour
 
     private void Start()
     {
-        audioSourceForTalk = GameObject.Find("EffectSound").GetComponent<AudioSource>();
+        audioSourceForTalk = GameObject.Find("EffectSound_For_Click").GetComponent<AudioSource>();
         audioClipForTalk = Resources.Load<AudioClip>("AudioResource/EffectSound/S_Click");
 
         for (int i = 0; i < reactions.Length; i++)

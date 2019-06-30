@@ -17,9 +17,9 @@ public class ConditionEventReaction : DelayedReaction {
 	protected override void ImmediateReaction()
 	{
 		if (condition.satisfied) {
-			trueReaction.React ();
+			trueReaction.InitAndReact ();
 		} else {
-			falseReaction.React ();
+			falseReaction.InitAndReact();
 		}
 	}
 }
