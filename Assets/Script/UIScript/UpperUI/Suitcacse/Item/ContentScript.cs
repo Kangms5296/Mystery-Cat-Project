@@ -67,7 +67,6 @@ public class ContentScript : MonoBehaviour {
 
         // stage1 item 이미지 캐싱
         stage1_sprites = Resources.LoadAll<Sprite>("ArtResource/Stage1/Object/");
-        Debug.Log(stage1_sprites.Length);
     }
 
 

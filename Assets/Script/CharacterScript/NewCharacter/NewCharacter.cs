@@ -120,14 +120,13 @@ public abstract class NewCharacter : MonoBehaviour {
         // 이동 방향으로 방향 전환
         ChangeAnimation(vector);
 
-        //trans.Translate(vector * *Time.deltaTime  speed);
-        rig2D.velocity = vector * speed;
+        trans.Translate(vector * Time.deltaTime * speed);
+        //rig2D.velocity = vector * speed;
         trans.position = new Vector3(trans.position.x, trans.position.y, trans.position.y);
 
-        //isMoving = false;
     }
 
-	public void MakeSpeedBack()
+    public void MakeSpeedBack()
 	{
 		speed = ownSpeed;
 	}

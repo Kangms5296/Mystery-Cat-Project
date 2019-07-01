@@ -18,7 +18,10 @@ public class ConditionObjectInteraction : MonoBehaviour {
 	[SerializeField]
 	public Image button;
 
-    Animator interactionBtn;
+    public enum TargetType { Object, NPC, Wholf};
+    public TargetType type;
+
+    private Animator interactionBtn;
 
 
     protected void Start()
@@ -31,19 +34,27 @@ public class ConditionObjectInteraction : MonoBehaviour {
 
     protected void OnTriggerEnter2D(Collider2D collision)
     {
-        if(interactionBtn == null)
-            interactionBtn = GameObject.Find("InteractionIcon").GetComponent<Animator>();
-
         // 상호작용이 가능한 거리로 플레이어가 접근
         if (collision.tag == "Player")
         {
+            if (interactionBtn == null)
+                interactionBtn = GameObject.Find("InteractionIcon").GetComponent<Animator>();
             interactionBtn.SetTrigger("InArea");
 
-            // NPC가 이벤트 수행중이 아니라면, 현재 행동을 멈추고 플레이어를 바라본다.
-            // 저장된 UI 리스트에서 UI를 생성 (각 UI 생성 위치는 현재 무시..)
-
             // 해당 UI 프리팹을 생성
-            button = Instantiate(Resources.Load<Image>("UI_Observation"), transform.position, transform.rotation);
+            switch(type)
+            {
+                case TargetType.Object:
+                    button = Instantiate(Resources.Load<Image>("UI_Observation"), transform.position, transform.rotation);
+                    break;
+                case TargetType.NPC:
+                    button = Instantiate(Resources.Load<Image>("UI_Talk"), transform.position, transform.rotation);
+                    break;
+                case TargetType.Wholf:
+                    button = Instantiate(Resources.Load<Image>(""), transform.position, transform.rotation);
+                    break;
+            }
+
 
             // 생성한 UI를 Canvas 하위로 이동
             button.transform.SetParent(canvas, false);

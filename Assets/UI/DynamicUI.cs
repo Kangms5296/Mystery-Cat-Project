@@ -19,7 +19,6 @@ public class DynamicUI : MonoBehaviour {
 
 	
 		transform.position = myCamera.WorldToScreenPoint (myVector);
-		Debug.Log ("Create");
 	}
 
 	public void SetVector(Vector3 vector){
@@ -28,7 +27,6 @@ public class DynamicUI : MonoBehaviour {
 	}
 
 	public void OnDestroy(){
-		Debug.Log ("***");
 		if(gameObject != null)
 			if(FSLocator.uiContainer != null)
 				FSLocator.uiContainer.DeleteObservation (gameObject);

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MainCamera : MonoBehaviour {
-
+    /*
 	private Transform Player;
 	private Vector3 cameraDeapth;
 
@@ -15,6 +15,16 @@ public class MainCamera : MonoBehaviour {
 	void LateUpdate(){
 		transform.position = Player.position + cameraDeapth;
 	}
+    */
+    
+    public Transform player;
+
+    // Update is called once per frame
+    void Update()
+    {
+        Vector2 temp = Vector2.Lerp(transform.position, player.position, 3 * Time.deltaTime);
+        transform.position = new Vector3(temp.x, temp.y, -60);
+    }
 }
 
 
