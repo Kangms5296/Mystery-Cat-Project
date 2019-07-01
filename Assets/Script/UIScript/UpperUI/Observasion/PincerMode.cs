@@ -104,7 +104,6 @@ public class PincerMode : TouchMode
             }
         }
         isTouch = false;
-        Debug.Log("qsfsdf");
     }
 
     public void OnDragNPC()
