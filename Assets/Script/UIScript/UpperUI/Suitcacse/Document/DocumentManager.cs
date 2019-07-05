@@ -39,7 +39,6 @@ public class DocumentManager : UIScript {
         information.isOpened = true;
 
         // character UI 기본 모습으로 초기화
-        character.OnClickCharacter();
         character.gameObject.SetActive(false);
         character.isOpened = false;
 
@@ -51,8 +50,7 @@ public class DocumentManager : UIScript {
     public void OnClickInformationButton()
     {
         // information UI 기본 모습으로 초기화
-        information.Init();
-
+        information.OnClickInformation();
         information.gameObject.SetActive(true);
         information.isOpened = true;
 
@@ -63,12 +61,11 @@ public class DocumentManager : UIScript {
     // 창 좌측의 인물 버튼 클릭
     public void OnClickCharacterButton()
     {
-        // character 스크립트 기본 모습으로 초기화
-        character.Init();
-
         information.gameObject.SetActive(false);
         information.isOpened = false;
 
+        // character 스크립트 기본 모습으로 초기화
+        character.OnClickCharacter();
         character.gameObject.SetActive(true);
         character.isOpened = true;
     }
@@ -83,6 +80,6 @@ public class DocumentManager : UIScript {
     // 리액션으로부터 slot에 들어갈 새로운 정보의 이름을 받아 이를 DocumentInformationManager 스크립트로 전송
     public void SetNewSlot(string name)
     {
-        information.SetNewSlot(name);
+        information.KnowNewInfo(name);
     }
 }

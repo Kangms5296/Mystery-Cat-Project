@@ -102,7 +102,7 @@ public class InformationData : MonoBehaviour {
             // 각 slot에 Load 한다.
             foreach (XmlNode clue in clues)
             {
-                temp.SetNewSlot(clue.SelectSingleNode("Name").InnerText);
+                temp.KnowNewInfo(clue.SelectSingleNode("Name").InnerText);
             }
 
         }

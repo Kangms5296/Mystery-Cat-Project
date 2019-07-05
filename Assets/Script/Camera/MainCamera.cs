@@ -20,10 +20,11 @@ public class MainCamera : MonoBehaviour {
     public Transform player;
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        Vector2 temp = Vector2.Lerp(transform.position, player.position, 3 * Time.deltaTime);
-        transform.position = new Vector3(temp.x, temp.y, -60);
+        transform.position = player.position + new Vector3(0, 0, -60);
+        //Vector2 temp = Vector2.Lerp(transform.position, player.position, 3 * Time.deltaTime);
+        //transform.position = new Vector3(temp.x, temp.y, -300);
     }
 }
 

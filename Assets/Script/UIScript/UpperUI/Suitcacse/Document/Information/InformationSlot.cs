@@ -10,6 +10,8 @@ public class InformationSlot : MonoBehaviour {
     // 현재 슬롯에 보여지는 단서 설명
     [TextArea]
     public string informationExp;
+    // 현재 슬롯이 보여지는 단서의 이미지
+    public Sprite informationImage;
 
     // 현재 슬롯에 보여지는 Text UI
     private Text innerText;
@@ -34,15 +36,6 @@ public class InformationSlot : MonoBehaviour {
     {
         documentInformationManager.ClickNewSlot(gameObject);
     }
-    
-    public void SetNewSlot(string tempName, string tempExp)
-    {
-        informationName = tempName;
-        informationExp = tempExp;
-
-        innerText.text = informationName;
-    }
-
 
     // ============================================================= Get Set Function =============================================================
 }
