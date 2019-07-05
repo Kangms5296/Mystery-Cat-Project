@@ -13,9 +13,6 @@ public class InformationSlot : MonoBehaviour {
     // 현재 슬롯이 보여지는 단서의 이미지
     public Sprite informationImage;
 
-    // 현재 슬롯에 보여지는 Text UI
-    private Text innerText;
-
     // slot 관리 manager
     private DocumentInformationManager documentInformationManager;
 
@@ -28,8 +25,6 @@ public class InformationSlot : MonoBehaviour {
     public void Init(DocumentInformationManager parent)
     {
         documentInformationManager = parent;
-
-        innerText = transform.Find("Text").GetComponent<Text>();
     }
 
     public void OnClickSlot()

@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: Tutorial_Look
   m_EditorClassIdentifier: 
   description: Tutorial_Look
-  satisfied: 1
+  satisfied: 0
   hash: 1202763652
 --- !u!114 &114025648758522546
 MonoBehaviour:
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Name: Tutorial_Pull
   m_EditorClassIdentifier: 
   description: Tutorial_Pull
-  satisfied: 1
+  satisfied: 0
   hash: -108544155
 --- !u!114 &114230158351397940
 MonoBehaviour:
@@ -1474,7 +1474,7 @@ MonoBehaviour:
   m_Name: 01.5_Clue_FindWatch
   m_EditorClassIdentifier: 
   description: 01.5_Clue_FindWatch
-  satisfied: 0
+  satisfied: 1
   hash: 1281501836
 --- !u!114 &114737135577775276
 MonoBehaviour:

@@ -84,24 +84,6 @@ public class DocumentCharacterManager : MonoBehaviour {
         return null;
     }
 
-    // 모든 slot들의 값을 데이터베이스에 저장하도록 지시
-    public void SaveSlotsState()
-    {
-       foreach(CharacterSlot slot in slots)
-        {
-            slot.SaveSlotState();
-        }
-    }
-
-    // 데이터베이스에 저장되어 있던 값을 슬롯들에 넣도록 지시
-    public void LoadSlotsState()
-    {
-        foreach (CharacterSlot slot in slots)
-        {
-            slot.LoadSlotState();
-        }
-    }
-
     // 유저가 새로운 slot을 클릭하면, 해당 slot의 정보가 전달.
     public void ClickNewSlot(GameObject newSlot)
     {

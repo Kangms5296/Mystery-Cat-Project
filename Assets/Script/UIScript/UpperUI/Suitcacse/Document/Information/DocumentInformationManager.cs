@@ -140,20 +140,6 @@ public class DocumentInformationManager : MonoBehaviour {
         expRect.anchoredPosition = new Vector2(0, -75f);
     }
 
-
-
-    // 모든 slot들의 값을 데이터베이스에 저장하도록 지시
-    public void SaveSlotsState()
-    {
-        GetComponent<InformationData>().SaveXmlData();
-    }
-
-    // 데이터베이스에 저장되어 있는 모든 slot들의 값을 반환
-    public void LoadSlotsState()
-    {
-        GetComponent<InformationData>().LoadXmlData();
-    }
-
     // slot에 새로운 정보를 등록한다. 이는 리액션에서 호출되어진다.
     public void KnowNewInfo(string infoName)
     {

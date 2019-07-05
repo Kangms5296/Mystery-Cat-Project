@@ -49,22 +49,4 @@ public class CharacterSlot : MonoBehaviour {
         effectAudio.clip = Resources.Load<AudioClip>("AudioResource/EffectSound/S_Clue3");
         effectAudio.Play();
     }
-
-    // 현재 slot의 값을 데이터베이스에 저장
-    public void SaveSlotState()
-    {
-        // 현재 isKnown 값 저장
-        PlayerPrefs.SetString("CharacterSlot_" + characterName, isKnown.ToString());
-    }
-
-    // 데이터베이스에 저장되어 있던 isKnown에 값을 캐싱
-    public void LoadSlotState()
-    {
-        // 저장되어 있는 inKnown 값이 있는지 우선 식별
-        if(PlayerPrefs.HasKey("CharacterSlot_" + characterName))
-        {
-            // 기존에 저장되어 있는 값을 가져온다.
-            isKnown = System.Convert.ToBoolean(PlayerPrefs.GetString("CharacterSlot_" + characterName));
-        }
-    }
 }
