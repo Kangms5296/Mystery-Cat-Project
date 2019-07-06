@@ -43,6 +43,11 @@ public class MissionScript : UIScript {
         textUI.text = temp;
     }
 
+    public string GetMission()
+    {
+        return textUI.text;
+    }
+
     public void SaveMission()
     {
         // 현재 미션이 앱 종료 후에도 유지되도록 변경

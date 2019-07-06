@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b4b1f3c2949294d8098db9aa993604, type: 3}
+  m_Name: Slot0
+  m_EditorClassIdentifier: 
+  isUsing: 1
+  time: 2019/07/06 09:43
+  pos: {x: 15.317163, y: -0.9301325, z: -0.9301325}
+  stage: 0
+  mission: "\uC0AC\uAC74\uD604\uC7A5\uC5D0 \uB4E4\uC5B4\uAC08 \uBC29\uBC95\uC744 \uCC3E\uC790\uB0E5!"
+  conditionsCheck: 000000000000000000000000000000000000000000000000000000000000000001010100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010100000000000000000000000000000000000000000000010000000000000000000000
+  itemsCheck:
+  - id: O018
+    count: 1
+  - id: O013
+    count: 1
+  infosCheck: 0000000000010100000000000000000000000000000000
+  charsCheck:
+  - name: "\uACBD\uCC30"
+    exp: "\uCD9C\uC2E0: \uBAA8\uB984\n\uC131\uBCC4: \uB0A8\uC131\r\n\uC9C1\uC5C5:
+      \uACBD\uCC30\n\uD615\uC0AC\uC640 \uD568\uAED8 \uC0AC\uAC74 \uD604\uC7A5\uC5D0
+      \uD30C\uACAC\uB41C \uACBD\uCC30.\n"
+  - name: "\uD615\uC0AC"
+    exp: "\uCD9C\uC2E0: \uD669\uAE08 \uADC0 \uB9C8\uC744\r\n\uC131\uBCC4: \uB0A8\uC131\r\n\uC9C1\uC5C5:
+      \uD615\uC0AC\r\n\uAF2C\uB9F9\uC774 \uB0A9\uCE58\uC0AC\uAC74\uC744 \uC870\uC0AC
+      \uD558\uB7EC \uD669\uAE08 \uADC0 \uB9C8\uC744\uC5D0\uC11C \uC628 \uD615\uC0AC.
+      \uD611\uC870\uC801\uC778 \uC131\uACA9.\n"
+  - name: "\uAF2C\uB9F9\uC774 \uC544\uBE60"
+    exp: "\uCD9C\uC2E0: \uC740\uAC00\uBE44 \uB9C8\uC744\r\n\uC131\uBCC4: \uB0A8\uC131\r\n\uC9C1\uC5C5:
+      \uD5E4\uC5B4 \uB514\uC790\uC774\uB108\r\n\uAF2C\uB9F9\uC774\uC758 \uC544\uBE60.
+      \uC12C\uC138\uD55C \uC131\uACA9\uACFC \uC190\uC7AC\uC8FC\uB85C \uC720\uBA85
+      \uD558\uB2E4.\n------------------\n\uB108\uBB34 \uC6B8\uC5B4\uC11C \uB208\uC774
+      \uBE68\uAC1B\uB2E4.\n"
+  - name: "\uB178\uC219\uBB18"
+    exp: "\uCD9C\uC2E0: \uBAA8\uB984\r\n\uC131\uBCC4: \uC5EC\uC131\r\n\uC9C1\uC5C5:
+      \uB178\uC219\uC790\r\n\uBB18\uD558\uAC8C \uC774\uC0C1\uD55C\uB370\uAC00 \uC788\uB294
+      \uB178\uC219\uBB18. \uC5B8\uC81C\uBD80\uD130 \uC774 \uB9C8\uC744\uC5D0 \uC788\uC5C8\uB294\uC9C0\uB294
+      \uBAA8\uB978\uB2E4. \uC0AC\uAC74\uC5D0 \uB300\uD574 \uBB54\uAC00 \uC54C\uACE0
+      \uC788\uB294 \uB4EF \uD558\uB2E4.\n"
+  conBgmSourceName: BGMSound_Sub
+  conBgmClipName: BGM_stage01
+  isDay20: 0
+  isFindBirthClue: 0
+  isGetEar: 0
+  isGetHair: 0
+  isGetSpoon: 0
+  isOnCriminalLine: 0
+  isOnLibraryLine: 0
+  isCustomerDrunken: 0
+  isPoliceWallRemove: 0
+  isLibraryTempRemove: 0

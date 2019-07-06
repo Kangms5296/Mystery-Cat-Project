@@ -35,18 +35,22 @@ public class CharacterSlot : MonoBehaviour {
     }
 
     // 이 슬롯에 담겨있는 캐릭터에 대한 정보를 플레이어가 찾을 경우 호출. 이후 이 슬롯은 캐릭터 정보가 노출된다.
-    public void CharacterKnow()
+    public void CharacterKnow(bool sound)
     {
+        if (isKnown == true)
+            return;
         isKnown = true;
 
         // Known 이미지 표시
         transform.Find("Known").gameObject.SetActive(true);
-
         // UnKnown 이미지 제거
         transform.Find("Unknown").gameObject.SetActive(false);
-
-        AudioSource effectAudio = GameObject.Find("EffectSound").GetComponent<AudioSource>();
-        effectAudio.clip = Resources.Load<AudioClip>("AudioResource/EffectSound/S_Clue3");
-        effectAudio.Play();
+        
+        if (sound)
+        {
+            AudioSource effectAudio = GameObject.Find("EffectSound").GetComponent<AudioSource>();
+            effectAudio.clip = Resources.Load<AudioClip>("AudioResource/EffectSound/S_Clue3");
+            effectAudio.Play();
+        }
     }
 }

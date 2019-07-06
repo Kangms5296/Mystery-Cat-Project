@@ -23,8 +23,15 @@ public class SaveManager : MonoBehaviour {
     private int conClick = -1;
     private bool isSave;
 
+
+
     // Use this for initialization
     void Start () {
+        for(int i = 0; i < slots.Length; i++)
+        {
+            SaveDataSystem saveData = Resources.Load<SaveDataSystem>("SaveData/Slot" + i);
+            slots[i].Init(saveData.isUsing, saveData.time, saveData.stage, saveData.mission);
+        }
 		
 	}
 	
@@ -83,14 +90,16 @@ public class SaveManager : MonoBehaviour {
         // 현재 상태 저장
         if(isSave)
         {
+            SaveDataSystem saveData = Resources.Load<SaveDataSystem>("SaveData/Slot" + conClick);
+            saveData.SaveData();
 
+            slots[conClick].Init(saveData.isUsing, saveData.time, saveData.stage, saveData.mission);
         }
         // 지정 slot으로 게임 데이터 불러오기
         else
         {
 
         }
-
 
         saveReConfirmationDisplayer.SetActive(false);
     }
@@ -101,5 +110,10 @@ public class SaveManager : MonoBehaviour {
         conClick = -1;
 
         saveReConfirmationDisplayer.SetActive(false);
+    }
+
+    public void Test()
+    {
+        Debug.Log("sdfdsafdsaf");
     }
 }

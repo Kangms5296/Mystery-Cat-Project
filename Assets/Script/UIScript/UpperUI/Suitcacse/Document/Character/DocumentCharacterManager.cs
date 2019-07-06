@@ -12,7 +12,7 @@ public class DocumentCharacterManager : MonoBehaviour {
     public Sprite activatedSlotBg;
 
     // Character slot
-    private CharacterSlot[] slots;
+    [HideInInspector] public CharacterSlot[] slots;
 
     // 현재 클릭되어있는 슬롯
     private GameObject conClickSlot = null;
@@ -67,7 +67,7 @@ public class DocumentCharacterManager : MonoBehaviour {
                     return;
 
                 // 이번에 새로 알게 되었다면..
-                slot.CharacterKnow();
+                slot.CharacterKnow(true);
                 return;
             }
         }

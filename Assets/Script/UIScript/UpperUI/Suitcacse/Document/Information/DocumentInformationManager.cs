@@ -22,9 +22,6 @@ public class DocumentInformationManager : MonoBehaviour {
     // information clue
     public InformationClue[] clues;
 
-    // 현재 사용중인 slot 수
-    private int conSlot = 0;
-
     // 현재 클릭되어있는 슬롯과 단서
     private GameObject conClickSlot = null;
     private GameObject conClickClue = null;
@@ -166,6 +163,32 @@ public class DocumentInformationManager : MonoBehaviour {
                 break;
             }
         }
+    }
+
+    public void KnowNewInfoByIndex(int index)
+    {
+        // 해당 인덱스의 문서정보는 바로 해금
+        slots[index].transform.Find("Text").GetComponent<Text>().text = slots[index].informationName;
+
+        // 해금된 문서정보와 같은 정보를 가지는 단서가 있으면 같이 해금
+        string infoName = slots[index].informationName;
+        foreach (InformationClue clue in clues)
+        {
+            // 같은 이름의 단서가 있으면..
+            if (clue.informationName == infoName)
+            {
+                clue.GetComponent<Image>().raycastTarget = true;
+                clue.transform.Find("UnKnown").gameObject.SetActive(false);
+                break;
+            }
+        }
+    }
+
+    public bool IsSlotKnown(int index)
+    {
+        if (slots[index].transform.Find("Text").GetComponent<Text>().text == "? ? ?")
+            return false;
+        return true;
     }
     
 

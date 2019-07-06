@@ -37,7 +37,7 @@ public class ContentScript : MonoBehaviour {
     [HideInInspector] public Sprite[] stage1_sprites;
 
 
-    private void Start()
+    private void Awake()
     {
         // 아이템 리스트에 대한 각 변수들을 할당
         Transform trans = itemContent.transform;
