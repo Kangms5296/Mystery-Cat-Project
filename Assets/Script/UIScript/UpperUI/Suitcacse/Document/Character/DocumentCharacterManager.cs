@@ -100,5 +100,8 @@ public class DocumentCharacterManager : MonoBehaviour {
         // 클릭한 slot 내 정보를 우측 칸에 표시
         nameText.text = newSlot.GetComponent<CharacterSlot>().characterName;
         expText.text = newSlot.GetComponent<CharacterSlot>().characterExp;
+
+        expText.rectTransform.anchoredPosition = new Vector2(0, -279.4f);
+        expText.transform.parent.GetComponent<ScrollRect>().StopMovement();
     }
 }

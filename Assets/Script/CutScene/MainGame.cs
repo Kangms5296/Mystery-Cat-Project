@@ -37,11 +37,14 @@ public class MainGame : MonoBehaviour {
     public GameObject criminalLine;
 
     [Header("Save - LibraryLine")]
-    public bool isOnLibraryLine;    // true이면 AfterGiveMilk_BeforeGiveFur 오브젝트 SetActive
+    public bool isOnLibraryLine;    // true이면 도서관 접근 이벤트 생성, 도서관 입장 이벤트 삭제, 도서관 NPC 마을 밖으로 배치
+    public GameObject libraryEntranceReaction;
     public GameObject libraryLine;
+    public Transform libraryNpc;
+    public Transform libraryNpcNewPos;
 
     [Header("Save - Drunken NPC")]
-    public bool isCustomerDrunken;  // true이면 취한 상태
+    public bool isCustomerNotDrunken;  // true이면 취한 상태
     public Transform customerNpc;
     public Transform npcNewPos;
     public Sprite npcNewSprite;
@@ -123,6 +126,14 @@ public class MainGame : MonoBehaviour {
             slot.characterExp = saveData.charsCheck[i].exp;
         }
 
+        // 이전의 상태로 사운드 상태를 변경
+        StaticInfoForSound.con_BGM_Audio = GameObject.Find(saveData.conBgmSourceName).GetComponent<AudioSource>();
+        if (saveData.conBgmClipName != "")
+        {
+            StaticInfoForSound.con_BGM_Audio.clip = Resources.Load<AudioClip>("AudioResource/BGM/" + saveData.conBgmClipName);
+            StartCoroutine(SoundStart());
+        }
+
         // etc
         isDay20 = saveData.isDay20;
         if (isDay20)
@@ -174,11 +185,14 @@ public class MainGame : MonoBehaviour {
 
         isOnLibraryLine = saveData.isOnLibraryLine;
         if (isOnLibraryLine)
+        {
             libraryLine.SetActive(true);
+            libraryEntranceReaction.SetActive(false);
+            libraryNpc.position = libraryNpcNewPos.position;
+        }
 
-
-        isCustomerDrunken = saveData.isCustomerDrunken;
-        if (isCustomerDrunken == false)
+        isCustomerNotDrunken = saveData.isCustomerNotDrunken;
+        if (isCustomerNotDrunken)
         {
             customerNpc.position = npcNewPos.position;
             customerNpc.Find("Sprite").GetComponent<SpriteRenderer>().sprite = npcNewSprite;
@@ -194,5 +208,21 @@ public class MainGame : MonoBehaviour {
         if (isLibraryTempRemove)
             libraryTemp.SetActive(false);
         
+    }
+
+    IEnumerator SoundStart()
+    {
+        float conTime = 0;
+        float maxTime = 2;
+
+        StaticInfoForSound.con_BGM_Audio.volume = 0;
+        StaticInfoForSound.con_BGM_Audio.Play();
+        while (conTime < maxTime)
+        {
+            StaticInfoForSound.con_BGM_Audio.volume = StaticInfoForSound.BGMSound * (conTime) / maxTime;
+            conTime += Time.deltaTime;
+            yield return null;
+        }
+        StaticInfoForSound.con_BGM_Audio.volume = StaticInfoForSound.BGMSound;
     }
 }

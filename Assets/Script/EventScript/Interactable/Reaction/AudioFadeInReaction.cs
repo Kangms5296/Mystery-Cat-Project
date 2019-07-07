@@ -14,14 +14,6 @@ public class AudioFadeInReaction : DelayedReaction
 
 	protected override void ImmediateReaction()
 	{
-		if (audioClip != null)
-			audioSource.clip = audioClip;
-        audioSource.Stop();
-        audioSource.Play();
-
-        // 현재 메인 배경음 담당 source를 교체
-        StaticInfoForSound.con_BGM_Audio = audioSource;
-
         go = CoroutineHandler.Start_Coroutine(FadeInAudio()).gameObject;
 	}
 
@@ -33,6 +25,14 @@ public class AudioFadeInReaction : DelayedReaction
             yield return null;
             temp += Time.deltaTime;
         }
+
+        if (audioClip != null)
+            audioSource.clip = audioClip;
+        audioSource.Stop();
+        audioSource.Play();
+
+        // 현재 메인 배경음 담당 source를 교체
+        StaticInfoForSound.con_BGM_Audio = audioSource;
 
         float conTime = 0;
         while (conTime < fadeTime)

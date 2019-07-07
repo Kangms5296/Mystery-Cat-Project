@@ -68,7 +68,7 @@ public class SaveDataSystem : ScriptableObject {
     public bool isGetSpoon;         // true이면 숟가락 오브젝트 map에서 삭제.
     public bool isOnCriminalLine;   // true이면 InitialApproachToCriminalArea 오브젝트 SetActive
     public bool isOnLibraryLine;    // true이면 AfterGiveMilk_BeforeGiveFur 오브젝트 SetActive
-    public bool isCustomerDrunken;  // true이면 취한 상태
+    public bool isCustomerNotDrunken;// true이면 술 깬 상태
     public bool isPoliceWallRemove;  // true이면 police Wall 삭제.
     public bool isLibraryTempRemove; // true이면 Library Temp 오브젝트 삭제
 
@@ -116,7 +116,7 @@ public class SaveDataSystem : ScriptableObject {
         isGetSpoon = false;
         isOnCriminalLine = false;
         isOnLibraryLine = false;
-        isCustomerDrunken = true;
+        isCustomerNotDrunken = false;
         isPoliceWallRemove = false;
         isLibraryTempRemove = false;
     }
@@ -228,7 +228,7 @@ public class SaveDataSystem : ScriptableObject {
         isGetSpoon = instantData.isGetSpoon;
         isOnCriminalLine = instantData.isOnCriminalLine;
         isOnLibraryLine = instantData.isOnLibraryLine;
-        isCustomerDrunken = instantData.isCustomerDrunken;
+        isCustomerNotDrunken = instantData.isCustomerNotDrunken;
         isPoliceWallRemove = instantData.isPoliceWallRemove;
         isLibraryTempRemove = instantData.isLibraryTempRemove;
     }
