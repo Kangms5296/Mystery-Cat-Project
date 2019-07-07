@@ -8,6 +8,12 @@ public class MainGame : MonoBehaviour {
     public ReactionCollection defaultReactionCollection;
     public ReactionCollection tutorialReactionCollection;
 
+    [Header("Con Stage")]
+    public Stage stage;
+
+    [Header("Can Save")]
+    public bool isCanSave;
+
     [Header("Save - 20day")]
     public bool isDay20;            // true이면 문서단서 '오늘 날짜'에 20일로 기록
     public InformationSlot slot;
@@ -15,6 +21,11 @@ public class MainGame : MonoBehaviour {
     public string infoName;
     [TextArea] public string infoExp;
     public Sprite infoImage;
+
+    [Header("Save - OnBackgarden")]
+    public bool isOnBackGarden;
+    public AudioSource footSource;
+    public AudioClip footClip;
 
     [Header("Save - BirthClue")]
     public bool isFindBirthClue;    // true이면 문서단서 '출생기록부'를 획득한 상태, 획득하지 않은 생태이면 옛날 집의 오브젝트들 상호작용 제한.
@@ -59,6 +70,7 @@ public class MainGame : MonoBehaviour {
     public GameObject libraryTemp;
 
 
+
     private SaveDataSystem saveData;
 
     // Use this for initialization
@@ -71,7 +83,7 @@ public class MainGame : MonoBehaviour {
         }
 
         // 현재 사용하는 slot 정보를 가져온다.
-        int usingSlotCount = 0;
+        int usingSlotCount = StaticInfoForSound.playingSlotIndex;
 
         saveData = Resources.Load<SaveDataSystem>("SaveData/Slot" + usingSlotCount);
         if (saveData.isUsing)
@@ -99,6 +111,9 @@ public class MainGame : MonoBehaviour {
 
         // 이전의 미션으로 현재 미션을 갱신
         FindObjectOfType<MissionScript>().SetMission(saveData.mission);
+
+        // 이전 stage로 현재 위치를 갱산
+        stage = saveData.stage;
 
         // 이전의 상태로 진행상태를 갱신
         AllConditions allConditions = Resources.Load<AllConditions>("AllConditions");
@@ -134,7 +149,11 @@ public class MainGame : MonoBehaviour {
             StartCoroutine(SoundStart());
         }
 
+
+
         // etc
+        isCanSave = saveData.isCanSave;
+
         isDay20 = saveData.isDay20;
         if (isDay20)
         {
@@ -156,6 +175,12 @@ public class MainGame : MonoBehaviour {
             }
         }
 
+        isOnBackGarden = saveData.isOnBackgarden;
+        if (isOnBackGarden)
+        {
+            footSource.clip = footClip;
+            footSource.Play();
+        }
 
         isFindBirthClue = saveData.isFindBirthClue;
         if (isFindBirthClue == false)

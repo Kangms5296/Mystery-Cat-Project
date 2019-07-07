@@ -29,6 +29,7 @@ MonoBehaviour:
   isGetSpoon: 0
   isOnCriminalLine: 0
   isOnLibraryLine: 0
-  isCustomerDrunken: 0
+  isCustomerNotDrunken: 0
   isPoliceWallRemove: 0
   isLibraryTempRemove: 0
+  isCanSave: 0

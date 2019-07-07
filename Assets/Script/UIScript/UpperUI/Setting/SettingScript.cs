@@ -36,11 +36,6 @@ public class SettingScript : UIScript {
         soundDisplayer.gameObject.SetActive(true);
     }
 
-    public void OnClickMain()
-    {
-
-    }
-
     public void OnClickExit()
     {
         // 환경설정 창을 끈다.

@@ -21,28 +21,16 @@ public class WaitingUntilMixReaction : DelayedReaction
 
     IEnumerator Wating()
     {
-        ItemScript itemScript = FindObjectOfType<ItemScript>();
+        GameObject itemScript = FindObjectOfType<ItemScript>().transform.Find("ReactionButton").gameObject;
         ContentScript content = FindObjectOfType<ContentScript>();
 
         // 인벤토리를 열 때 까지 대기
-        while (true)
-        {
+        while (itemScript.activeSelf == false)
             yield return null;
-            if (itemScript.isOpened == true)
-            {
-                break;
-            }
-        }
 
         // 인벤토리를 끌 때 까지 대기
-        while (true)
-        {
+        while (itemScript.activeSelf == true)
             yield return null;
-            if (itemScript.isOpened == false)
-            {
-                break;
-            }
-        }
 
         // 조합을 성공하였는가?
         if (content.IsGottenItem(itemName))

@@ -8,9 +8,12 @@ public class WaitingUntilClickDocuInfoReaction : DelayedReaction
 {
     private GameObject myCorotine;
 
-    private bool isInfoClick = false;
+    public ReactionCollection afterCheckReaction;
+    public ReactionCollection CantCheckReaction;
+
 
     public Button button;
+    private bool isInfoClick = false;
 
     protected override void ImmediateReaction()
     {
@@ -21,46 +24,34 @@ public class WaitingUntilClickDocuInfoReaction : DelayedReaction
 
     IEnumerator Wating()
     {
-        // 문서 정보를 클릭하였는지 확인
+        GameObject docuScript = FindObjectOfType<DocumentManager>().transform.Find("ReactionButton").gameObject;
+
+        // 문서 정보를 클릭하였는지 확인하는 리스너 추가
         button.onClick.AddListener(ClickInfo);
 
-        DocumentManager docuScript = FindObjectOfType<DocumentManager>();
-
         // 문서창을 열 때 까지 대기
-        while (true)
-        {
+        while (docuScript.activeSelf == false)
             yield return null;
-            if (docuScript.information.isOpened == true)
-                break;
-        }
 
-        // 문서 정보 클릭 까지 대기
-        while (true)
-        {
+        // 문서창을 끌 때 까지 대기
+        while (docuScript.activeSelf == true)
             yield return null;
-            if (isInfoClick == true)
-                break;
-        }
-
-        // 문서창을 닫을 때 까지 대기
-        while (true)
-        {
-            yield return null;
-            if (docuScript.information.isOpened == false)
-                break;
-        }
-
-
+        
         button.onClick.RemoveListener(ClickInfo);
 
+        // 조합을 성공하였는가?
+        if (isInfoClick)
+            afterCheckReaction.InitAndReact();
+        else
+            CantCheckReaction.InitAndReact();
+
         FSLocator.textDisplayer.reactionButton.enabled = true;
-        FSLocator.textDisplayer.reactionButton.onClick.Invoke();
+
         Destroy(myCorotine);
     }
 
     void ClickInfo()
     {
-        Debug.Log(1111);
         isInfoClick = true;
     }
 }

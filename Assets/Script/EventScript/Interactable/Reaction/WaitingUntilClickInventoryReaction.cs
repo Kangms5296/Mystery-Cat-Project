@@ -14,27 +14,15 @@ public class WaitingUntilClickInventoryReaction : DelayedReaction {
 
     IEnumerator Wating()
     {
-        ItemScript itemScript = GameObject.FindObjectOfType<ItemScript>();
-        
+        GameObject itemScript = FindObjectOfType<ItemScript>().transform.Find("ReactionButton").gameObject;
+
         // 인벤토리를 열 때 까지 대기
-        while (true)
-        {
+        while (itemScript.activeSelf == false)
             yield return null;
-            if (itemScript.isOpened == true)
-            {
-                break;
-            }
-        }
 
         // 인벤토리를 끌 때 까지 대기
-        while (true)
-        {
+        while (itemScript.activeSelf == true)
             yield return null;
-            if (itemScript.isOpened == false)
-            {
-                break;
-            }
-        }
 
         FSLocator.textDisplayer.reactionButton.enabled = true;
         FSLocator.textDisplayer.reactionButton.onClick.Invoke();

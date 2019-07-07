@@ -41,11 +41,11 @@ public class AudioFadeOutReaction : DelayedReaction
             yield return null;
 		}
         audioSource.volume = 0;
-
+        audioSource.clip = null;
 
         //audioSource.Stop();
 
 
-		Destroy(go);
+        Destroy(go);
 	}
 }

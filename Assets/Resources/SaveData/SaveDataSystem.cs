@@ -62,6 +62,7 @@ public class SaveDataSystem : ScriptableObject {
 
     // 그외(하드코딩내역)
     public bool isDay20;            // true이면 문서단서 '오늘 날짜'에 20일로 기록
+    public bool isOnBackgarden;
     public bool isFindBirthClue;    // true이면 문서단서 '출생기록부'를 획득한 상태, 획득하지 않은 생태이면 옛날 집의 오브젝트들 상호작용 제한.
     public bool isGetEar;           // true이면 귀 오브젝트 map에서 삭제.
     public bool isGetHair;          // true이면 모자 오브젝트 map에서 삭제.
@@ -71,6 +72,7 @@ public class SaveDataSystem : ScriptableObject {
     public bool isCustomerNotDrunken;// true이면 술 깬 상태
     public bool isPoliceWallRemove;  // true이면 police Wall 삭제.
     public bool isLibraryTempRemove; // true이면 Library Temp 오브젝트 삭제
+    public bool isCanSave;
 
 
     // -------------------------------------------------------------------- public Function --------------------------------------------------------------------
@@ -221,7 +223,9 @@ public class SaveDataSystem : ScriptableObject {
     private void SaveEtc()
     {
         MainGame instantData = FindObjectOfType<MainGame>();
+        stage = instantData.stage;
         isDay20 = instantData.isDay20;
+        isOnBackgarden = instantData.isOnBackGarden;
         isFindBirthClue = instantData.isFindBirthClue;
         isGetEar = instantData.isGetEar;
         isGetHair = instantData.isGetHair;
@@ -231,5 +235,6 @@ public class SaveDataSystem : ScriptableObject {
         isCustomerNotDrunken = instantData.isCustomerNotDrunken;
         isPoliceWallRemove = instantData.isPoliceWallRemove;
         isLibraryTempRemove = instantData.isLibraryTempRemove;
+        isCanSave = instantData.isCanSave;
     }
 }

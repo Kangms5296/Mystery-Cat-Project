@@ -23,12 +23,14 @@ MonoBehaviour:
   conBgmSourceName: 
   conBgmClipName: 
   isDay20: 0
+  isOnBackgarden: 0
   isFindBirthClue: 0
   isGetEar: 0
   isGetHair: 0
   isGetSpoon: 0
   isOnCriminalLine: 0
   isOnLibraryLine: 0
-  isCustomerDrunken: 0
+  isCustomerNotDrunken: 0
   isPoliceWallRemove: 0
   isLibraryTempRemove: 0
+  isCanSave: 0

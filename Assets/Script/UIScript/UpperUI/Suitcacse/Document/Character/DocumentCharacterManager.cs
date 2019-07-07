@@ -20,12 +20,7 @@ public class DocumentCharacterManager : MonoBehaviour {
     // 우측 내용 표시 UI 캐싱
     private Text nameText;
     private Text expText;
-
-
-    [HideInInspector] public bool isOpened = false;
-
-
-
+    
 
     // ================================================================= Public Function ===============================================================
 

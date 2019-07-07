@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SaveManager : MonoBehaviour {
 
+    public ReactionCollection loadReaction;
+
     [Header("Displayer")]
     // 이전으로 돌아갈 canvas
     public GameObject settingDisplayer;
@@ -14,6 +16,10 @@ public class SaveManager : MonoBehaviour {
     public GameObject saveConfirmationDisplayer;
     // 최종 선택 canvas
     public GameObject saveReConfirmationDisplayer;
+    // 저장 / 불러오기 불가 canvas
+    public GameObject saveCnatDisplater;
+    // 불러올 데이터가 없는 slot을 불러오기 클릭할 때 나오는 canvas
+    public GameObject LoadCantDisplayer;
 
     [Header("Slot Info")]
     public SaveSlot[] slots;
@@ -73,22 +79,40 @@ public class SaveManager : MonoBehaviour {
 
     public void OnClickSave()
     {
-        isSave = true;
-        saveReConfirmationDisplayer.SetActive(true);
-        saveConfirmationDisplayer.SetActive(false);
+        if(FindObjectOfType<MainGame>().isCanSave)
+        {
+            isSave = true;
+            saveReConfirmationDisplayer.SetActive(true);
+            saveConfirmationDisplayer.SetActive(false);
+        }
+        else
+        {
+            saveCnatDisplater.SetActive(true);
+            saveConfirmationDisplayer.SetActive(false);
+        }
     }
 
     public void OnClickCallingUp()
     {
-        isSave = false;
-        saveReConfirmationDisplayer.SetActive(true);
-        saveConfirmationDisplayer.SetActive(false);
+        if (FindObjectOfType<MainGame>().isCanSave)
+        {
+            isSave = false;
+            saveReConfirmationDisplayer.SetActive(true);
+            saveConfirmationDisplayer.SetActive(false);
+        }
+        else
+        {
+            saveCnatDisplater.SetActive(true);
+            saveConfirmationDisplayer.SetActive(false);
+        }
     }
 
     public void OnClickYes()
     {
+        saveReConfirmationDisplayer.SetActive(false);
+
         // 현재 상태 저장
-        if(isSave)
+        if (isSave)
         {
             SaveDataSystem saveData = Resources.Load<SaveDataSystem>("SaveData/Slot" + conClick);
             saveData.SaveData();
@@ -98,10 +122,18 @@ public class SaveManager : MonoBehaviour {
         // 지정 slot으로 게임 데이터 불러오기
         else
         {
-
+            SaveDataSystem saveData = Resources.Load<SaveDataSystem>("SaveData/Slot" + conClick);
+            if(saveData.isUsing)
+            {
+                StaticInfoForSound.playingSlotIndex = conClick;
+                loadReaction.InitAndReact();
+                saveDisplayer.SetActive(false);
+            }
+            else
+            {
+                LoadCantDisplayer.SetActive(true);
+            }
         }
-
-        saveReConfirmationDisplayer.SetActive(false);
     }
 
     public void OnClickNo()
@@ -111,9 +143,15 @@ public class SaveManager : MonoBehaviour {
 
         saveReConfirmationDisplayer.SetActive(false);
     }
-
-    public void Test()
+    
+    public void OnClickYesByCantSave()
     {
-        Debug.Log("sdfdsafdsaf");
+        saveCnatDisplater.SetActive(false);
+
+    }
+
+    public void OnClickYesByCantLoad()
+    {
+        LoadCantDisplayer.SetActive(false);
     }
 }

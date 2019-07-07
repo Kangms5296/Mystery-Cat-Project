@@ -37,16 +37,10 @@ public class ItemScript : UIScript {
     // 주기 리액션 관련 조건 변수;
     [HideInInspector] public bool isSimpleGive = true;
 
-    [HideInInspector]
-    public bool isOpened = false;
-
-
 
     // 메인화면 상단 UI의 Icon 클릭으로 인벤토리 캔버스 표시
     public override void OnClickUI()
     {
-        isOpened = true;
-
         // 인벤토리 UI에 조합 버튼이 들어있는 bg가 표시된다.
         mixBg1.SetActive(true);
         // 인벤토리 UI에 조합 목록 bg가 가려진다.
@@ -127,9 +121,7 @@ public class ItemScript : UIScript {
         mixBg2.SetActive(false);
         // 인벤토리 UI에 주다 버튼이 들어있는 bg가 표시된다.
         giveBg.SetActive(false);
-
-        isOpened = false;
-
+        
         InitUI();
 
         itemDisplayer.gameObject.SetActive(false);
@@ -211,9 +203,7 @@ public class ItemScript : UIScript {
             mixBg2.SetActive(false);
             // 인벤토리 UI에 주다 버튼이 들어있는 bg가 표시된다.
             giveBg.SetActive(false);
-
-            isOpened = false;
-
+            
             itemDisplayer.gameObject.SetActive(false);
         }
     }

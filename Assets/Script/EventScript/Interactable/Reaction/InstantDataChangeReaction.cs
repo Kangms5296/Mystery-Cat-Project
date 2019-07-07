@@ -16,6 +16,9 @@ public class InstantDataChangeReaction : DelayedReaction
             case "isDay20":
                 instantData.isDay20 = newValue;
                 break;
+            case "isOnBackGarden":
+                instantData.isOnBackGarden = newValue;
+                break;
             case "isFindBirthClue":
                 instantData.isFindBirthClue = newValue;
                 break;
@@ -42,6 +45,9 @@ public class InstantDataChangeReaction : DelayedReaction
                 break;
             case "isLibraryTempRemove":
                 instantData.isLibraryTempRemove = newValue;
+                break;
+            case "isCanSave":
+                instantData.isCanSave = newValue;
                 break;
             default:
                 break;
