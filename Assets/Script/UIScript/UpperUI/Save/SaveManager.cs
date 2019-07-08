@@ -92,7 +92,7 @@ public class SaveManager : MonoBehaviour {
         }
     }
 
-    public void OnClickCallingUp()
+    public void OnClickLoad()
     {
         if (FindObjectOfType<MainGame>().isCanSave)
         {
@@ -152,6 +152,9 @@ public class SaveManager : MonoBehaviour {
 
     public void OnClickYesByCantLoad()
     {
+        slots[conClick].GetComponent<Image>().sprite = deActivatedBG;
+        conClick = -1;
+
         LoadCantDisplayer.SetActive(false);
     }
 }

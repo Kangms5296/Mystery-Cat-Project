@@ -35,7 +35,7 @@ public class SoundScript : MonoBehaviour {
     {
         bSource = GameObject.Find("BGMSound_Main").GetComponent<AudioSource>();
         StaticInfoForSound.con_BGM_Audio = bSource;
-        bSlider.value = StaticInfoForSound.BGMSound;
+        //bSlider.value = StaticInfoForSound.BGMSound;
 
         eSource = GameObject.Find("EffectSound").GetComponent<AudioSource>();
         eSlider.value = StaticInfoForSound.EffectSound;

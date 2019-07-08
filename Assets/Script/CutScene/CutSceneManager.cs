@@ -39,6 +39,9 @@ public class CutSceneManager : MonoBehaviour
     // last black pannel fade in time
     public float fadeTime;
 
+    public AudioSource clickSound;
+    public AudioClip SkipTouchSound;
+
     // script control variable
     private float conTime = 0;
     private bool isFinishLine = false;
@@ -60,7 +63,9 @@ public class CutSceneManager : MonoBehaviour
 
     public void OnClickTouchBtn()
     {
-        if(!isFinishLine)
+        clickSound.Play();
+
+        if (!isFinishLine)
         {
             delayPerChar = 0;
             conTime = 20;
@@ -74,6 +79,9 @@ public class CutSceneManager : MonoBehaviour
     // skip 버튼 클릭
     public void OnClickSkip()
     {
+        clickSound.clip = SkipTouchSound;
+        clickSound.Play();
+        
         StartCoroutine(VisibleBlackPanel());
     }
 
@@ -202,17 +210,17 @@ public class CutSceneManager : MonoBehaviour
 
     IEnumerator VisibleBlackPanel()
     {
-        blackPanel.color = new Color(0, 0, 0, 0);
+        blackPanel.color = new Color32(20, 20, 20, 0);
         blackPanel.gameObject.SetActive(true);
 
         // 검은 패널을 지정된 시간을 들여서 표시
         for (float tempTime = 0; tempTime < fadeTime; tempTime += Time.deltaTime * speed)
         {
-            blackPanel.color = new Color(0, 0, 0, tempTime / fadeTime);
+            blackPanel.color = new Color(20.0f / 255, 20.0f / 255, 20.0f / 255, tempTime / fadeTime);
             audioSource.volume = (1 - tempTime / fadeTime) * StaticInfoForSound.BGMSound;
             yield return null;
         }
-        blackPanel.color = new Color(0, 0, 0, 1);
+        blackPanel.color = new Color32(20, 20, 20, 255);
         audioSource.volume = 0;
 
         // 씬 전환

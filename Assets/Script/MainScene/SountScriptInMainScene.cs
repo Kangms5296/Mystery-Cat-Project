@@ -21,9 +21,10 @@ public class SountScriptInMainScene : MonoBehaviour {
 
     // 배경 사운드
     private AudioSource bSource;
+    // 클릭 사운드
+    private AudioSource eSource;
 
-
-    private void Awake()
+    private void Start()
     {
         // 최초 0.6으로 소리 지정
         bSound1.enabled = true;
@@ -40,13 +41,11 @@ public class SountScriptInMainScene : MonoBehaviour {
         eSound2.enabled = true;
         eSound3.enabled = false;
 
+
+        eSource = GameObject.Find("Effect").GetComponent<AudioSource>();
         eSlider.value = 0.6f;
         StaticInfoForSound.EffectSound = eSlider.value;
-    }
-
-    public void OnClickOption()
-    {
-        soundDisplayer.gameObject.SetActive(true);
+        eSource.volume = StaticInfoForSound.EffectSound;
     }
 
     // Background 소리 Slider를 이동 시 호출
@@ -93,6 +92,7 @@ public class SountScriptInMainScene : MonoBehaviour {
 
         // 소리를 키우거나 줄이고
         StaticInfoForSound.EffectSound = temp;
+        eSource.volume = StaticInfoForSound.EffectSound;
 
         // speaker 이미지 옆의 빼빼로들 수정해야징
         if (temp == 0)
@@ -119,11 +119,5 @@ public class SountScriptInMainScene : MonoBehaviour {
             eSound2.enabled = true;
             eSound3.enabled = true;
         }
-    }
-
-    // close 버튼 클릭
-    public void OnClickClose()
-    {
-        soundDisplayer.gameObject.SetActive(false);
     }
 }

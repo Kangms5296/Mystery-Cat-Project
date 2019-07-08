@@ -239,7 +239,7 @@ public class MainGame : MonoBehaviour {
     {
         float conTime = 0;
         float maxTime = 2;
-
+        Debug.Log(StaticInfoForSound.con_BGM_Audio.volume);
         StaticInfoForSound.con_BGM_Audio.volume = 0;
         StaticInfoForSound.con_BGM_Audio.Play();
         while (conTime < maxTime)

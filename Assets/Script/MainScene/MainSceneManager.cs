@@ -5,11 +5,30 @@ using UnityEngine.SceneManagement;
 
 
 public class MainSceneManager : MonoBehaviour {
-
-    public float fadeTime;
-
+    
     public CanvasGroup blackPanel;
+
+    [Header("Start UI")]
+    public GameObject touchToStart;
+
+    [Header("Stage Choice UI")]
+    public CanvasGroup stageUI;
+    public Image stageBlack;
+    public RectTransform hourHand;
+
+    [Header("For New Game/Load Game")]
+    public GameObject newLoadDisplayer;
+    public GameObject loadDisplayer;
+
+    [Header("For Developer")]
+    public GameObject developerDisplayer;
+
+    [Header("For Sound")]
+    public SountScriptInMainScene soundScript;
     public AudioSource bgm;
+    public AudioSource effect;
+    public AudioClip clockRotateClip;
+
 
     public void Start()
     {
@@ -24,34 +43,144 @@ public class MainSceneManager : MonoBehaviour {
 
     // =============================================================================== public function ==============================================================================
 
-    // 게임 시작 - 스토리 보기 이후 stage1 씬으로 이동
+    public void OnClickTouchToStart()
+    {
+        // 클릭 효과음
+        effect.Play();
+
+        // 시작 터치 UI 삭제
+        touchToStart.SetActive(false);
+
+        stageUI.gameObject.SetActive(true);
+        stageBlack.gameObject.SetActive(true);
+
+        // Stage 선택 UI 화면 표시 코루틴 실행
+        StartCoroutine(UIVisible());
+    }
+
+    // 게임 시작 버튼 클릭
     public void OnClickStart()
     {
-        PlayerPrefs.SetString("AfterStory", "Stage01");
-        StartCoroutine(FadingBlack());
+        // 클릭 효과음
+        effect.Play();
+
+        newLoadDisplayer.SetActive(true);
     }
 
-    // 스토리 다시 보기 - 스토리 보기 이후 main 씬으로 이동
+    // 스토리 다시 보기 버튼 클릭
     public void OnClickStory()
     {
+        // 클릭 효과음
+        effect.Play();
+
         PlayerPrefs.SetString("AfterStory", "MainScene");
-        StartCoroutine(FadingBlack());
+        StartCoroutine(StartingReStory());
     }
 
+    // 개발자 확인 UI 클릭
+    public void OnClickDeveloper()
+    {
+        // 클릭 효과음
+        effect.Play();
+
+        developerDisplayer.SetActive(true);
+    }
+
+    // 개발자 확인 UI 종료
+    public void OnClickDeveloperClose()
+    {
+        // 클릭 효과음
+        effect.Play();
+
+        developerDisplayer.SetActive(false);
+    }
+
+    // 사운드 UI 클릭
+    public void OnClickSound()
+    {
+        // 클릭 효과음
+        effect.Play();
+
+        soundScript.soundDisplayer.SetActive(true);
+    }
+
+    // 사운드 UI 종료
+    public void OnClickSoundClose()
+    {
+        // 클릭 효과음
+        effect.Play();
+
+        soundScript.soundDisplayer.SetActive(false);
+    }
+    
+    public void OnClickNewGame()
+    {
+        // 클릭 효과음
+        effect.Play();
+        
+        newLoadDisplayer.SetActive(false);
+
+        StaticInfoForSound.playingSlotIndex = 4;
+        PlayerPrefs.SetString("AfterStory", "Stage01");
+        StartCoroutine(StartingNewGame());
+    }
+
+    public void OnClickLoadGame()
+    {
+        // 클릭 효과음
+        effect.Play();
+
+        newLoadDisplayer.SetActive(false);
+        loadDisplayer.SetActive(true);
+    }
+
+    public void LoadGame(float rotateValue)
+    {
+        StartCoroutine(StartingLoadGame(rotateValue));
+    }
 
     // ============================================================================== private function ==============================================================================
 
-    private IEnumerator FadingBlack()
+    private IEnumerator StartingNewGame()
     {
+        yield return null;
+
+        // 터치를 막는다.
         blackPanel.gameObject.SetActive(true);
 
+        effect.clip = clockRotateClip;
+
+        // 시계 회전
+        const float RotateSpeed = 60f;
+        float conRotate = -115;
+        float maxRotate = -205;
+        float tempfloat = 0;
+        while(conRotate > maxRotate)
+        {
+
+            hourHand.localEulerAngles = new Vector3(0, 0, conRotate);
+            conRotate -= Time.deltaTime * RotateSpeed;
+            tempfloat += Time.deltaTime * RotateSpeed;
+            if(tempfloat > 10)
+            {
+                tempfloat = 0;
+                effect.Play();
+            }
+
+            yield return null;
+        }
+        hourHand.localEulerAngles = new Vector3(0, 0, maxRotate);
+
+        yield return new WaitForSeconds(1);
+
+        // 씬 이동 간 페이드인
         float conTime = 0;
-        while (conTime < fadeTime)
+        while (conTime < 3)
         {
             // black panel의 알파값을 상승
-            blackPanel.alpha = conTime / fadeTime;
+            blackPanel.alpha = conTime / 3;
             // bgm의 크기를 낮춘다.
-            bgm.volume = StaticInfoForSound.BGMSound * (fadeTime - conTime) / fadeTime;
+            bgm.volume = StaticInfoForSound.BGMSound * (3 - conTime) / 3;
 
             conTime += Time.deltaTime;
             yield return null;
@@ -59,5 +188,93 @@ public class MainSceneManager : MonoBehaviour {
 
         // 씬 이동
         SceneManager.LoadScene("TemporaryCutScene");
+    }
+
+    private IEnumerator StartingLoadGame(float rotateValue)
+    {
+        yield return null;
+
+        // 터치를 막는다.
+        blackPanel.gameObject.SetActive(true);
+
+        effect.clip = clockRotateClip;
+
+        // 시계 회전
+        const float RotateSpeed = 60f;
+        float conRotate = -115;
+        float maxRotate = conRotate - rotateValue;
+        float tempfloat = 0;
+        while (conRotate > maxRotate)
+        {
+
+            hourHand.localEulerAngles = new Vector3(0, 0, conRotate);
+            conRotate -= Time.deltaTime * RotateSpeed;
+            tempfloat += Time.deltaTime * RotateSpeed;
+            if (tempfloat > 10)
+            {
+                tempfloat = 0;
+                effect.Play();
+            }
+
+            yield return null;
+        }
+        hourHand.localEulerAngles = new Vector3(0, 0, maxRotate);
+
+        yield return new WaitForSeconds(1);
+
+        // 씬 이동 간 페이드인
+        float conTime = 0;
+        while (conTime < 3)
+        {
+            // black panel의 알파값을 상승
+            blackPanel.alpha = conTime / 3;
+            // bgm의 크기를 낮춘다.
+            bgm.volume = StaticInfoForSound.BGMSound * (3 - conTime) / 3;
+
+            conTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // 씬 이동
+        SceneManager.LoadScene("Stage01");
+    }
+
+
+    private IEnumerator StartingReStory()
+    {
+        blackPanel.gameObject.SetActive(true);
+
+        float conTime = 0;
+        while (conTime < 3)
+        {
+            // black panel의 알파값을 상승
+            blackPanel.alpha = conTime / 3;
+            // bgm의 크기를 낮춘다.
+            bgm.volume = StaticInfoForSound.BGMSound * (3 - conTime) / 3;
+
+            conTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // 씬 이동
+        SceneManager.LoadScene("TemporaryCutScene");
+    }
+
+    private IEnumerator UIVisible()
+    {
+        yield return null;
+
+        float conTime = 0;
+        float maxTime = 1f;
+
+        while(conTime < maxTime)
+        {
+            stageUI.alpha = conTime;
+            stageBlack.color = new Color(0, 0, 0, ( 140 * conTime )/ (255 * maxTime));
+            conTime += Time.deltaTime;
+            yield return null;
+        }
+        stageUI.alpha = 1;
+        stageBlack.color = new Color32(0, 0, 0, 140);
     }
 }

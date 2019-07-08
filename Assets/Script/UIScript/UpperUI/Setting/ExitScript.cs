@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ExitScript : MonoBehaviour {
 
+    public ReactionCollection exitReaction;
+
     // 환경설정 canvas
     public GameObject settingDisplayer;
 
@@ -12,20 +14,14 @@ public class ExitScript : MonoBehaviour {
     public GameObject exitDisplayer;
 
 
-    // 동~그라미
-    public List<Sprite> clickSprite;
-
-
-
-
-    // 냐옹
     public void OnClickYes()
     {
-        // app 종료
-        Application.Quit();
+        // 종료 창을 끈다.
+        exitDisplayer.gameObject.SetActive(false);
+
+        exitReaction.InitAndReact();
     }
 
-    // 싫다옹
     public void OnClickNo()
     {
         // 종료 창을 끈다.
