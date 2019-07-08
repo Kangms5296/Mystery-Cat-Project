@@ -140,7 +140,7 @@ public class SaveDataSystem : ScriptableObject {
         // 현재 미션 저장
         mission = FindObjectOfType<MissionScript>().GetMission();
 
-        UnityEditor.EditorUtility.SetDirty(this);
+        SetDirty();
     }
     
     // 진행상태(Condition) 저장
