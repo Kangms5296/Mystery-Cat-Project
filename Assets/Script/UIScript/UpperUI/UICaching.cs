@@ -6,6 +6,10 @@ public class UICaching : MonoBehaviour {
     // 상단에 존재하는 모든 UI들(tag가 UI로 되어있다.)
     public List<GameObject> UI;
 
+    public AudioSource source;
+    public AudioClip clip1;
+    public AudioClip clip2;
+
 
 
     public void ClearUI()
@@ -22,5 +26,16 @@ public class UICaching : MonoBehaviour {
     {
         return UI;
     }
-	
+
+    public void OnClickUIClip1()
+    {
+        source.clip = clip1;
+        source.Play();
+    }
+
+    public void OnClickUIClip2()
+    {
+        source.clip = clip2;
+        source.Play();
+    }
 }

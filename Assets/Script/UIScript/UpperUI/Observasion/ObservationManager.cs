@@ -62,10 +62,14 @@ public class ObservationManager : MonoBehaviour {
     // ================================================= public Function ===========================================================
 
     // Displayer 표시
-    public void Init(string npcName, bool disabledPull, bool disabledLook, bool disabledPincer)
+    public void Init(string npcName,Sprite npcSprite, bool disabledPull, bool disabledLook, bool disabledPincer)
     {
-        // 현재 대화하고 있는 npc 이름 갱신. 이를 통해 나머지 정보들을 초기화
+        // 현재 대화하고 있는 npc 이름 갱신.
         this.npcName = npcName;
+
+        // 이미지를 지정
+        NPCImage.sprite = npcSprite;
+        NPCBigImage.sprite = npcSprite;
 
         // Displayer 우측 버튼 초기화
         observationWayManager.Init(disabledPull, disabledLook, disabledPincer);
@@ -73,9 +77,6 @@ public class ObservationManager : MonoBehaviour {
         // Displayer 좌측 Text들 초기화
         GottenItemTextInit();
         ChatTextInit();
-
-        // Dlspalyer 중단 NPC 이미지 초기화
-        NPCImageInit();
 
         // Displayer 화면에 표시
         Displayer.SetActive(true);
@@ -303,17 +304,6 @@ public class ObservationManager : MonoBehaviour {
     private void ChatTextInit()
     {
         chatText.text = "";
-    }
-
-    // NPCNameConverter 함수로 변환된 이름(NPC1_Police 등)을 통해 Resource 폴더의 이미지를 가져온다.
-    private void NPCImageInit()
-    {
-        // 이미지를 가져온다
-        Sprite npcSprite = Resources.Load<Sprite>("ArtResource/Illust/" + npcName);
-        NPCImage.sprite = npcSprite;
-        NPCBigImage.sprite = npcSprite;
-
-        //NPCImage.sprite = null;
     }
 
     // Scriptable object로 작동하는 Reaction 진행 상황에서 현재 대화하고있는 NPC에 대한 정보를 알 방법이 없음(있으면 누가 좀 알려주셈)

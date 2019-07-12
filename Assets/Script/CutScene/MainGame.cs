@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+public enum Stage { Backgarden, Home, Village, Bar, Library_1, Library_2, Library_3, Library1_Tutorial, Library2_Tutorial, Village_Tutorial, None };
+
 public class MainGame : MonoBehaviour {
     [Header("Start Reaciton Collections")]
     public ReactionCollection defaultReactionCollection;
@@ -10,6 +13,7 @@ public class MainGame : MonoBehaviour {
 
     [Header("Con Stage")]
     public Stage stage;
+    public Transform stageObject;
 
     [Header("Can Save")]
     public bool isCanSave;
@@ -48,9 +52,11 @@ public class MainGame : MonoBehaviour {
     public GameObject criminalLine;
 
     [Header("Save - LibraryLine")]
-    public bool isOnLibraryLine;    // true이면 도서관 접근 이벤트 생성, 도서관 입장 이벤트 삭제, 도서관 NPC 마을 밖으로 배치
-    public GameObject libraryEntranceReaction;
+    public bool isOnLibraryLine;    // true이면 도서관 접근 이벤트 생성
     public GameObject libraryLine;
+
+    [Header("Save - Library NPC Out")]
+    public bool isLibraryNpcOut;    // true이면 도서관 외부로 NPC 배치.
     public Transform libraryNpc;
     public Transform libraryNpcNewPos;
 
@@ -70,7 +76,6 @@ public class MainGame : MonoBehaviour {
     public GameObject libraryTemp;
 
 
-
     private SaveDataSystem saveData;
 
     // Use this for initialization
@@ -82,79 +87,86 @@ public class MainGame : MonoBehaviour {
                 canvases[i].referenceResolution = new Vector2(1920, 1920 * Screen.height / Screen.width);
         }
 
+        // Load / Save를 위한 script 캐싱
+        saveData = FindObjectOfType<SaveDataSystem>();
+
         // 현재 사용하는 slot 정보를 가져온다.
         int usingSlotCount = StaticInfoForSound.playingSlotIndex;
 
-        saveData = Resources.Load<SaveDataSystem>("SaveData/Slot" + usingSlotCount);
-        if (saveData.isUsing)
+        // 메인 씬에서 불러오기를 선택했다면..
+        if (usingSlotCount != 4)
         {
-            // 이전 데이터로 현제 상태를 변경
+            // 이전 데이터를 불러온다.
+            saveData.LoadData(usingSlotCount);
+
+            // 이전 데이터로 현재 데이터를 변경한다.
             LoadData();
 
-            // 게임 시작
+            // 게임 시작.
             defaultReactionCollection.InitAndReact();
         }
         else
         {
+            StaticInfoForSound.con_BGM_Audio = GameObject.Find("BGMSound_Main").GetComponent<AudioSource>();
+
             // 튜토리얼 시작
             tutorialReactionCollection.InitAndReact();
         }
 	}
-
-
-
-
-    private void LoadData()
+    
+    public void LoadData()
     {
         // 이전의 위치로 플레이어를 이동
-        FindObjectOfType<NewPlayer>().transform.position = saveData.pos;
+        FindObjectOfType<NewPlayer>().transform.position = new Vector3((float)saveData.tempData.posX, (float)saveData.tempData.posY, (float)saveData.tempData.posZ);
 
         // 이전의 미션으로 현재 미션을 갱신
-        FindObjectOfType<MissionScript>().SetMission(saveData.mission);
+        FindObjectOfType<MissionScript>().SetMission(saveData.tempData.mission);
 
-        // 이전 stage로 현재 위치를 갱산
-        stage = saveData.stage;
+        // 이전 stage로 현재 위치를 갱신
+        stage = saveData.tempData.stage;
+        // 최초 맵 Active
+        stageObject.Find(stage.ToString()).gameObject.SetActive(true);
 
         // 이전의 상태로 진행상태를 갱신
         AllConditions allConditions = Resources.Load<AllConditions>("AllConditions");
         for (int i = 0; i < allConditions.conditions.Length; i++)
-            allConditions.conditions[i].satisfied = saveData.conditionsCheck[i];
+            allConditions.conditions[i].satisfied = saveData.tempData.conditionsCheck[i];
 
         // 이전의 상태로 인벤토리 정보를 갱신
         ContentScript inventory = FindObjectOfType<ContentScript>();
-        for (int i = 0; i < saveData.itemsCheck.Count; i++)
-            for (int j = 0; j < saveData.itemsCheck[i].count; j++)
-                inventory.GetItem(saveData.itemsCheck[i].id);
+        for (int i = 0; i < saveData.tempData.itemsCheck.Count; i++)
+            for (int j = 0; j < saveData.tempData.itemsCheck[i].count; j++)
+                inventory.GetItem(saveData.tempData.itemsCheck[i].id);
 
         // 이전의 상태로 문서단서 정보를 갱신
         DocumentInformationManager information = FindObjectOfType<DocumentManager>().information;
-        for(int i = 0; i < saveData.infosCheck.Count; i++)
-            if(saveData.infosCheck[i])
+        for(int i = 0; i < saveData.tempData.infosCheck.Count; i++)
+            if(saveData.tempData.infosCheck[i])
                 information.KnowNewInfoByIndex(i);
 
         // 이전의 상태로 인물단서 정보를 갱신
         DocumentCharacterManager character = FindObjectOfType<DocumentManager>().character;
-        for (int i = 0; i < saveData.charsCheck.Count; i++)
+        for (int i = 0; i < saveData.tempData.charsCheck.Count; i++)
         {
-            CharacterSlot slot = character.GetSlot(saveData.charsCheck[i].name);
+            CharacterSlot slot = character.GetSlot(saveData.tempData.charsCheck[i].name);
             slot.CharacterKnow(false);
-            slot.characterExp = saveData.charsCheck[i].exp;
+            slot.characterExp = saveData.tempData.charsCheck[i].exp;
         }
 
         // 이전의 상태로 사운드 상태를 변경
-        StaticInfoForSound.con_BGM_Audio = GameObject.Find(saveData.conBgmSourceName).GetComponent<AudioSource>();
-        if (saveData.conBgmClipName != "")
+        StaticInfoForSound.con_BGM_Audio = GameObject.Find(saveData.tempData.conBgmSourceName).GetComponent<AudioSource>();
+        if (saveData.tempData.conBgmClipName != "")
         {
-            StaticInfoForSound.con_BGM_Audio.clip = Resources.Load<AudioClip>("AudioResource/BGM/" + saveData.conBgmClipName);
+            StaticInfoForSound.con_BGM_Audio.clip = Resources.Load<AudioClip>("AudioResource/BGM/" + saveData.tempData.conBgmClipName);
             StartCoroutine(SoundStart());
         }
 
 
 
         // etc
-        isCanSave = saveData.isCanSave;
+        isCanSave = saveData.tempData.isCanSave;
 
-        isDay20 = saveData.isDay20;
+        isDay20 = saveData.tempData.isDay20;
         if (isDay20)
         {
             if (slot != null)
@@ -175,61 +187,62 @@ public class MainGame : MonoBehaviour {
             }
         }
 
-        isOnBackGarden = saveData.isOnBackgarden;
+        isOnBackGarden = saveData.tempData.isOnBackgarden;
         if (isOnBackGarden)
         {
             footSource.clip = footClip;
             footSource.Play();
         }
 
-        isFindBirthClue = saveData.isFindBirthClue;
+        isFindBirthClue = saveData.tempData.isFindBirthClue;
         if (isFindBirthClue == false)
             foreach (GameObject hideObject in hideObjects)
                 hideObject.SetActive(false);
 
 
-        isGetEar = saveData.isGetEar;
+        isGetEar = saveData.tempData.isGetEar;
         if (isGetEar)
             ear.SetActive(false);
 
 
-        isGetHair = saveData.isGetHair;
+        isGetHair = saveData.tempData.isGetHair;
         if (isGetHair)
             hair.SetActive(false);
 
 
-        isGetSpoon = saveData.isGetSpoon;
+        isGetSpoon = saveData.tempData.isGetSpoon;
         if (isGetSpoon)
             spoon.SetActive(false);
 
 
-        isOnCriminalLine = saveData.isOnCriminalLine;
+        isOnCriminalLine = saveData.tempData.isOnCriminalLine;
         if (isOnCriminalLine)
             criminalLine.SetActive(true);
 
 
-        isOnLibraryLine = saveData.isOnLibraryLine;
+        isOnLibraryLine = saveData.tempData.isOnLibraryLine;
         if (isOnLibraryLine)
-        {
             libraryLine.SetActive(true);
-            libraryEntranceReaction.SetActive(false);
-            libraryNpc.position = libraryNpcNewPos.position;
-        }
 
-        isCustomerNotDrunken = saveData.isCustomerNotDrunken;
+        isLibraryNpcOut = saveData.tempData.isLibraryNpcOut;
+        if(isLibraryNpcOut)
+            libraryNpc.position = new Vector3(libraryNpcNewPos.position.x, libraryNpcNewPos.position.y, libraryNpcNewPos.position.y);
+
+
+        isCustomerNotDrunken = saveData.tempData.isCustomerNotDrunken;
         if (isCustomerNotDrunken)
         {
-            customerNpc.position = npcNewPos.position;
+            customerNpc.position = new Vector3(npcNewPos.position.x, npcNewPos.position.y, npcNewPos.position.y);
             customerNpc.Find("Sprite").GetComponent<SpriteRenderer>().sprite = npcNewSprite;
             npcDrunkenReaction.SetActive(false);
         }
 
 
-        isPoliceWallRemove = saveData.isPoliceWallRemove;
+        isPoliceWallRemove = saveData.tempData.isPoliceWallRemove;
         if (isPoliceWallRemove)
             policeWall.SetActive(false);
 
-        isLibraryTempRemove = saveData.isLibraryTempRemove;
+        isLibraryTempRemove = saveData.tempData.isLibraryTempRemove;
         if (isLibraryTempRemove)
             libraryTemp.SetActive(false);
         
@@ -237,11 +250,14 @@ public class MainGame : MonoBehaviour {
 
     IEnumerator SoundStart()
     {
+        yield return new WaitForSeconds(0.5f);
+
         float conTime = 0;
         float maxTime = 2;
-        Debug.Log(StaticInfoForSound.con_BGM_Audio.volume);
+        
         StaticInfoForSound.con_BGM_Audio.volume = 0;
         StaticInfoForSound.con_BGM_Audio.Play();
+
         while (conTime < maxTime)
         {
             StaticInfoForSound.con_BGM_Audio.volume = StaticInfoForSound.BGMSound * (conTime) / maxTime;

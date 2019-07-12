@@ -8,6 +8,10 @@ public class JoystickScript : MonoBehaviour
     // 플레이어 객체
     private NewCharacter player;
 
+    public CanvasGroup joysticCanvas;
+    private Coroutine visibleCoroutine;
+    float conAlpha = 0;
+
     // ClickArea RectTransform 콤포넌트 캐싱
     private RectTransform rectTrans;
 
@@ -39,6 +43,11 @@ public class JoystickScript : MonoBehaviour
 
         // 최대 ClickArea 이동 거리 지정
         maxMove = 25.0f;
+    }
+
+    private void OnEnable()
+    {
+        joysticCanvas.alpha = 0;
     }
 
     private void FixedUpdate()
@@ -82,6 +91,17 @@ public class JoystickScript : MonoBehaviour
     // 조이스틱 클릭다운
     public void OnJoystickDown()
     {
+        // 조이스틱 중앙 손잡이를 가운데로
+        rectTrans.position = transform.parent.position;
+
+        // 조이스틱 생성
+        transform.parent.position = Input.mousePosition;
+        if (joysticCanvas.gameObject.activeSelf)
+        {
+            if (visibleCoroutine != null)
+                StopCoroutine(visibleCoroutine);
+            visibleCoroutine = StartCoroutine(Visible());
+        }
         // 이동 시작
         isClicked = true;
     }
@@ -89,17 +109,45 @@ public class JoystickScript : MonoBehaviour
     // 조이스틱 클릭업
     public void OnJoystickUp()
     {
+        // 조이스틱 삭제
+        if (joysticCanvas.gameObject.activeSelf)
+        {
+            if (visibleCoroutine != null)
+                StopCoroutine(visibleCoroutine);
+            visibleCoroutine = StartCoroutine(InVisible());
+        }
+
         // 이동 중지
         isClicked = false;
-
+        
         // 플레이어를 정지
         player.Stop();
 
-        // ClickArea의 위치를 다시 중앙으로 이동
-        // idlePos는 Transform 위치를 나타내기때문에 RectTransform인 rectTrans에 대입x
-        rectTrans.position = transform.parent.position;
-
         // 현재 이동 방향이 없으므로 moveVector도 0으로 초기화
         moveVector = Vector2.zero;
+    }
+
+    IEnumerator Visible()
+    {
+        while(conAlpha < 1)
+        {
+            joysticCanvas.alpha = conAlpha;
+
+            conAlpha += Time.deltaTime * 10;
+            yield return null;
+        }
+        joysticCanvas.alpha = 1;
+    }
+
+    IEnumerator InVisible()
+    {
+        while (conAlpha > 0)
+        {
+            joysticCanvas.alpha = conAlpha;
+
+            conAlpha -= Time.deltaTime * 10;
+            yield return null;
+        }
+        joysticCanvas.alpha = 0;
     }
 }

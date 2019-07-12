@@ -5,6 +5,9 @@ public class ObservationReaction : DelayedReaction
 {
     // 현재 대화중인 NPC 이름
     public string NpcName = "";
+    // 화면에 표시할 NPC 이미지
+    public Sprite NpcSprite;
+
 
     // 관찰 기능 중 사용을 막을 기능들을 표시(특수한 경우)
     public bool disabledPull;
@@ -38,7 +41,7 @@ public class ObservationReaction : DelayedReaction
     IEnumerator CheckForDoingObservation()
     {
         // UI 초기 설정 및 화면 표시
-        observationManager.Init(NpcName, disabledPull, disabledLook, disabledPincer);
+        observationManager.Init(NpcName, NpcSprite, disabledPull, disabledLook, disabledPincer);
 
         // 사용자가 UI를 종료하기까지 대기
         while (observationManager.Displayer.activeSelf == true)

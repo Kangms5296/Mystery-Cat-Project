@@ -27,6 +27,11 @@ public class ItemScript : UIScript {
     // Item Index (Only Use By Give)
     private int clickSlotindex;
 
+    // 재료 아이템 스크롤 이동
+    public Button up;
+    public Button down;
+    public RectTransform content;
+
     // Drag Item Image RectTransform 콤포넌트 캐싱
     public RectTransform dragImage;
 
@@ -52,6 +57,9 @@ public class ItemScript : UIScript {
 
         // 조합 불가능한 아이템을 표시하고 있다면, 이 표시를 제거
         GetComponent<ContentScript>().IsMixOKReverse();
+
+        // 재료 아이템 스크롤을 최초로
+        content.localPosition = new Vector2(content.localPosition.x, 0);
 
         InitUI();
     }
@@ -128,11 +136,11 @@ public class ItemScript : UIScript {
     }
 
     // slot 클릭 시 좌측 칸에 클릭 아이템 정보 표시
-    public void EditClickItemInfo(string name, string exp, Image image, int index)
+    public void EditClickItemInfo(string name, string exp, Sprite image, int index)
     {
         itemName.text = name;
         itemExp.text = exp;
-        itemImage.sprite = image.sprite;
+        itemImage.sprite = image;
         itemImage.enabled = true;
         clickSlotindex = index;
     }
@@ -216,6 +224,24 @@ public class ItemScript : UIScript {
         GetComponent<ContentScript>().SortItemSlot();
         // 아이템을 주었다고 표시
         isGive = true;
+    }
+
+    // list를 한칸 올린다.
+    public void OnClickUp()
+    {
+        if (content.localPosition.y <= 0)
+            return;
+
+        content.localPosition = new Vector2(content.localPosition.x, content.localPosition.y - 180);
+    }
+
+    // list를 한칸 내린다.
+    public void OnClickDown()
+    {
+        if (content.localPosition.y >= 720)
+            return;
+
+        content.localPosition = new Vector2(content.localPosition.x, content.localPosition.y + 180);
     }
 
     // ================================================================== 비공개 메서드 정의 ======================================================

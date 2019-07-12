@@ -25,19 +25,24 @@ public class SoundScript : MonoBehaviour {
     // Effect Slider
     public Slider eSlider;
     // Effect 소리 정보
-    private AudioSource eSource;
-    private AudioSource eSource_Foot;
+    private List<AudioSource> eSources;
 
     bool isFirst = true;
 
 
     private void Start()
     {
-        bSource = GameObject.Find("BGMSound_Main").GetComponent<AudioSource>();
-        StaticInfoForSound.con_BGM_Audio = bSource;
-        //bSlider.value = StaticInfoForSound.BGMSound;
+        bSlider.value = StaticInfoForSound.BGMSound;
 
-        eSource = GameObject.Find("EffectSound").GetComponent<AudioSource>();
+        AudioSource[] effectList = FindObjectsOfType<AudioSource>();
+        eSources = new List<AudioSource>();
+        foreach (AudioSource tempEffect in effectList)
+        {
+            if (tempEffect.name == "BGMSound_Main" || tempEffect.name == "BGMSound_Sub" || tempEffect.name == "PlayerSound")
+                continue;
+
+            eSources.Add(tempEffect);
+        }
         eSlider.value = StaticInfoForSound.EffectSound;
     }
 
@@ -102,7 +107,8 @@ public class SoundScript : MonoBehaviour {
         {
             temp = slider.value;
         }
-        eSource.volume = temp;
+        foreach(AudioSource tempSource in eSources)
+            tempSource.volume = temp;
         StaticInfoForSound.EffectSound = temp;
 
         // speaker 이미지 옆의 빼빼로들 수정해야징

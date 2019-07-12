@@ -11,7 +11,7 @@ public class MissionScript : UIScript {
 
     [HideInInspector]
     public bool isClicked = false;
-
+    
     // Use this for initialization
     void Awake()
     {

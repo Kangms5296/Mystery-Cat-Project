@@ -49,6 +49,9 @@ public class InstantDataChangeReaction : DelayedReaction
             case "isCanSave":
                 instantData.isCanSave = newValue;
                 break;
+            case "isLibraryNpcOut":
+                instantData.isLibraryNpcOut = newValue;
+                break;
             default:
                 break;
         }

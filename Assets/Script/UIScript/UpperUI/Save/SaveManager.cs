@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class SaveManager : MonoBehaviour {
 
@@ -35,8 +36,13 @@ public class SaveManager : MonoBehaviour {
     void Start () {
         for(int i = 0; i < slots.Length; i++)
         {
-            SaveDataSystem saveData = Resources.Load<SaveDataSystem>("SaveData/Slot" + i);
-            slots[i].Init(saveData.isUsing, saveData.time, saveData.stage, saveData.mission);
+            if (File.Exists(Application.persistentDataPath + "SlotData" + i + ".json"))
+            {
+                string jsonString = File.ReadAllText(Application.persistentDataPath + "SlotData" + i + ".json");
+                SlotData tempData = JsonUtility.FromJson<SlotData>(jsonString);
+
+                slots[i].Init(true, tempData.time, tempData.stage, tempData.mission);
+            }
         }
 		
 	}
@@ -87,8 +93,9 @@ public class SaveManager : MonoBehaviour {
         }
         else
         {
-            saveCnatDisplater.SetActive(true);
             saveConfirmationDisplayer.SetActive(false);
+
+            saveCnatDisplater.SetActive(true);
         }
     }
 
@@ -96,9 +103,21 @@ public class SaveManager : MonoBehaviour {
     {
         if (FindObjectOfType<MainGame>().isCanSave)
         {
-            isSave = false;
-            saveReConfirmationDisplayer.SetActive(true);
-            saveConfirmationDisplayer.SetActive(false);
+            // 저장된 데이터가 있는 Slot을 Load 하는 경우
+            if (slots[conClick].isUsing)
+            {
+                saveConfirmationDisplayer.SetActive(false);
+
+                isSave = false;
+                saveReConfirmationDisplayer.SetActive(true);
+            }
+            // 저장된 데이터가 없는 Slot을 Load 하는 경우
+            else
+            {
+                saveConfirmationDisplayer.SetActive(false);
+
+                LoadCantDisplayer.SetActive(true);
+            }
         }
         else
         {
@@ -114,25 +133,25 @@ public class SaveManager : MonoBehaviour {
         // 현재 상태 저장
         if (isSave)
         {
-            SaveDataSystem saveData = Resources.Load<SaveDataSystem>("SaveData/Slot" + conClick);
-            saveData.SaveData();
+            SaveDataSystem save = FindObjectOfType<SaveDataSystem>();
 
-            slots[conClick].Init(saveData.isUsing, saveData.time, saveData.stage, saveData.mission);
+            // 저장
+            save.SaveData(conClick);
+
+            // slot 표시 변경
+            slots[conClick].Init(true, save.tempData.time, save.tempData.stage, save.tempData.mission);
         }
         // 지정 slot으로 게임 데이터 불러오기
         else
         {
-            SaveDataSystem saveData = Resources.Load<SaveDataSystem>("SaveData/Slot" + conClick);
-            if(saveData.isUsing)
-            {
-                StaticInfoForSound.playingSlotIndex = conClick;
-                loadReaction.InitAndReact();
-                saveDisplayer.SetActive(false);
-            }
-            else
-            {
-                LoadCantDisplayer.SetActive(true);
-            }
+            // 재시작 후 Load 할 데이터 지정
+            StaticInfoForSound.playingSlotIndex = conClick;
+
+            // 켜져있는 Canvas 제거
+            saveDisplayer.SetActive(false);
+            
+            // 재시작
+            loadReaction.InitAndReact();
         }
     }
 

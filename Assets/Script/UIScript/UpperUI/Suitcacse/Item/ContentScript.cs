@@ -151,6 +151,9 @@ public class ContentScript : MonoBehaviour {
                     {
                         tempBool = true;
                         itemSlots[k].CountPlus(1);
+
+
+                        GetComponent<ItemScript>().EditClickItemInfo(itemSlots[k].GetName(), itemSlots[k].GetExp(), itemSlots[k].GetImage(), -1);
                     }
                 }
                 // 만약 조합 결과 아이템과 같은 종류의 아이템이 없다면 마지막 slot에 추가시키고..
@@ -164,6 +167,8 @@ public class ContentScript : MonoBehaviour {
                     itemSlots[conSlot_item].CountPlus(1);
 
                     conSlot_item++;
+
+                    GetComponent<ItemScript>().EditClickItemInfo(tempName, tempExp, tempSprite, -1);
                 }
 
                 // 삭제된 Item slot에 의해 생긴 빈 공간을 정렬

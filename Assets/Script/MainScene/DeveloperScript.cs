@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DeveloperScript : MonoBehaviour {
@@ -7,7 +6,8 @@ public class DeveloperScript : MonoBehaviour {
     public CanvasGroup hangul;
     public CanvasGroup english;
 
-    public AudioSource source;
+    public AudioSource clickSource;
+    public AudioClip clicksound;
 
     private bool isHangul = true;
 
@@ -15,7 +15,8 @@ public class DeveloperScript : MonoBehaviour {
 
     public void OnClickNext()
     {
-        source.Play();
+        clickSource.clip = clicksound;
+        clickSource.Play();
 
         isHangul = !isHangul;
 

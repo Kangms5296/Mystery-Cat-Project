@@ -44,14 +44,15 @@ public class CutSceneManager : MonoBehaviour
 
     // script control variable
     private float conTime = 0;
-    private bool isFinishLine = false;
-    private bool doNextScript = false;
+    private bool isFinishLine = true;
+    private bool doNextScript = true;
 
     // Use this for initialization
     void Start()
     {
-        // 씬 BGM 관리
+        // 씬 Sound 지정
         audioSource.volume = StaticInfoForSound.BGMSound;
+        clickSound.volume = StaticInfoForSound.EffectSound;
 
         // 위의 변수들을 바탕으로 스크립팅 시작
         StartCoroutine(CutSceneCheckingForSkip());
@@ -109,8 +110,8 @@ public class CutSceneManager : MonoBehaviour
             conTime = 0;
 
             // scriptImg를 새로운 sprite로 교체
-            cutSceneScriptImg.sprite = scriptInfos[conLine].scriptImg;
             cutSceneScriptImg.color = new Color(1, 1, 1, 0);
+            cutSceneScriptImg.sprite = scriptInfos[conLine].scriptImg;
 
             // 이미지를 표시
             while (conTime < fadeinTime)
@@ -121,13 +122,12 @@ public class CutSceneManager : MonoBehaviour
                 yield return null;
             }
             cutSceneScriptImg.color = new Color(1, 1, 1, 1);
-            //cutSceneScriptText.color = new Color(tempColor.r, tempColor.g, tempColor.b, 1);
-            conTime = 0;
+            cutSceneScriptText.color = new Color(tempColor.r, tempColor.g, tempColor.b, 1);
 
             // 이제부터 화면을 터치 시 Skip or 다음 script 출력
             isFinishLine = false;
             doNextScript = false;
-
+            conTime = 0;
 
             // 해당 라인의 글자들을 일정 간격(delayPerChar)으로 입력
             for (int conChar = 0; conChar < scriptInfos[conLine].scriptText.Length; conChar++)

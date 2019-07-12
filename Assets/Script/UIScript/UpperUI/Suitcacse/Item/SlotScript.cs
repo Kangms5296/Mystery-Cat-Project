@@ -95,13 +95,13 @@ public class SlotScript : MonoBehaviour {
         if (use == USE.ITEM)
         {
             // 좌측에 아이템 정보 표시
-            itemScript.EditClickItemInfo(itemName, itemExp, itemImage, index);
+            itemScript.EditClickItemInfo(itemName, itemExp, itemImage.sprite, index);
         }
         // 클릭한 slot이 속해있는 List가 재료 리스트이면..
         else
         {
             // 좌측에 아이템 정보 표시
-            itemScript.EditClickItemInfo(itemName, itemExp, itemImage, index);
+            itemScript.EditClickItemInfo(itemName, itemExp, itemImage.sprite, index);
         }
     }
 

@@ -27,6 +27,7 @@ public class MainSceneManager : MonoBehaviour {
     public SountScriptInMainScene soundScript;
     public AudioSource bgm;
     public AudioSource effect;
+    public AudioClip uiClickClip;
     public AudioClip clockRotateClip;
 
 
@@ -46,6 +47,7 @@ public class MainSceneManager : MonoBehaviour {
     public void OnClickTouchToStart()
     {
         // 클릭 효과음
+        effect.clip = uiClickClip;
         effect.Play();
 
         // 시작 터치 UI 삭제
@@ -62,6 +64,7 @@ public class MainSceneManager : MonoBehaviour {
     public void OnClickStart()
     {
         // 클릭 효과음
+        effect.clip = uiClickClip;
         effect.Play();
 
         newLoadDisplayer.SetActive(true);
@@ -71,6 +74,7 @@ public class MainSceneManager : MonoBehaviour {
     public void OnClickStory()
     {
         // 클릭 효과음
+        effect.clip = uiClickClip;
         effect.Play();
 
         PlayerPrefs.SetString("AfterStory", "MainScene");
@@ -81,6 +85,7 @@ public class MainSceneManager : MonoBehaviour {
     public void OnClickDeveloper()
     {
         // 클릭 효과음
+        effect.clip = uiClickClip;
         effect.Play();
 
         developerDisplayer.SetActive(true);
@@ -90,6 +95,7 @@ public class MainSceneManager : MonoBehaviour {
     public void OnClickDeveloperClose()
     {
         // 클릭 효과음
+        effect.clip = uiClickClip;
         effect.Play();
 
         developerDisplayer.SetActive(false);
@@ -99,6 +105,7 @@ public class MainSceneManager : MonoBehaviour {
     public void OnClickSound()
     {
         // 클릭 효과음
+        effect.clip = uiClickClip;
         effect.Play();
 
         soundScript.soundDisplayer.SetActive(true);
@@ -108,6 +115,7 @@ public class MainSceneManager : MonoBehaviour {
     public void OnClickSoundClose()
     {
         // 클릭 효과음
+        effect.clip = uiClickClip;
         effect.Play();
 
         soundScript.soundDisplayer.SetActive(false);
@@ -115,9 +123,6 @@ public class MainSceneManager : MonoBehaviour {
     
     public void OnClickNewGame()
     {
-        // 클릭 효과음
-        effect.Play();
-        
         newLoadDisplayer.SetActive(false);
 
         StaticInfoForSound.playingSlotIndex = 4;
@@ -128,6 +133,7 @@ public class MainSceneManager : MonoBehaviour {
     public void OnClickLoadGame()
     {
         // 클릭 효과음
+        effect.clip = uiClickClip;
         effect.Play();
 
         newLoadDisplayer.SetActive(false);
@@ -149,6 +155,7 @@ public class MainSceneManager : MonoBehaviour {
         blackPanel.gameObject.SetActive(true);
 
         effect.clip = clockRotateClip;
+        effect.Play();
 
         // 시계 회전
         const float RotateSpeed = 60f;

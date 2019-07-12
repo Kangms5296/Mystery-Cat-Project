@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SaveSlot : MonoBehaviour {
 
+    public bool isUsing;
+
     private Text _time;
     private Text _pos;
     private Text _mission;
@@ -19,6 +21,7 @@ public class SaveSlot : MonoBehaviour {
         _mission = transform.Find("Mission").GetComponent<Text>();
         _empty = transform.Find("Empty").gameObject;
 
+        this.isUsing = isUsing;
         if (isUsing)
         {
             _time.text = time;
@@ -50,14 +53,14 @@ public class SaveSlot : MonoBehaviour {
                 return "바";
             case Stage.Home:
                 return "옛날 집";
-            case Stage.Library1:
-            case Stage.Library2:
-            case Stage.Library3:
-            case Stage.Library1T:
-            case Stage.Library2T:
+            case Stage.Library_1:
+            case Stage.Library_2:
+            case Stage.Library_3:
+            case Stage.Library1_Tutorial:
+            case Stage.Library2_Tutorial:
                 return "도서관";
-            case Stage.Viliage:
-            case Stage.ViliageT:
+            case Stage.Village:
+            case Stage.Village_Tutorial:
                 return "광장";
         }
         return "";
