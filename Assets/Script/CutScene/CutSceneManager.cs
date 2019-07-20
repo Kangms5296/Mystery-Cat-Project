@@ -139,12 +139,11 @@ public class CutSceneManager : MonoBehaviour
                         cutSceneScriptText.text = cutSceneScriptText.text += '\n';
                         continue;
                     case 'd':
-                        float T1 = 0.5f;
-                        if (delayPerChar == 0)
-                            T1 = 0;
-
+                        float T1 = 0.8f;
                         for (float temp = 0; temp < T1;)
                         {
+                            if (delayPerChar == 0)
+                                T1 = 0;
                             temp += Time.deltaTime * speed;
                             yield return null;
                         }

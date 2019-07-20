@@ -39,10 +39,7 @@ public class LookMode : TouchMode
 
         float tempX = observationAreaBG.anchoredPosition.x;
         float tempY = observationAreaBG.anchoredPosition.y;
-
-
-        Debug.Log(observationAreaBG.anchoredPosition);
-
+        
         observationAreaBG.anchoredPosition = new Vector2(tempX, tempY);
         observationAreaInput.anchoredPosition = firstInputPosition + firstBgPosition - new Vector2(tempX, tempY);
     }

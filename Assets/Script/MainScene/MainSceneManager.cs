@@ -15,6 +15,11 @@ public class MainSceneManager : MonoBehaviour {
     public CanvasGroup stageUI;
     public Image stageBlack;
     public RectTransform hourHand;
+    public RectTransform clock;
+    public Image cantStage1;
+    public Image cantStage2;
+    public Image cantStage3;
+
 
     [Header("For New Game/Load Game")]
     public GameObject newLoadDisplayer;
@@ -123,6 +128,10 @@ public class MainSceneManager : MonoBehaviour {
     
     public void OnClickNewGame()
     {
+        // 클릭 효과음
+        effect.clip = uiClickClip;
+        effect.Play();
+
         newLoadDisplayer.SetActive(false);
 
         StaticInfoForSound.playingSlotIndex = 4;
@@ -142,6 +151,10 @@ public class MainSceneManager : MonoBehaviour {
 
     public void LoadGame(float rotateValue)
     {
+        // 클릭 효과음
+        effect.clip = uiClickClip;
+        effect.Play();
+
         StartCoroutine(StartingLoadGame(rotateValue));
     }
 
@@ -149,13 +162,24 @@ public class MainSceneManager : MonoBehaviour {
 
     private IEnumerator StartingNewGame()
     {
-        yield return null;
-
         // 터치를 막는다.
         blackPanel.gameObject.SetActive(true);
 
+        // 시계가 약간 커지며 현재까지의 stage가 밝아진다.
+        float conAlpha = 0;
+        float maxAlpha = 0.5f;
+        while (conAlpha < maxAlpha)
+        {
+            clock.localScale = new Vector3(1.1f + 0.05f * conAlpha * 2, 1.1f + 0.05f * conAlpha * 2, 1);
+            cantStage1.color = new Color(1, 1, 1, 1 - conAlpha * 2);
+
+            conAlpha += Time.deltaTime;
+            yield return null;
+        }
+        clock.localScale = new Vector3(1.15f, 1.15f, 1);
+        cantStage1.color = new Color(1, 1, 1, 0);
+
         effect.clip = clockRotateClip;
-        effect.Play();
 
         // 시계 회전
         const float RotateSpeed = 60f;
@@ -164,7 +188,6 @@ public class MainSceneManager : MonoBehaviour {
         float tempfloat = 0;
         while(conRotate > maxRotate)
         {
-
             hourHand.localEulerAngles = new Vector3(0, 0, conRotate);
             conRotate -= Time.deltaTime * RotateSpeed;
             tempfloat += Time.deltaTime * RotateSpeed;
@@ -199,11 +222,23 @@ public class MainSceneManager : MonoBehaviour {
 
     private IEnumerator StartingLoadGame(float rotateValue)
     {
-        yield return null;
-
         // 터치를 막는다.
         blackPanel.gameObject.SetActive(true);
 
+        // 시계가 약간 커지며 현재까지의 stage가 밝아진다.
+        float conAlpha = 0;
+        float maxAlpha = 0.5f;
+        while (conAlpha < maxAlpha)
+        {
+            clock.localScale = new Vector3(1.1f + 0.05f * conAlpha, 1.1f + 0.05f * conAlpha, 1);
+            cantStage1.color = new Color(1, 1, 1, 1 - conAlpha);
+
+            conAlpha += Time.deltaTime;
+            yield return null;
+        }
+        clock.localScale = new Vector3(1.15f, 1.15f, 1);
+        cantStage1.color = new Color(1, 1, 1, 0);
+        
         effect.clip = clockRotateClip;
 
         // 시계 회전
@@ -213,7 +248,6 @@ public class MainSceneManager : MonoBehaviour {
         float tempfloat = 0;
         while (conRotate > maxRotate)
         {
-
             hourHand.localEulerAngles = new Vector3(0, 0, conRotate);
             conRotate -= Time.deltaTime * RotateSpeed;
             tempfloat += Time.deltaTime * RotateSpeed;
