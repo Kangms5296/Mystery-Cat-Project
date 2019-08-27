@@ -1,5 +1,8 @@
 ﻿public interface TouchMode {
 
+    // UI 화면 표시 전 세팅할 내용
+    void Init();
+
     // 현재 클릭한 ObservationWay에 대한, NPC 버튼다운 패턴 정의
     void OnButtonDownNPC(TouchPointScript touchPoint);
 

@@ -37,9 +37,8 @@ public class WaitingUntilClickDocuCharReaction : DelayedReaction
         while (docuScript.activeSelf == true)
             yield return null;
 
-        button.onClick.RemoveListener(ClickInfo);
 
-        // 조합을 성공하였는가?
+        // 문서창 속 캐릭터를 확인하였는가?
         if (isCharClick)
             afterCheckReaction.InitAndReact();
         else
@@ -53,5 +52,7 @@ public class WaitingUntilClickDocuCharReaction : DelayedReaction
     void ClickInfo()
     {
         isCharClick = true;
+
+        button.onClick.RemoveListener(ClickInfo);
     }
 }

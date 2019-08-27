@@ -7,6 +7,8 @@ using UnityEngine.UI;
 // 현재 Displayer 우측 버튼 중 Look 버튼이 눌러져있을때, 아래 행동에 대한 처리 방법을 기술
 public class LookMode : TouchMode
 {
+    private bool canLook;
+
     // 돋보기 아이콘들
     private RectTransform observationAreaBG;
     private RectTransform observationAreaInput;
@@ -23,6 +25,10 @@ public class LookMode : TouchMode
 
     // ===================================================== public function ===========================================================
 
+    public void Init()
+    {
+        canLook = true;
+    }
 
     // NPC 버튼다운 패턴 정의
     public void OnButtonDownNPC(TouchPointScript conTouch)
@@ -88,7 +94,7 @@ public class LookMode : TouchMode
     
     public void InTouchArea(TouchPointScript conTouch)
     {
-        if (conTouch.name != "Default")
+        if (conTouch.name != "Default" && canLook)
             StaticCorouting.Start("TimeCounting", TimeCounting(conTouch));
     }
 
@@ -98,7 +104,6 @@ public class LookMode : TouchMode
         conTouch = null;
     }
 
-
     // ===================================================== private function ===========================================================
 
     // 지정된 TouchPoint 최소 관찰 시간 제어
@@ -106,7 +111,7 @@ public class LookMode : TouchMode
     {
         float touchPointTime = 0.0f;
 
-        // 최소 2초동안 TouchPoint를 돋보기로 보아야 관찰한것으로 인정
+        // 1초동안 TouchPoint를 돋보기로 보아야 관찰한것으로 인정
         while (touchPointTime < 1.0f)
         {
             touchPointTime += Time.deltaTime;
@@ -116,10 +121,13 @@ public class LookMode : TouchMode
         // 우선 우유배달소년만 다르게 작동되므로 따로 하드코딩.. 시간이 없다..
         if (conTouch.nPCSpecialWork == TouchPointScript.NPCSpecialWork.MILKBOY)
         {
-            GameObject.FindObjectOfType<ObservationManager>().GetItem("기 록", "흉터 같은 게 있다. 좀 갈라진 것 같다…?", "", GameObject.Find("07_AfterFindScar").GetComponent<ReactionCollection>()); ;
+            canLook = false;
+
+            GameObject.FindObjectOfType<ObservationManager>().GetItem("기 록", "흉터 같은 게 있다. 좀 갈라진 것 같다…?", "", GameObject.Find("07_AfterFindScar").GetComponent<ReactionCollection>());
         }
         else
         {
+            canLook = true;
 
             // 해당 이벤트들을 처리
             ParsingData tempData = Resources.Load("CSVData/All Observation List Asset") as ParsingData;

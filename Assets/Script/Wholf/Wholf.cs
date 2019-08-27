@@ -9,6 +9,7 @@ public class Wholf : MonoBehaviour {
 	{
 		if (col.tag == "Player") {
 			if (interactable) {
+                col.GetComponent<BoxCollider2D>().enabled = false;
 				col.GetComponent<NewPlayer> ().Stop ();
 				interactable.Interact ();
 			}

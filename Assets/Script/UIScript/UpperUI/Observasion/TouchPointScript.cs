@@ -13,10 +13,6 @@ public class TouchPointScript : MonoBehaviour {
 
     private ObservationManager eventManager;
 
-
-    [HideInInspector]
-    public int touchCount;
-
     public enum NPCSpecialWork { ELSE, MILKBOY };
     public NPCSpecialWork nPCSpecialWork;
 

@@ -9,9 +9,13 @@ public class SaveManager : MonoBehaviour {
     public ReactionCollection loadReaction;
 
     [Header("Displayer")]
+
+
+    public GameObject reactionButton;
+
     // 이전으로 돌아갈 canvas
-    public GameObject settingDisplayer;
-    // 메인 canvas
+    public GameObject mainDisplayer;
+    // 저장 canvas
     public GameObject saveDisplayer;
     // 저장 / 불러오기 선택 canvas
     public GameObject saveConfirmationDisplayer;
@@ -50,7 +54,7 @@ public class SaveManager : MonoBehaviour {
 
     public void OnClickIcon()
     {
-        settingDisplayer.SetActive(false);
+        mainDisplayer.SetActive(false);
         saveDisplayer.SetActive(true);
 
         if (conClick != -1)
@@ -61,14 +65,16 @@ public class SaveManager : MonoBehaviour {
         
     }
 
-    public void OnClickExit()
+    public void OnClickClose()
     {
         saveDisplayer.SetActive(false);
+
+        reactionButton.SetActive(false);
     }
 
     public void OnClickBefore()
     {
-        settingDisplayer.SetActive(true);
+        mainDisplayer.SetActive(true);
         saveDisplayer.SetActive(false);
     }
 

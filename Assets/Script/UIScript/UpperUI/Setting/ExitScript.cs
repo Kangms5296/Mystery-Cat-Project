@@ -7,12 +7,14 @@ public class ExitScript : MonoBehaviour {
 
     public ReactionCollection exitReaction;
 
-    // 환경설정 canvas
-    public GameObject settingDisplayer;
+    public GameObject reactionButton;
 
-    // 종료 canvas
+    // 되돌아갈 canvas
+    public GameObject mainDisplayer;
+
+    // 현재 canvas
     public GameObject exitDisplayer;
-
+    
 
     public void OnClickYes()
     {
@@ -28,13 +30,12 @@ public class ExitScript : MonoBehaviour {
         exitDisplayer.gameObject.SetActive(false);
 
         // 환경설정 창을 킨다.
-        settingDisplayer.gameObject.SetActive(true);
+        mainDisplayer.gameObject.SetActive(true);
     }
 
     // 종료 버튼 클릭 - UI 외부 영역 클릭
     public void OnClickClose()
     {
-        // 종료 창을 끈다.
-        exitDisplayer.gameObject.SetActive(false);
+        reactionButton.SetActive(false);
     }
 }

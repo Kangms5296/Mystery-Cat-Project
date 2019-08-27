@@ -20,14 +20,14 @@ public class ChoiceFrame : MonoBehaviour {
 		this.secondText.text = secondText;
 
 		firstButton.onClick.AddListener(delegate{
-			transform.parent.GetComponent<TextDisplayer>().reactionButton.enabled = true;
 			firstReaction.InitAndReact();
-			HideChoiceFrame();
+            transform.parent.GetComponent<TextDisplayer>().reactionButton.enabled = true;
+            HideChoiceFrame();
 		});
 		secondButton.onClick.AddListener (delegate {
-			transform.parent.GetComponent<TextDisplayer>().reactionButton.enabled = true;
 			secondReaction.InitAndReact ();
-			HideChoiceFrame();
+            transform.parent.GetComponent<TextDisplayer>().reactionButton.enabled = true;
+            HideChoiceFrame();
 		});
 
         StartCoroutine(Visible());

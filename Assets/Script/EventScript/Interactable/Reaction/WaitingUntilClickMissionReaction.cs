@@ -10,7 +10,6 @@ public class WaitingUntilClickMissionReaction : DelayedReaction
 
     protected override void ImmediateReaction()
     {
-
         myCorotine = CoroutineHandler.Start_Coroutine(Wating()).gameObject;
     }
 
@@ -28,7 +27,7 @@ public class WaitingUntilClickMissionReaction : DelayedReaction
                 break;
             }
         }
-
+        
         Destroy(myCorotine);
     }
 }

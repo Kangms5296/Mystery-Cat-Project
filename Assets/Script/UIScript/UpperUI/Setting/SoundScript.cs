@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class SoundScript : MonoBehaviour {
 
+    public GameObject reactionButton;
+
     // 환경설정 canvas
-    public GameObject settingDisplayer;
+    public GameObject mainDisplayer;
 
     // 사운드 canvas
     public GameObject soundDisplayer;
@@ -141,7 +143,9 @@ public class SoundScript : MonoBehaviour {
     // close 버튼 클릭
     public void OnClickClose()
     {
-        soundDisplayer.gameObject.SetActive(false);
+        soundDisplayer.SetActive(false);
+
+        reactionButton.gameObject.SetActive(false);
     }
 
     // back 버튼 클릭
@@ -149,6 +153,6 @@ public class SoundScript : MonoBehaviour {
     {
         soundDisplayer.gameObject.SetActive(false);
 
-        settingDisplayer.gameObject.SetActive(true);
+        mainDisplayer.gameObject.SetActive(true);
     }
 }

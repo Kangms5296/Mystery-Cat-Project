@@ -154,7 +154,7 @@ public abstract class NewCharacter : MonoBehaviour {
 
         isMoving = true;
 
-        while (!(trans.position.x == movePoint.x || trans.position.y == movePoint.y))
+        while (Vector2.Distance(trans.position, movePoint) > 0.01f)
         {
             trans.position = Vector3.MoveTowards(trans.position, new Vector3(movePoint.x, movePoint.y, movePoint.y), speed * Time.deltaTime);
             trans.position = new Vector3(trans.position.x, trans.position.y, trans.position.y);

@@ -88,17 +88,23 @@ public class PuzzleScript : MonoBehaviour
     private IEnumerator RotatingClock()
     {
         // 현재 시간 시계가 가리키는 시간 확인
-        int conHour;
-        int conMinute;
-        conHour = (int)((hourRotate.rotation.eulerAngles.z % 360) / 30);
-        conMinute = (int)((minuteRotate.rotation.eulerAngles.z % 360) / 6);
+        int conHour = (int)((hourRotate.rotation.eulerAngles.z % 360) / 30);
+        int conMinute = (int)((minuteRotate.rotation.eulerAngles.z % 360) / 6);
+
+        // 속도 계산을 위한 목표 시간 계산
+        int conTemp = conHour * 60 + conMinute;
+        int goalTemp = papers[clickIndex].hour * 60 + papers[clickIndex].minute;
 
         // 시계를 돌릴 방향 지장
         float rotateDir;
         if (papers[clickIndex].hour > conHour)
-            rotateDir = 5;
+        {
+            rotateDir = 5 + (goalTemp - conTemp) / 100;
+        }
         else if (papers[clickIndex].hour < conHour)
-            rotateDir = -5;
+        {
+            rotateDir = -5 - (conTemp - goalTemp) / 100;
+        }
         else
         {
             if (papers[clickIndex].minute > conMinute)
@@ -112,15 +118,16 @@ public class PuzzleScript : MonoBehaviour
         {
             conHour = (int)((hourRotate.rotation.eulerAngles.z % 360) / 30);
             conMinute = (int)((minuteRotate.rotation.eulerAngles.z % 360) / 6);
-            if (conHour == papers[clickIndex].hour && conMinute == papers[clickIndex].minute)
-            {
+            conTemp = conHour * 60 + conMinute;
+
+            if (rotateDir > 0 && conTemp > goalTemp)
                 break;
-            }
-            else
-            {
-                minuteRotate.Rotate(0, 0, rotateDir);
-                hourRotate.Rotate(0, 0, rotateDir / 12);
-            }
+            else if (rotateDir < 0 && conTemp < goalTemp)
+                break;
+
+            minuteRotate.Rotate(0, 0, rotateDir);
+            hourRotate.Rotate(0, 0, rotateDir / 12);
+
             yield return null;
         }
 

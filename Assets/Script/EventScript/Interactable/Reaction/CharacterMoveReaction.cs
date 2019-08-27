@@ -17,9 +17,8 @@ public class CharacterMoveReaction : DelayedReaction
 
 
 	protected override void ImmediateReaction()
-	{
-        
-		FSLocator.textDisplayer.reactionButton.enabled = false;
+    {
+        FSLocator.textDisplayer.reactionButton.enabled = false;
 
         myCorotine = CoroutineHandler.Start_Coroutine(CheckAllMoving()).gameObject;
     }

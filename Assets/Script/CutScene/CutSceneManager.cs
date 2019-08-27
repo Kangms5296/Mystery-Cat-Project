@@ -6,18 +6,35 @@ using UnityEngine.SceneManagement;
 
 public class CutSceneManager : MonoBehaviour
 {
+    [Header("Information Text Info")]
+    public CanvasGroup infoMain;
+    public Text[] infoText;
+    public float infoTextStartDelay;
+    public float infoTextFadeInDelay;
+    public float infoTextFadeOutDelay;
+    public float infoTextDelayPerString;
+    public float infoTextEndDelay;
+
+    public CanvasGroup infoChoices;
+    public Button choice1;
+    public Button choice2;
+
     [System.Serializable]
     public struct ScriptInfo
     {
         public string scriptText;
         public Sprite scriptImg;
     }
+
+    [Header("Story Info")]
     public ScriptInfo[] scriptInfos;
 
     // scriptText show Text
     public Text cutSceneScriptText;
     // scriptImg show Image
     public Image cutSceneScriptImg;
+    // skip Button
+    public Button skipBtn;
 
     // Sound Source(BGM)
     public AudioSource audioSource;
@@ -39,8 +56,9 @@ public class CutSceneManager : MonoBehaviour
     // last black pannel fade in time
     public float fadeTime;
 
+    public AudioSource bgm;
     public AudioSource clickSound;
-    public AudioClip SkipTouchSound;
+    public AudioSource skipSound;
 
     // script control variable
     private float conTime = 0;
@@ -53,14 +71,38 @@ public class CutSceneManager : MonoBehaviour
         // 씬 Sound 지정
         audioSource.volume = StaticInfoForSound.BGMSound;
         clickSound.volume = StaticInfoForSound.EffectSound;
+        skipSound.volume = StaticInfoForSound.EffectSound;
 
-        // 위의 변수들을 바탕으로 스크립팅 시작
-        StartCoroutine(CutSceneCheckingForSkip());
+        if (PlayerPrefs.GetString("AfterStory") == "Stage01")
+        {
+            // 안내 후 스토리 시작
+            StartCoroutine(InformationTextingCoroutine());
+        }
+        else
+        {
+            // 바로 스토리 시작
+            infoMain.gameObject.SetActive(false);
+
+            bgm.Play();
+            StartCoroutine(CutSceneCheckingForSkip());
+            skipBtn.gameObject.SetActive(true);
+        }
     }
 
 
 
     // ================================================================= public function ==================================================================
+
+
+    public void OnClickChoice()
+    {
+        skipSound.Play();
+
+        choice1.enabled = false;
+        choice2.enabled = false;
+
+        StartCoroutine(InformationTextingEndCoroutine());
+    }
 
     public void OnClickTouchBtn()
     {
@@ -80,13 +122,79 @@ public class CutSceneManager : MonoBehaviour
     // skip 버튼 클릭
     public void OnClickSkip()
     {
-        clickSound.clip = SkipTouchSound;
-        clickSound.Play();
+        skipSound.Play();
         
         StartCoroutine(VisibleBlackPanel());
     }
 
     // ================================================================= private function ==================================================================
+
+    IEnumerator InformationTextingCoroutine()
+    {
+        float conTime = 0;
+        while(conTime < infoTextStartDelay)
+        {
+            conTime += Time.deltaTime;
+            yield return null;
+        }
+        conTime = 0;
+
+        for(int i = 0; i < infoText.Length; i++)
+        {
+            while (conTime < infoTextFadeInDelay)
+            {
+                infoText[i].color = new Color(250.0f / 255, 250.0f / 255, 220.0f / 255, conTime / infoTextFadeInDelay);
+                conTime += Time.deltaTime;
+                yield return null;
+            }
+            infoText[i].color = new Color(250.0f / 255, 250.0f / 255, 220.0f / 255, 1);
+            conTime = 0;
+
+            while (conTime < infoTextDelayPerString)
+            {
+                conTime += Time.deltaTime;
+                yield return null;
+            }
+            conTime = 0;
+        }
+
+        while (conTime < infoTextFadeInDelay)
+        {
+            conTime += Time.deltaTime;
+            infoChoices.alpha = conTime / infoTextFadeInDelay;
+            yield return null;
+        }
+        conTime = 0;
+        choice1.enabled = true;
+        choice2.enabled = true;
+    }
+
+    IEnumerator InformationTextingEndCoroutine()
+    {
+        float conTime = 0;
+        while (conTime < infoTextFadeOutDelay)
+        {
+            conTime += Time.deltaTime;
+            infoMain.alpha = 1 - conTime / infoTextFadeOutDelay;
+            yield return null;
+        }
+        conTime = 0;
+
+        while (conTime < infoTextEndDelay)
+        {
+            conTime += Time.deltaTime;
+            yield return null;
+        }
+        conTime = 0;
+
+        infoMain.gameObject.SetActive(false);
+
+        bgm.Play();
+        StartCoroutine(CutSceneCheckingForSkip());
+        skipBtn.gameObject.SetActive(true);
+
+
+    }
 
     // skip을 누르거나, 스크립팅이 끝날 때 까지 대사를 출력
     IEnumerator CutSceneCheckingForSkip()

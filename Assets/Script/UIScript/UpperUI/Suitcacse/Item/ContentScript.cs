@@ -215,6 +215,20 @@ public class ContentScript : MonoBehaviour {
         }
     }
 
+    public bool IsMaterialSlotFull()
+    {
+        bool isFiull = true;
+        foreach (SlotScript slot in materialSlots)
+        {
+            if (slot.GetID() == "")
+            {
+                isFiull = false;
+                break;
+            }
+        }
+        return isFiull;
+    }
+
     // 조합 하려는 item을 조합 창으로 들고 왔는지 판별
     public void Enter()
     {

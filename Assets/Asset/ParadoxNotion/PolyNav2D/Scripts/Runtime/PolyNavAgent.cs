@@ -300,7 +300,7 @@ namespace PolyNav{
 
             //move the agent
             //position += velocity * Time.deltaTime;
-            GetComponent<NewNpc>().MoveToVector(velocity * Time.deltaTime * 20);
+            GetComponent<NewNpc>().MoveToVector(velocity * 0.6f);
 
             //restrict just after movement
             Restrict();

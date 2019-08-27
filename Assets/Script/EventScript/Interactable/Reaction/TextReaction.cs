@@ -6,7 +6,6 @@ public class TextReaction : DelayedReaction
     public string characterName;
     public Sprite characterImage;
 
-
     protected override void SpecificInit()
     {
     }

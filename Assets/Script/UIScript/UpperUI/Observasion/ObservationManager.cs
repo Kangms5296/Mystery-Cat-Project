@@ -43,9 +43,6 @@ public class ObservationManager : MonoBehaviour {
     public AudioClip audioClipForClick;
     private ReactionCollection afterReaction;
 
-    
-
-
 
     // 현재 대화하고 있는 NPC 정보 캐싱
     [HideInInspector]
@@ -71,12 +68,21 @@ public class ObservationManager : MonoBehaviour {
         NPCImage.sprite = npcSprite;
         NPCBigImage.sprite = npcSprite;
 
+        // 각 모드들 준비
+        touchMode = PullMode.pullMode;
+        touchMode.Init();
+        touchMode = LookMode.lookMode;
+        touchMode.Init();
+        touchMode = PincerMode.pincerMode;
+        touchMode.Init();
+
         // Displayer 우측 버튼 초기화
         observationWayManager.Init(disabledPull, disabledLook, disabledPincer);
 
         // Displayer 좌측 Text들 초기화
         GottenItemTextInit();
         ChatTextInit();
+
 
         // Displayer 화면에 표시
         Displayer.SetActive(true);
@@ -118,7 +124,7 @@ public class ObservationManager : MonoBehaviour {
 
         touchMode = DefaultMode.defaultMode;
     }
-
+    
     // Displayer 우측 버튼 중 Touch 버튼 클릭
     public void OnClickPullBtn()
     {
@@ -187,6 +193,7 @@ public class ObservationManager : MonoBehaviour {
         lookEvents.SetActive(false);
 
         touchMode = PincerMode.pincerMode;
+        touchMode.Init();
     }
 
     // 현재 mode에서의 버튼다운 수행
@@ -291,6 +298,14 @@ public class ObservationManager : MonoBehaviour {
             afterReaction = null;
         }
     }
+
+    // NPC 이미지 교체
+    public void ChangeNpcImage(Sprite newImage)
+    {
+        // 이미지를 지정
+        NPCImage.sprite = newImage;
+        NPCBigImage.sprite = newImage;
+    }
     
 
     // ================================================= private Function ===========================================================
@@ -313,11 +328,11 @@ public class ObservationManager : MonoBehaviour {
         return NpcNameConverter.Converter(name);
     }
 
-    // 얻은 아이템에 대한 정보를 우측에 표시
+    // 얻은 아이템에 대한 정보를 좌측 상단에 표시
     IEnumerator ItemInfoText(string itemName, string itemExp)
     {
         float conTypingTime = 0;
-        float maxTypingTime = 0.05f;
+        float maxTypingTime = 0.02f;
 
         // 기존의 내용을 지운다.
         gottenItemNameText.text = "";
@@ -373,7 +388,7 @@ public class ObservationManager : MonoBehaviour {
     IEnumerator TalkScriptText(string talkScript)
     {
         float conTypingTime = 0;
-        float maxTypingTime = 0.05f;
+        float maxTypingTime = 0.02f;
 
         // 기존의 내용을 지운다.
         chatText.text = "";

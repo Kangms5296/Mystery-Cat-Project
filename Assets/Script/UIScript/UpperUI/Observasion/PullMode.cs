@@ -25,9 +25,14 @@ public class PullMode : TouchMode
 
     public TouchPointScript conTouch;
 
+    private int milkboyEarPullCount;
 
     // ===================================================== public function ===========================================================
 
+    public void Init()
+    {
+        milkboyEarPullCount = 0;
+    }
 
     public void OnButtonDownNPC(TouchPointScript conTouch)
     {
@@ -56,21 +61,36 @@ public class PullMode : TouchMode
             // 우선 우유배달소년만 다르게 작동되므로 따로 하드코딩.. 시간이 없다..
             if (conTouch.nPCSpecialWork == TouchPointScript.NPCSpecialWork.MILKBOY)
             {
-                switch (conTouch.touchCount)
+                Sprite newImage;
+
+                switch (milkboyEarPullCount)
                 {
                     case 0:
                         // 대사만 처리
                         GameObject.FindObjectOfType<ObservationManager>().GetItem("", "", "냥군님…? 아파옹…", null);
-                        conTouch.touchCount++;
+                        milkboyEarPullCount++;
+
+                        // 귀가 조금 찢어진 이미지로 교체
+                        newImage = Resources.Load<Sprite>("ArtResource/Stage1/ETC/우유소년_귀조금찢어짐");
+                        GameObject.FindObjectOfType<ObservationManager>().ChangeNpcImage(newImage);
                         break;
                     case 1:
                         // 대사만 처리
                         GameObject.FindObjectOfType<ObservationManager>().GetItem("", "", "냥군님… 적당히t하시라옹…", null);
-                        conTouch.touchCount++;
+                        milkboyEarPullCount++;
+
+                        // 귀가 찢어진 이미지로 교체
+                        newImage = Resources.Load<Sprite>("ArtResource/Stage1/ETC/우유소년_귀찢어짐");
+                        GameObject.FindObjectOfType<ObservationManager>().ChangeNpcImage(newImage);
+
                         break;
                     case 2:
                         // 귀 획득
                         GameObject.FindObjectOfType<ObservationManager>().GetItem("가짜 귀", "우유배달소년이 끼우던 가짜 귀", "야, 그만 하라고 했지.", GameObject.Find("08_AfterGetToyEar").GetComponent<ReactionCollection>());
+
+                        // 귀가 찢어진 이미지로 교체
+                        newImage = Resources.Load<Sprite>("ArtResource/Stage1/ETC/우유소년_귀뜯어짐");
+                        GameObject.FindObjectOfType<ObservationManager>().ChangeNpcImage(newImage);
                         break;
                 }
                 return;

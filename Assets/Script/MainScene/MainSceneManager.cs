@@ -217,7 +217,7 @@ public class MainSceneManager : MonoBehaviour {
         }
 
         // 씬 이동
-        SceneManager.LoadScene("TemporaryCutScene");
+        SceneManager.LoadScene("StoryCutScene");
     }
 
     private IEnumerator StartingLoadGame(float rotateValue)
@@ -298,7 +298,7 @@ public class MainSceneManager : MonoBehaviour {
         }
 
         // 씬 이동
-        SceneManager.LoadScene("TemporaryCutScene");
+        SceneManager.LoadScene("StoryCutScene");
     }
 
     private IEnumerator UIVisible()

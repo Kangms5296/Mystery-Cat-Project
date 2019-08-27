@@ -5,43 +5,53 @@ using UnityEngine.UI;
 
 public class SettingScript : UIScript {
 
-    // 환경설정 canvas
-    public GameObject settingDisplayer;
+    public GameObject reactionButton;
 
+    // 메인 canvas
+    public GameObject mainDisplayer;
+    
     // 사운드 canvas
     public GameObject soundDisplayer;
 
+    // 저장 canvas
+    public GameObject saveDisplayer;
+
     // 종료 canvas
     public GameObject exitDisplayer;
-
+    
 
     public override void OnClickUI()
     {
         // 환경설정 창을 킨다.
-        settingDisplayer.gameObject.SetActive(true);
-    }
+        mainDisplayer.SetActive(true);
 
+        // 화면에 표시
+        reactionButton.SetActive(true);
+    }
+    
     public void OnClickClose()
     {
-        // 환경설정 창을 끈다.
-        settingDisplayer.gameObject.SetActive(false);
+        reactionButton.SetActive(false);
     }
 
     public void OnClickSound()
     {
-        // 환경설정 창을 끈다.
-        settingDisplayer.gameObject.SetActive(false);
+        mainDisplayer.SetActive(false);
 
-        // 사운드 창을 킨다.
-        soundDisplayer.gameObject.SetActive(true);
+        soundDisplayer.SetActive(true);
+    }
+
+    public void OnClickSave()
+    {
+        mainDisplayer.SetActive(false);
+
+        saveDisplayer.SetActive(true);
     }
 
     public void OnClickExit()
     {
-        // 환경설정 창을 끈다.
-        settingDisplayer.gameObject.SetActive(false);
+        mainDisplayer.SetActive(false);
 
-        // 종료 창을 킨다.
-        exitDisplayer.gameObject.SetActive(true);
+        exitDisplayer.SetActive(true);
     }
 }

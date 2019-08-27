@@ -69,7 +69,6 @@ public class ObservationWayManager : MonoBehaviour {
         activatedBtnState = ActivatedBtnState.Default;
 
         // 최초 지정 상태를 총괄 manager에게 전달
-        //observationManager.OnClickPullBtn();
         observationManager.OnClickDefaultBtn();
     }
 

@@ -37,6 +37,10 @@ public class PincerMode : TouchMode
 
     // ===================================================== public function ===========================================================
 
+    public void Init()
+    {
+
+    }
 
     public void OnButtonDownNPC(TouchPointScript conTouch)
     {

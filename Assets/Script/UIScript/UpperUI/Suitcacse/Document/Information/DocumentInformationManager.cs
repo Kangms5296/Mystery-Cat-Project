@@ -110,6 +110,8 @@ public class DocumentInformationManager : MonoBehaviour {
             InfoImage.sprite = clickSlot.informationImage;
             InfoImage.enabled = true;
             expText.text = clickSlot.informationExp;
+
+            conClickSlot.transform.Find("New").GetComponent<Image>().enabled = false;
         }
         expRect.anchoredPosition = new Vector2(0, -75f);
     }
@@ -146,6 +148,7 @@ public class DocumentInformationManager : MonoBehaviour {
             {
                 // 해당 슬롯을 해금
                 slot.transform.Find("Text").GetComponent<Text>().text = infoName;
+                slot.transform.Find("New").GetComponent<Image>().enabled = true;
                 break;
             }
         }
