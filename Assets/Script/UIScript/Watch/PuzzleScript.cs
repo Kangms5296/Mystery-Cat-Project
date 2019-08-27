@@ -120,9 +120,9 @@ public class PuzzleScript : MonoBehaviour
             conMinute = (int)((minuteRotate.rotation.eulerAngles.z % 360) / 6);
             conTemp = conHour * 60 + conMinute;
 
-            if (rotateDir > 0 && conTemp > goalTemp)
+            if (rotateDir > 0 && conTemp >= goalTemp)
                 break;
-            else if (rotateDir < 0 && conTemp < goalTemp)
+            else if (rotateDir < 0 && conTemp <= goalTemp)
                 break;
 
             minuteRotate.Rotate(0, 0, rotateDir);

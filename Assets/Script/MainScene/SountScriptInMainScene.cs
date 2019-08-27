@@ -26,26 +26,63 @@ public class SountScriptInMainScene : MonoBehaviour {
 
     private void Start()
     {
-        // 최초 0.6으로 소리 지정
-        bSound1.enabled = true;
-        bSound2.enabled = true;
-        bSound3.enabled = false;
-
         bSource = GameObject.Find("BGM").GetComponent<AudioSource>();
-        bSlider.value = 0.6f;
-        StaticInfoForSound.BGMSound = bSlider.value;
+        bSlider.value = StaticInfoForSound.BGMSound;
         bSource.volume = StaticInfoForSound.BGMSound;
-
-        // 최초 0.6으로 소리 지정
-        eSound1.enabled = true;
-        eSound2.enabled = true;
-        eSound3.enabled = false;
+        if (bSlider.value == 0)
+        {
+            bSound1.enabled = false;
+            bSound2.enabled = false;
+            bSound3.enabled = false;
+        }
+        else if (bSlider.value < 0.3f)
+        {
+            bSound1.enabled = true;
+            bSound2.enabled = false;
+            bSound3.enabled = false;
+        }
+        else if (bSlider.value < 0.6f)
+        {
+            bSound1.enabled = true;
+            bSound2.enabled = true;
+            bSound3.enabled = false;
+        }
+        else
+        {
+            bSound1.enabled = true;
+            bSound2.enabled = true;
+            bSound3.enabled = true;
+        }
+        
 
 
         eSource = GameObject.Find("Effect").GetComponent<AudioSource>();
-        eSlider.value = 0.6f;
-        StaticInfoForSound.EffectSound = eSlider.value;
+        eSlider.value = StaticInfoForSound.EffectSound;
         eSource.volume = StaticInfoForSound.EffectSound;
+        if (eSource.volume == 0)
+        {
+            eSound1.enabled = false;
+            eSound2.enabled = false;
+            eSound3.enabled = false;
+        }
+        else if (eSource.volume < 0.3f)
+        {
+            eSound1.enabled = true;
+            eSound2.enabled = false;
+            eSound3.enabled = false;
+        }
+        else if (eSource.volume < 0.6f)
+        {
+            eSound1.enabled = true;
+            eSound2.enabled = true;
+            eSound3.enabled = false;
+        }
+        else
+        {
+            eSound1.enabled = true;
+            eSound2.enabled = true;
+            eSound3.enabled = true;
+        }
     }
 
     // Background 소리 Slider를 이동 시 호출
