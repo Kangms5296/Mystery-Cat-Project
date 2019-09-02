@@ -50,10 +50,9 @@ public class JoystickScript : MonoBehaviour
         joysticCanvas.alpha = 0;
     }
 
-    private void LateUpdate()
+    Vector3 clickPos;
+    private void FixedUpdate()
     {
-        Vector3 clickPos;
-
         // 조이스틱을 클릭 중이면..
         if (isClicked)
         {

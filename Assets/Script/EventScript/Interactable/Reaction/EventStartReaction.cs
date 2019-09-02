@@ -22,11 +22,18 @@ public class EventStartReaction : DelayedReaction
 		FSLocator.textDisplayer.ShowDialogueHolder ();
 		FSLocator.uiContainer.HideObservationList ();
 
+        // 원활한 진행을 위해 플레이어의 물리 법칙을 잠시 종료
 		newPlayer.GetComponent<BoxCollider2D> ().enabled = false;
 
         uiCaching = FindObjectOfType<UICaching>();
+
+        // 상단 UI 제거
         foreach (var ui in uiCaching.GetUI())
-            ui.gameObject.SetActive(false);
+            ui.SetActive(false);
+
+        // Displayer 제거
+        foreach (var ui in uiCaching.GetDisplayers())
+            ui.SetActive(false);
 
 		if(joyStick != null)
 			joyStick.OnJoystickUp();

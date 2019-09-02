@@ -233,7 +233,7 @@ public class MainSceneManager : MonoBehaviour {
         float maxAlpha = 0.5f;
         while (conAlpha < maxAlpha)
         {
-            clock.localScale = new Vector3(1.1f + 0.05f * conAlpha, 1.1f + 0.05f * conAlpha, 1);
+            clock.localScale = new Vector3(1.1f + 0.05f * conAlpha * 2, 1.1f + 0.05f * conAlpha * 2, 1);
             cantStage1.color = new Color(1, 1, 1, 1 - conAlpha);
 
             conAlpha += Time.deltaTime;

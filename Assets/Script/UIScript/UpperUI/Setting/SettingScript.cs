@@ -22,6 +22,11 @@ public class SettingScript : UIScript {
 
     public override void OnClickUI()
     {
+        // 기존에 켜져있는 창을 끈다.
+        soundDisplayer.SetActive(false);
+        saveDisplayer.SetActive(false);
+        exitDisplayer.SetActive(false);
+
         // 환경설정 창을 킨다.
         mainDisplayer.SetActive(true);
 
@@ -39,13 +44,6 @@ public class SettingScript : UIScript {
         mainDisplayer.SetActive(false);
 
         soundDisplayer.SetActive(true);
-    }
-
-    public void OnClickSave()
-    {
-        mainDisplayer.SetActive(false);
-
-        saveDisplayer.SetActive(true);
     }
 
     public void OnClickExit()

@@ -143,8 +143,6 @@ public class SoundScript : MonoBehaviour {
     // close 버튼 클릭
     public void OnClickClose()
     {
-        soundDisplayer.SetActive(false);
-
         reactionButton.gameObject.SetActive(false);
     }
 

@@ -62,13 +62,10 @@ public class SaveManager : MonoBehaviour {
             slots[conClick].GetComponent<Image>().sprite = deActivatedBG;
             conClick = -1;
         }
-        
     }
 
     public void OnClickClose()
     {
-        saveDisplayer.SetActive(false);
-
         reactionButton.SetActive(false);
     }
 
