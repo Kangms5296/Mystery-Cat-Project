@@ -14,27 +14,12 @@ public class NewNpc : NewCharacter {
     {
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
 
     // =========================================== 비공개 메서드 ============================================
 
-    protected override void CoroutineListStart()
-    {
-
-    }
-
-    protected override void CoroutineListStop()
-    {
-
-    }
 
     // 이전에 작용되고 있던 애니메이션을 표시 - 같은 애니메이션이 계속 호출 되는것을 방지, 4방향의 Idle 중 어느 방향을 호출할 지 선택
-    private enum BEHAVIOR_MODE { IDLE, MOVE_TOPLEFT, MOVE_TOPRIGHT, MOVE_BOTLEFT, MOVE_BOTRIGHT };
     private BEHAVIOR_MODE beforeDir = BEHAVIOR_MODE.IDLE;
 
     protected override void ChangeAnimation(Vector2 moveVector)

@@ -181,6 +181,9 @@ public class MainSceneManager : MonoBehaviour {
 
         effect.clip = clockRotateClip;
 
+        // 잠시 대기
+        yield return new WaitForSeconds(0.2f);
+
         // 시계 회전
         const float RotateSpeed = 60f;
         float conRotate = -115;
@@ -240,6 +243,9 @@ public class MainSceneManager : MonoBehaviour {
         cantStage1.color = new Color(1, 1, 1, 0);
         
         effect.clip = clockRotateClip;
+
+        // 잠시 대기
+        yield return new WaitForSeconds(0.2f);
 
         // 시계 회전
         const float RotateSpeed = 60f;

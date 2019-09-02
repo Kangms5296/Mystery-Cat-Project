@@ -50,7 +50,7 @@ public class JoystickScript : MonoBehaviour
         joysticCanvas.alpha = 0;
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         Vector3 clickPos;
 
