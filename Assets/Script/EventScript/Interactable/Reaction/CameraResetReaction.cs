@@ -8,7 +8,6 @@ public class CameraResetReaction : DelayedReaction
     protected override void ImmediateReaction()
     {
         MainCamera camera = GameObject.Find("Main Camera").GetComponent<MainCamera>();
-
-        camera.enabled = true;
+        camera.SetNewTarget(camera.player);
     }
 }

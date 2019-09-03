@@ -3,28 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MainCamera : MonoBehaviour {
-    /*
-	private Transform Player;
-	private Vector3 cameraDeapth;
 
-	void Start(){
-		Player = GameObject.FindGameObjectWithTag ("Player").transform;
-		cameraDeapth = new Vector3 (0, 0, -60);
-	}
-
-	void LateUpdate(){
-		transform.position = Player.position + cameraDeapth;
-	}
-    */
-    
     public Transform player;
+    public Transform target;
+    private Vector2 targetPos;
+
+    public bool isTracing = false;
+
+    private Vector2 tempVector;
 
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = player.position + new Vector3(0, 0, -60);
-        //Vector2 temp = Vector2.Lerp(transform.position, player.position, 3 * Time.deltaTime);
-        //transform.position = new Vector3(temp.x, temp.y, -300);
+        // 카메라가 표적을 점점 따라간다.
+        if (isTracing)
+        {
+            tempVector = Vector2.MoveTowards(transform.position, targetPos, 7 * Time.deltaTime);
+            transform.position = new Vector3(tempVector.x, tempVector.y, -100);
+        }
+        // 카메라가 바로 표적을 가리킨다.
+        else
+        {
+            transform.position = new Vector3(target.position.x, target.position.y, -100);
+        }
+    }
+
+    public void SetNewTracingTarget(Transform newTarget)
+    {
+        target = newTarget;
+        targetPos = target.position;
+
+        isTracing = true;
+    }
+
+    public void SetNewTarget(Transform newTarget)
+    {
+        target = newTarget;
+
+        isTracing = false;
     }
 }
 
