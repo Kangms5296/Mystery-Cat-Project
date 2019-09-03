@@ -224,13 +224,6 @@ public class ReactionCollection : MonoBehaviour
                     delayedReaction.React(this);
                     return;
                 }
-                else if (reactionName == "SkipReaction")
-                {
-                    Skip();
-                    //FSLocator.controlManager.m_Button.onClick.RemoveAllListeners();
-                    //FSLocator.controlManager.m_Button.onClick.AddListener(delegate { this.React(); });
-                    //return;
-                }
                 else
                 {
                     delayedReaction.React(this);
