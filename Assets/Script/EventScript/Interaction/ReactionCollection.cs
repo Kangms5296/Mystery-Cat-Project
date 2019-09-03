@@ -104,6 +104,22 @@ public class ReactionCollection : MonoBehaviour
                     delayedReaction.React(this);
                     return;
                 }
+                else if (reactionName == "CutSceneStartReaction")
+                {
+                    startIndex = i + 1;
+                    FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
+                    FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
+                    delayedReaction.React(this);
+                    return;
+                }
+                else if (reactionName == "CutSceneEndReaction")
+                {
+                    startIndex = i + 1;
+                    FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
+                    FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
+                    delayedReaction.React(this);
+                    return;
+                }
                 else if (reactionName == "CharacterMoveReaction")
                 {
                     startIndex = i + 1;
@@ -229,13 +245,7 @@ public class ReactionCollection : MonoBehaviour
                     delayedReaction.React(this);
                 }
             }
-            else
-            {
-                
-            }
         }
-        //startIndex = 0;
-
     }
 
 	public void Skip()

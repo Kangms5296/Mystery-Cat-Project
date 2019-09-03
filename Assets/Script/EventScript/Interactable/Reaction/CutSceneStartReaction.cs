@@ -14,22 +14,27 @@ public class CutSceneStartReaction : DelayedReaction
 
 	public List<GameObject> activeFalseObjectList;
 	public List<GameObject> activeTrueObjectList;
-
-	CoroutineHandler myCoroutine;
+    
+    private GameObject myCorotine;
 
     protected override void ImmediateReaction()
     {
-		canvas.alpha = 0.0f;
-		canvas.gameObject.SetActive (true);
+        FSLocator.textDisplayer.reactionButton.enabled = false;
 
-        canvas.GetComponent<Image>().sprite = showedImage;
-	
-		myCoroutine = CoroutineHandler.Start_Coroutine (FadeIn ());
+        myCorotine = CoroutineHandler.Start_Coroutine(FadeIn()).gameObject;
     }
 
 	private IEnumerator FadeIn()
 	{
-		currentTime = Time.time;
+        FSLocator.textDisplayer.reactionButton.enabled = true;
+        FSLocator.textDisplayer.reactionButton.onClick.Invoke();
+
+        canvas.alpha = 0.0f;
+        canvas.gameObject.SetActive(true);
+
+        canvas.GetComponent<Image>().sprite = showedImage;
+
+        currentTime = Time.time;
 
 		if (fadeTime == 0f) {
 			canvas.alpha = 1f;
@@ -49,8 +54,7 @@ public class CutSceneStartReaction : DelayedReaction
 			activeTrueObjectList [i].SetActive (true);
 		}
 
-		GameObject go = myCoroutine.gameObject;
-		Destroy(go);
-	}
+        Destroy(myCorotine);
+    }
 
 }

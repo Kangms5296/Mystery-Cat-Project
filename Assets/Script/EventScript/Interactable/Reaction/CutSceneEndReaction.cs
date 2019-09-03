@@ -16,12 +16,17 @@ public class CutSceneEndReaction : DelayedReaction
 
 	protected override void ImmediateReaction()
 	{
-		myCorotine = CoroutineHandler.Start_Coroutine (FadeOut ()).gameObject;
-	}
+        FSLocator.textDisplayer.reactionButton.enabled = false;
+
+        myCorotine = CoroutineHandler.Start_Coroutine(FadeOut()).gameObject;
+    }
 
 	private IEnumerator FadeOut()
 	{
-		currentTime = Time.time;
+        FSLocator.textDisplayer.reactionButton.enabled = true;
+        FSLocator.textDisplayer.reactionButton.onClick.Invoke();
+
+        currentTime = Time.time;
 
 		if (fadeTime == 0f) {
 			canvas.alpha = 0.0f;
