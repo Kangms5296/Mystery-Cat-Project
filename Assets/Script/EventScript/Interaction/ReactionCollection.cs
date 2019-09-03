@@ -71,7 +71,8 @@ public class ReactionCollection : MonoBehaviour
 			FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
             return;
         }
-        
+
+        string reactionName = "";
         for (int i = startIndex; i < reactions.Length; i++)
         {
             DelayedReaction delayedReaction = reactions[i] as DelayedReaction;
@@ -84,124 +85,18 @@ public class ReactionCollection : MonoBehaviour
                     audioSourceForTalk.Play();
                     beforeTextReaction = false;
                 }
-                if (reactions[i].GetType().Name == "TextReaction")
-                {
-					if (startIndex == reactions.Length - 1) {
-						break;
-					}
-                    else
-                    {
-                        beforeTextReaction = true;
-                        startIndex = i + 1;
-                        delayedReaction.React(this);
-						FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
-						FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
-                        return;
-                    }
-                }
-                if (reactions [i].GetType ().Name == "ChoiceTextReaction") {
-					
-						startIndex = i + 1;
-						delayedReaction.React(this);
-						FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
-						FSLocator.textDisplayer.reactionButton.enabled = true;
-						return;
 
-				}
-                else if (reactions[i].GetType().Name == "DelayReaction")
+                reactionName = reactions[i].GetType().Name;
+                if (reactionName == "TextReaction")
                 {
-                    if (startIndex == reactions.Length - 1)
-                        break;
-                    else
-                    {
-                        startIndex = i + 1;
-                        if (FSLocator.textDisplayer != null) { 
-                            FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
-                            FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
-                        }
-						delayedReaction.React(this);
-                        return;
-                    }
+                    beforeTextReaction = true;
+                    startIndex = i + 1;
+                    delayedReaction.React(this);
+                    FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
+                    FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
+                    return;
                 }
-                else if (reactions[i].GetType().Name == "AnimationReaction")
-                {
-                    if (startIndex == reactions.Length - 1)
-                        break;
-                    else
-                    {
-                        startIndex = i + 1;
-						FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
-						FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
-                        delayedReaction.React(this);
-                        return;
-                    }
-                }
-				else if (reactions[i].GetType().Name == "CharacterMoveReaction")
-                {
-                    if (startIndex == reactions.Length - 1)
-                        break;
-                    else
-                    {
-                        startIndex = i + 1;
-						FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
-						FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
-                        delayedReaction.React(this);
-                        return;
-                    }
-                }
-                else if (reactions[i].GetType().Name == "CameraMoveReaction")
-                {
-                    if (startIndex == reactions.Length - 1)
-                        break;
-                    else
-                    {
-                        startIndex = i + 1;
-                        FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
-                        FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
-                        delayedReaction.React(this);
-                        return;
-                    }
-                }
-                else if (reactions[i].GetType().Name == "CameraZoomInReaction")
-                {
-                    if (startIndex == reactions.Length - 1)
-                        break;
-                    else
-                    {
-                        startIndex = i + 1;
-                        FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
-                        FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
-                        delayedReaction.React(this);
-                        return;
-                    }
-                }
-                else if (reactions[i].GetType().Name == "CameraZoomOutReaction")
-                {
-                    if (startIndex == reactions.Length - 1)
-                        break;
-                    else
-                    {
-                        startIndex = i + 1;
-                        FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
-                        FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
-                        delayedReaction.React(this);
-                        return;
-                    }
-                }
-                else if (reactions[i].GetType().Name == "PushBackReaction")
-				{
-					if (startIndex == reactions.Length - 1)
-						break;
-					else
-					{
-						startIndex = i + 1;
-						FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
-						FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
-						delayedReaction.React(this);
-						return;
-					}
-				}
-                else if (reactions[i].GetType().Name == "GameOverReaction")
+                else if (reactionName == "DelayReaction")
                 {
                     startIndex = i + 1;
                     FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
@@ -209,7 +104,7 @@ public class ReactionCollection : MonoBehaviour
                     delayedReaction.React(this);
                     return;
                 }
-                else if (reactions[i].GetType().Name == "ObservationReaction")
+                else if (reactionName == "CharacterMoveReaction")
                 {
                     startIndex = i + 1;
                     FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
@@ -217,7 +112,7 @@ public class ReactionCollection : MonoBehaviour
                     delayedReaction.React(this);
                     return;
                 }
-                else if (reactions[i].GetType().Name == "MoveDistanceCheckReaction")
+                else if (reactionName == "CameraMoveReaction")
                 {
                     startIndex = i + 1;
                     FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
@@ -225,7 +120,7 @@ public class ReactionCollection : MonoBehaviour
                     delayedReaction.React(this);
                     return;
                 }
-                else if (reactions[i].GetType().Name == "WaitingUntilClickMissionReaction")
+                else if (reactionName == "CameraZoomInReaction")
                 {
                     startIndex = i + 1;
                     FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
@@ -233,7 +128,7 @@ public class ReactionCollection : MonoBehaviour
                     delayedReaction.React(this);
                     return;
                 }
-                else if (reactions[i].GetType().Name == "WaitingUntilClickInventoryReaction")
+                else if (reactionName == "CameraZoomOutReaction")
                 {
                     startIndex = i + 1;
                     FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
@@ -241,7 +136,7 @@ public class ReactionCollection : MonoBehaviour
                     delayedReaction.React(this);
                     return;
                 }
-                else if (reactions[i].GetType().Name == "WaitingUntilClickDocuInfoReaction")
+                else if (reactionName == "PushBackReaction")
                 {
                     startIndex = i + 1;
                     FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
@@ -249,7 +144,7 @@ public class ReactionCollection : MonoBehaviour
                     delayedReaction.React(this);
                     return;
                 }
-                else if (reactions[i].GetType().Name == "WaitingUntilClickDocuCharReaction")
+                else if (reactionName == "GameOverReaction")
                 {
                     startIndex = i + 1;
                     FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
@@ -257,7 +152,7 @@ public class ReactionCollection : MonoBehaviour
                     delayedReaction.React(this);
                     return;
                 }
-                else if (reactions[i].GetType().Name == "WaitingUntilMixReaction")
+                else if (reactionName == "ObservationReaction")
                 {
                     startIndex = i + 1;
                     FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
@@ -265,7 +160,7 @@ public class ReactionCollection : MonoBehaviour
                     delayedReaction.React(this);
                     return;
                 }
-                else if (reactions[i].GetType().Name == "WatingUntilClickSaveReaction")
+                else if (reactionName == "MoveDistanceCheckReaction")
                 {
                     startIndex = i + 1;
                     FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
@@ -273,20 +168,63 @@ public class ReactionCollection : MonoBehaviour
                     delayedReaction.React(this);
                     return;
                 }
-                else if (reactions[i].GetType().Name == "EventCallbackReaction" || reactions[i].GetType().Name == "EventCallbackConditionReaction")
+                else if (reactionName == "WaitingUntilClickMissionReaction")
+                {
+                    startIndex = i + 1;
+                    FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
+                    FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
+                    delayedReaction.React(this);
+                    return;
+                }
+                else if (reactionName == "WaitingUntilClickInventoryReaction")
+                {
+                    startIndex = i + 1;
+                    FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
+                    FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
+                    delayedReaction.React(this);
+                    return;
+                }
+                else if (reactionName == "WaitingUntilClickDocuInfoReaction")
+                {
+                    startIndex = i + 1;
+                    FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
+                    FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
+                    delayedReaction.React(this);
+                    return;
+                }
+                else if (reactionName == "WaitingUntilClickDocuCharReaction")
+                {
+                    startIndex = i + 1;
+                    FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
+                    FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
+                    delayedReaction.React(this);
+                    return;
+                }
+                else if (reactionName == "WaitingUntilMixReaction")
+                {
+                    startIndex = i + 1;
+                    FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
+                    FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
+                    delayedReaction.React(this);
+                    return;
+                }
+                else if (reactionName == "WatingUntilClickSaveReaction")
+                {
+                    startIndex = i + 1;
+                    FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
+                    FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
+                    delayedReaction.React(this);
+                    return;
+                }
+                else if (reactionName == "EventCallbackReaction" ||
+                    reactionName == "EventCallbackConditionReaction" ||
+                    reactionName == "EventConditionReaction")
                 {
                     startIndex = 0;
                     delayedReaction.React(this);
                     return;
                 }
-				else if (reactions[i].GetType().Name == "EventConditionReaction")
-				{
-					startIndex = 0;
-					delayedReaction.React(this);
-					return;
-				}
-
-                else if (reactions[i].GetType().Name == "SkipReaction")
+                else if (reactionName == "SkipReaction")
                 {
                     Skip();
                     //FSLocator.controlManager.m_Button.onClick.RemoveAllListeners();
@@ -311,11 +249,6 @@ public class ReactionCollection : MonoBehaviour
 	{
 		for (int i = startIndex; i < reactions.Length; i++)
 		{
-			if (reactions[i].GetType().Name == "AnimationReaction")
-			{
-				//AnimationReaction animationReaction = reactions[i] as AnimationReaction;
-				//animationReaction.Skip ();
-			}
 
         }
 
