@@ -23,37 +23,26 @@ public class CameraZoomOutReaction : DelayedReaction
     {
         // 카메라 조절을 위해 캐싱
         Camera camera = GameObject.Find("Main Camera").GetComponent<Camera>();
-        // 카메라가 유저를 따라다니는 행동을 중단
-        camera.GetComponent<MainCamera>().enabled = false;
+
         // 카메라 초기 위치 캐싱
         Vector3 cameraFirst = camera.transform.position;
+        Vector2 temp;
 
-        // 지.변.
-        bool isSizeOK = false;
-        bool isPosOK = false;
-
-
-        while (isSizeOK == false || isPosOK == false)
+        float conTime = 0;
+        while (conTime < 1)
         {
-            if (camera.orthographicSize < 5)
-                camera.orthographicSize += Time.deltaTime * speed;
-            else
-            {
-                isSizeOK = true;
-                camera.orthographicSize = 5;
-            }
+            // 카메라가 점점 축소
+            camera.orthographicSize = 3.5f + conTime * 1.5f;
 
-            if (camera.transform.position.x == returnObject.transform.position.x && camera.transform.position.y == returnObject.transform.position.y)
-                isPosOK = true;
-            else
-            {
-                //camera.transform.position = Vector3.MoveTowards(camera.transform.position, new Vector3(foucsObject.position.x, foucsObject.position.y, -60), 5 * Time.deltaTime);
-                camera.transform.position = Vector3.Lerp(cameraFirst, returnObject.transform.position, (camera.orthographicSize - 3.5f) / 1.5f);
-                camera.transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y, -60);
-            }
+            // 카메라가 점점 지정된 위치로 이동
+            temp = Vector2.Lerp(cameraFirst, returnObject.position, conTime);
+            camera.transform.position = new Vector3(temp.x, temp.y, -100);
 
+            conTime += Time.deltaTime * speed;
             yield return null;
         }
+        camera.orthographicSize = 5f;
+        camera.transform.position = new Vector3(returnObject.position.x, returnObject.position.y, -100);
 
         // 카메라가 유저를 따라다니는 행동을 다시 시작
         camera.GetComponent<MainCamera>().enabled = true;
