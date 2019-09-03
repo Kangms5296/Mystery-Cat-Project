@@ -25,14 +25,15 @@ public class ObservationReaction : DelayedReaction
 
     protected override void SpecificInit()
     {
+        // 관찰 간 조작 금지 설정
+        FSLocator.textDisplayer.reactionButton.gameObject.SetActive(false);
+
         observationManager = FindObjectOfType<ObservationManager>();
     }
 
 
     protected override void ImmediateReaction()
     {
-        // 관찰 간 조작 금지 설정
-        FSLocator.textDisplayer.reactionButton.gameObject.SetActive(false);
 
         // 관찰 루틴 실행
         myCorotine = CoroutineHandler.Start_Coroutine(CheckForDoingObservation()).gameObject;

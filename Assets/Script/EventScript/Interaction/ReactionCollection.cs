@@ -79,6 +79,8 @@ public class ReactionCollection : MonoBehaviour
 
             if (delayedReaction)
             {
+                FSLocator.textDisplayer.reactionButton.enabled = false;
+
                 if (beforeTextReaction == true)
                 {
                     audioSourceForTalk.clip = audioClipForTalk;
@@ -89,6 +91,8 @@ public class ReactionCollection : MonoBehaviour
                 reactionName = reactions[i].GetType().Name;
                 if (reactionName == "TextReaction")
                 {
+                    FSLocator.textDisplayer.reactionButton.enabled = true;
+
                     beforeTextReaction = true;
                     startIndex = i + 1;
                     delayedReaction.React(this);
@@ -170,6 +174,8 @@ public class ReactionCollection : MonoBehaviour
                 }
                 else if (reactionName == "ObservationReaction")
                 {
+                    FSLocator.textDisplayer.reactionButton.enabled = true;
+
                     startIndex = i + 1;
                     FSLocator.textDisplayer.reactionButton.onClick.RemoveAllListeners();
                     FSLocator.textDisplayer.reactionButton.onClick.AddListener(delegate { this.React(); });
@@ -242,6 +248,8 @@ public class ReactionCollection : MonoBehaviour
                 }
                 else
                 {
+                    FSLocator.textDisplayer.reactionButton.enabled = true;
+
                     delayedReaction.React(this);
                 }
             }
