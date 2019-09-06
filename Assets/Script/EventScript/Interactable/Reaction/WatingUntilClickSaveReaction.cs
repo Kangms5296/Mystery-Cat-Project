@@ -9,9 +9,12 @@ public class WatingUntilClickSaveReaction : DelayedReaction
 
     public Button button;
     private bool isSaveClick = false;
-
     public ReactionCollection afterReaction;
     public ReactionCollection notReaction;
+
+    public Button endButton;
+    private bool isEndClick = false;
+    public ReactionCollection gameEndReaction;
 
     protected override void ImmediateReaction()
     {
@@ -28,6 +31,8 @@ public class WatingUntilClickSaveReaction : DelayedReaction
         // 문서 정보를 클릭하였는지 확인하는 리스너 추가
         button.onClick.AddListener(ClickSave);
 
+        // 게임 종료를 클릭하였는가 확인하는 리스너 추가
+        endButton.onClick.AddListener(ClickEnd);
 
         GameObject settingCanvas = FindObjectOfType<SettingScript>().transform.Find("ReactionButton").gameObject;
         
@@ -39,14 +44,21 @@ public class WatingUntilClickSaveReaction : DelayedReaction
         while (settingCanvas.activeSelf == true)
             yield return null;
 
-        // 저장 버튼을 눌렀는가?
-        if (isSaveClick)
-            afterReaction.InitAndReact();
+        // 종료 버튼을 눌렀는가?
+        if (isEndClick)
+        {
+            gameEndReaction.InitAndReact();
+        }
         else
-            notReaction.InitAndReact();
+        {
+            // 저장 버튼을 눌렀는가?
+            if (isSaveClick)
+                afterReaction.InitAndReact();
+            else
+                notReaction.InitAndReact();
+        }
 
         FSLocator.textDisplayer.reactionButton.enabled = true;
-
         Destroy(myCorotine);
     }
 
@@ -56,5 +68,12 @@ public class WatingUntilClickSaveReaction : DelayedReaction
         isSaveClick = true;
 
         button.onClick.RemoveListener(ClickSave);
+    }
+
+    void ClickEnd()
+    {
+        isEndClick = true;
+
+        endButton.onClick.RemoveListener(ClickEnd);
     }
 }
