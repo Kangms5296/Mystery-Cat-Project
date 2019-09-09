@@ -21,6 +21,7 @@ public class SaveManager : MonoBehaviour {
     public GameObject saveConfirmationDisplayer;
     // 최종 선택 canvas
     public GameObject saveReConfirmationDisplayer;
+    public GameObject loadReConfirmationDisplayer;
     // 저장 / 불러오기 불가 canvas
     public GameObject saveCnatDisplater;
     // 불러올 데이터가 없는 slot을 불러오기 클릭할 때 나오는 canvas
@@ -112,7 +113,7 @@ public class SaveManager : MonoBehaviour {
                 saveConfirmationDisplayer.SetActive(false);
 
                 isSave = false;
-                saveReConfirmationDisplayer.SetActive(true);
+                loadReConfirmationDisplayer.SetActive(true);
             }
             // 저장된 데이터가 없는 Slot을 Load 하는 경우
             else
@@ -132,6 +133,7 @@ public class SaveManager : MonoBehaviour {
     public void OnClickYes()
     {
         saveReConfirmationDisplayer.SetActive(false);
+        loadReConfirmationDisplayer.SetActive(false);
 
         // 현재 상태 저장
         if (isSave)
@@ -164,6 +166,7 @@ public class SaveManager : MonoBehaviour {
         conClick = -1;
 
         saveReConfirmationDisplayer.SetActive(false);
+        loadReConfirmationDisplayer.SetActive(false);
     }
     
     public void OnClickYesByCantSave()

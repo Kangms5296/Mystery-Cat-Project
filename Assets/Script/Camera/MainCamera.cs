@@ -12,6 +12,11 @@ public class MainCamera : MonoBehaviour {
 
     private Vector2 tempVector;
 
+    private void Start()
+    {
+        targetPos = target.position;
+    }
+
     // Update is called once per frame
     void LateUpdate()
     {

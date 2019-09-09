@@ -82,7 +82,8 @@ public class JoystickScript : MonoBehaviour
 
             // 3. 이동시킨 조이스틱 방향으로 플레이어를 이동
             // 정규화한 벡터의 방향으로 플레이어를 이동
-            moveVector = new Vector2(clickPos.x - idlePos.x, clickPos.y - idlePos.y).normalized;
+            //moveVector = new Vector2(clickPos.x - idlePos.x, clickPos.y - idlePos.y).normalized * 1.2f;
+            moveVector = new Vector2(transform.position.x - idlePos.x, transform.position.y - idlePos.y) * 0.012f;
             player.MoveToVector(moveVector);
         }
     }
