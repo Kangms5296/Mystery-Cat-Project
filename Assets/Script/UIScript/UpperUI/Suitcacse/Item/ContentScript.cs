@@ -504,7 +504,10 @@ public class ContentScript : MonoBehaviour {
             DeleteMaterialSlot(materialSlots[conSlot_material - 1].GetIndex());
     }
 
-
+    public int GetConSlot_material()
+    {
+        return conSlot_material;
+    }
 
 
     // ========================================================== 비공개 메서드 정의 ====================================================

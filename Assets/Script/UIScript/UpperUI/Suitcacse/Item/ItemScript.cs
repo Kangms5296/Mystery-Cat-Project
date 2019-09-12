@@ -30,7 +30,10 @@ public class ItemScript : UIScript {
     // 재료 아이템 스크롤 이동
     public Button up;
     public Button down;
+    private int upDownCount;
+
     public RectTransform content;
+    public ContentScript contentScript;
 
     // Drag Item Image RectTransform 콤포넌트 캐싱
     public RectTransform dragImage;
@@ -56,10 +59,17 @@ public class ItemScript : UIScript {
         bgState = BGSTATE.MIX1;
 
         // 조합 불가능한 아이템을 표시하고 있다면, 이 표시를 제거
-        GetComponent<ContentScript>().IsMixOKReverse();
+        contentScript.IsMixOKReverse();
 
         // 재료 아이템 스크롤을 최초로
         content.localPosition = new Vector2(content.localPosition.x, 0);
+        up.interactable = false;
+        
+        upDownCount = 8;
+        if (contentScript.GetItemSlotsCount() <= upDownCount)
+            down.interactable = false;
+        else
+            down.interactable = true;
 
         InitUI();
     }
@@ -77,10 +87,10 @@ public class ItemScript : UIScript {
         bgState = BGSTATE.MIX2;
 
         // 자~ 가지고 있는 이이템 목록을 순회하며 조합 가능한 아이템만 표시
-        GetComponent<ContentScript>().IsMixOK();
+        contentScript.IsMixOK();
 
         // 조합 목록에 이전에 사용한 재료가 있다면 삭제
-        GetComponent<ContentScript>().DeleteAllMaterial();
+        contentScript.DeleteAllMaterial();
     }
 
     // NPC 대화 상 '주다' 버튼으로 인벤토리 캔버스 표시
@@ -98,7 +108,7 @@ public class ItemScript : UIScript {
         bgState = BGSTATE.GIVE;
 
         // 조합 불가능한 아이템을 표시하고 있다면, 이 표시를 제거
-        GetComponent<ContentScript>().IsMixOKReverse();
+        contentScript.IsMixOKReverse();
 
         InitUI();
     }
@@ -150,12 +160,6 @@ public class ItemScript : UIScript {
     {
         if (isSimpleGive)
         {
-            // 현재 플레이어가 누른 아이템을 확인
-            Debug.Log("플레이어가 클릭한 아이템은 " + itemName.text);
-
-            // 현재 대화하고있는 NPC를 확인
-            Debug.Log("대화하고 있는 NPC는" + npcName_GiveUIOnlyUse);
-
             // 해당 NPC가 누른 아이템에 대해 필요로 하는지 확인
             bool isNeed = false;
             int temp = -1;
@@ -166,7 +170,6 @@ public class ItemScript : UIScript {
                 if (tempList[i]["NPC"] as string == npcName_GiveUIOnlyUse &&
                     tempList[i]["ITEM"] as string == itemName.text)
                 {
-                    Debug.Log(npcName_GiveUIOnlyUse + " 에게 " + itemName.text + " 는 필요하다.");
                     isNeed = true;
                     temp = i;
                 }
@@ -176,9 +179,9 @@ public class ItemScript : UIScript {
             if (isNeed)
             {
                 // 인벤토리 내 해당 아이템 삭제
-                GetComponent<ContentScript>().DeleteItemSlot(clickSlotindex);
+                contentScript.DeleteItemSlot(clickSlotindex);
                 // 인벤토리 정렬
-                GetComponent<ContentScript>().SortItemSlot();
+                contentScript.SortItemSlot();
 
                 // 아이템 제공 Condition을 체크
                 AllConditions conditions = Resources.Load<AllConditions>("AllConditions");
@@ -219,9 +222,9 @@ public class ItemScript : UIScript {
     public void Give_OnCondition()
     {
         // 인벤토리 내 해당 아이템 삭제
-        GetComponent<ContentScript>().DeleteItemSlot(clickSlotindex);
+        contentScript.DeleteItemSlot(clickSlotindex);
         // 인벤토리 정렬
-        GetComponent<ContentScript>().SortItemSlot();
+        contentScript.SortItemSlot();
         // 아이템을 주었다고 표시
         isGive = true;
     }
@@ -232,6 +235,11 @@ public class ItemScript : UIScript {
         if (content.localPosition.y <= 0)
             return;
 
+        upDownCount -= 4;
+        down.interactable = true;
+        if (upDownCount == 8)
+            up.interactable = false;
+
         content.localPosition = new Vector2(content.localPosition.x, content.localPosition.y - 180);
     }
 
@@ -240,6 +248,13 @@ public class ItemScript : UIScript {
     {
         if (content.localPosition.y >= 720)
             return;
+
+        int itemCount = contentScript.GetItemSlotsCount();
+        
+        upDownCount += 4;
+        up.interactable = true;
+        if (upDownCount + 4 - (itemCount % 4) > itemCount)
+            down.interactable = false;
 
         content.localPosition = new Vector2(content.localPosition.x, content.localPosition.y + 180);
     }

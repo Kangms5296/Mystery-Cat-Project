@@ -40,12 +40,15 @@ public class GuideArrowScript : MonoBehaviour {
         isTarget = false;
         target = null;
 
+        Debug.Log("!!!!!!!!!!!!!");
         gameObject.SetActive(true);
     }
 
     public void SetTarget(Transform newTarget, Transform parentTrans)
     {
         target = newTarget;
+        trans.position = target.position;
+
         trans.SetParent(parentTrans);
 
         isTarget = true;
